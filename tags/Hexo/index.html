@@ -29,7 +29,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
+    <meta name="theme-color" content="#BAEED6">
     <meta name="author" content="你的名字。">
     <meta name="description" content="null">
     <meta name="keywords" content="null">
@@ -77,7 +77,7 @@
     }
 
     a {
-        color: #00838F;
+        color: #FF5376;
     }
 
     .mdl-card__media,
@@ -128,7 +128,7 @@
     }
 
     .post-toc a:hover {
-        color: #00838F;
+        color: #FF5376;
         text-decoration: underline;
     }
 </style>
@@ -276,10 +276,10 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 6; i++) {
-        randomNum = Math.floor(Math.random() * 28 + 1);
+        randomNum = Math.floor(Math.random() * 105 + 1);
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
+        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + 'http://od50s29vd.bkt.clouddn.com/material-' + randomNum + '.png' + '?imageView2/2/w/1080/h/960/interlace/0/q/80' + ')')
 
         locatePost = locatePost.next();
     }
