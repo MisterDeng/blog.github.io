@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[一个人的时候]]></title>
-      <url>http://loveswift.site/2017/02/19/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%B6%E5%80%99/</url>
+      <url>http://sayyourname.cn/2017/02/19/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%B6%E5%80%99/</url>
       <content type="html"><![CDATA[<h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，不管你是否单身，当你一个人独处的时候，你会想什么，做什么。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">放一首音乐吧，舒缓你紧张神经</div><div class="line"></div><div class="line">读一本书吧，带你去书中的世界</div><div class="line"></div><div class="line">看一场电影吧，体验惊险刺激</div><div class="line"></div><div class="line">写一篇文章吧，记录下你的生活</div></pre></td></tr></table></figure>
 <p><strong>思考人生吧</strong></p>
@@ -34,7 +34,7 @@
     
     <entry>
       <title><![CDATA[Markdown语法]]></title>
-      <url>http://loveswift.site/2017/02/19/Markdown%E8%AF%AD%E6%B3%95/</url>
+      <url>http://sayyourname.cn/2017/02/19/Markdown%E8%AF%AD%E6%B3%95/</url>
       <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>原来用的<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器，上面有很多快捷键，有图形化按钮，很方便。然后换了个逼格比较高的Typora，<strong>漂亮的不像实力派</strong>，因为少了按钮，那我必须记下来了，因为觉得<code>MWeb</code>的语法总结很好，所以以下是来自<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器的Markdown语法</p>
 <h2 id="Markdown-的设计哲学"><a href="#Markdown-的设计哲学" class="headerlink" title="Markdown 的设计哲学"></a>Markdown 的设计哲学</h2><blockquote>
 <p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
@@ -163,7 +163,7 @@
     
     <entry>
       <title><![CDATA[Hexo文章添加音乐插件]]></title>
-      <url>http://loveswift.site/2017/02/19/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
+      <url>http://sayyourname.cn/2017/02/19/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo添加音乐插件方法网上已经有一大堆了，此文章是定制化的在文章中插入音乐，比如<a href="http://loveswift.site/about/index.html">这样的</a>文章。只需要在文章加入<code>music: xxx</code>就可以设置你想要的音乐了（xxx为网易某个歌曲id）</p>
 <h2 id="定制化"><a href="#定制化" class="headerlink" title="定制化"></a>定制化</h2><p>定制化基于我的主题<a href="https://material.viosey.com/" target="_blank" rel="external">Material</a>，网易云音乐的外链想必不用说了，我复制下来的是这样的:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=29567192&amp;auto=0&amp;height=66"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -191,7 +191,7 @@
     
     <entry>
       <title><![CDATA[Hexo设置多说shortname]]></title>
-      <url>http://loveswift.site/2017/02/18/Hexo%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%AF%B4shortname/</url>
+      <url>http://sayyourname.cn/2017/02/18/Hexo%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%AF%B4shortname/</url>
       <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>本来是很简单的问题，但是浪费我不少时间，所以有必要记录一下，防止下次出错。<br>刚开始配置多说<code>shortname</code>压根没有在意，因为上一个主题的这个是随便填的，而且成功了（黑人问号）。<br>所以这次也是随便写的，怎么都失败，还看了控制台、源代码，后来突然觉得这个<code>shortname</code>这个单词好奇怪,然后百度了一下。</p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>比如我的多说二级域名是xxx.duoshuo.com，<code>shortname</code>就是<code>xxx</code>。<br>最后吐槽一下，<code>short</code>不是短的意思吗，短名字？，<em>are you sure？</em></p>
 ]]></content>
@@ -209,7 +209,7 @@
     
     <entry>
       <title><![CDATA[Node.js上传图片到七牛]]></title>
-      <url>http://loveswift.site/2017/02/17/Node.js%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E4%B8%83%E7%89%9B/</url>
+      <url>http://sayyourname.cn/2017/02/17/Node.js%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E4%B8%83%E7%89%9B/</url>
       <content type="html"><![CDATA[<h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><p>主题基于 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a> ，作者使用的是<a href="https://www.instagram.com/" target="_blank" rel="external">Instagram</a>拉取的相册，捣鼓了半天，翻墙申请账号，最后发现图片爬不下来，后来发现<a href="https://yq.aliyun.com/articles/8607" target="_blank" rel="external">一篇</a>七牛上传的node脚本，因为需要上传的图片太多，然后改成了自己需要的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (stats.isFile()) &#123;</div><div class="line">    <span class="keyword">var</span> suffix = getFilenameSuffix(files[index]);</div><div class="line">    <span class="keyword">if</span>(!(suffix==<span class="string">'.js'</span>|| suffix == <span class="string">'.DS_Store'</span>))&#123;</div><div class="line">      <span class="comment">//要上传文件的本地路径</span></div><div class="line">      filePath = path+<span class="string">'/'</span>+files[index];</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'抓取到文件: '</span>+files[index]);</div><div class="line">      <span class="comment">//上传到七牛后保存的文件名</span></div><div class="line">      key = files[index];</div><div class="line">      <span class="comment">//生成上传 Token</span></div><div class="line">      token = uptoken(bucket, key);</div><div class="line">      <span class="comment">// 异步执行</span></div><div class="line">      uploadFile(token, key, filePath);</div><div class="line">      arr.push(files[index]);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <p>这是上传图片的主要代码，主要问题有在<code>photos</code>文件中如果新增了图片，会把以前的图片再次上传一遍，所以做了检查重复不会上传：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 判断数组中是否包含某元素</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_contain</span>(<span class="params">array, obj</span>)</span>&#123;</div><div class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</div><div class="line">     <span class="keyword">if</span> (array[i] == obj)<span class="comment">//如果要求数据类型也一致，这里可使用恒等号===</span></div><div class="line">         <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>然后愉快的开始执行，因为<code>photos</code>文件里大约有1000多张图片，理所当然的电脑直接死机。因为执行了一千次异步方法，js又是<a href="http://m.blog.csdn.net/article/details?id=53522759" target="_blank" rel="external">单线程</a>，那就用同步上传的方法，js异步改成同步的话有嵌套或者回调，我用了<a href="http://caolan.github.io/async/" target="_blank" rel="external">async</a>库，用法很简单:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span>.series([</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; ... &#125;,</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; ... &#125;</div><div class="line">]);</div></pre></td></tr></table></figure></p>
@@ -237,7 +237,7 @@
     
     <entry>
       <title><![CDATA[秒速五厘米]]></title>
-      <url>http://loveswift.site/2017/02/16/%E7%A7%92%E9%80%9F%E4%BA%94%E5%8E%98%E7%B1%B3/</url>
+      <url>http://sayyourname.cn/2017/02/16/%E7%A7%92%E9%80%9F%E4%BA%94%E5%8E%98%E7%B1%B3/</url>
       <content type="html"><![CDATA[<p><img src="http://pic1.win4000.com/wallpaper/b/566a5bd61ba86.jpg" alt=""></p>
 <hr>
 <blockquote>
@@ -258,7 +258,7 @@
     
     <entry>
       <title><![CDATA[清晨 醒来的时候]]></title>
-      <url>http://loveswift.site/2017/02/15/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/</url>
+      <url>http://sayyourname.cn/2017/02/15/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/</url>
       <content type="html"><![CDATA[<p><img src="http://pic1.win4000.com/wallpaper/2/5835570118d7f.jpg" alt=""></p>
 <hr>
 <blockquote>
