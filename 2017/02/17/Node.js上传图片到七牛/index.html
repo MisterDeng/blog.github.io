@@ -393,6 +393,9 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
+    
+
+    
         <h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><p>主题基于 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a> ，作者使用的是<a href="https://www.instagram.com/" target="_blank" rel="external">Instagram</a>拉取的相册，捣鼓了半天，翻墙申请账号，最后发现图片爬不下来，后来发现<a href="https://yq.aliyun.com/articles/8607" target="_blank" rel="external">一篇</a>七牛上传的node脚本，因为需要上传的图片太多，然后改成了自己需要的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">if (stats.isFile()) &#123;</div><div class="line">    var suffix = getFilenameSuffix(files[index]);</div><div class="line">    if(!(suffix==&apos;.js&apos;|| suffix == &apos;.DS_Store&apos;))&#123;</div><div class="line">      //要上传文件的本地路径</div><div class="line">      filePath = path+&apos;/&apos;+files[index];</div><div class="line">      console.log(&apos;抓取到文件: &apos;+files[index]);</div><div class="line">      //上传到七牛后保存的文件名</div><div class="line">      key = files[index];</div><div class="line">      //生成上传 Token</div><div class="line">      token = uptoken(bucket, key);</div><div class="line">      // 异步执行</div><div class="line">      uploadFile(token, key, filePath);</div><div class="line">      arr.push(files[index]);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <p>这是上传图片的主要代码，主要问题有在<code>photos</code>文件中如果新增了图片，会把以前的图片再次上传一遍，所以做了检查重复不会上传：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 判断数组中是否包含某元素</div><div class="line">*/</div><div class="line">function array_contain(array, obj)&#123;</div><div class="line"> for (var i = 0; i &lt; array.length; i++)&#123;</div><div class="line">     if (array[i] == obj)//如果要求数据类型也一致，这里可使用恒等号===</div><div class="line">         return true;</div><div class="line"> &#125;</div><div class="line"> return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>然后愉快的开始执行，因为<code>photos</code>文件里大约有1000多张图片，理所当然的电脑直接死机。因为执行了一千次异步方法，js又是<a href="http://m.blog.csdn.net/article/details?id=53522759" target="_blank" rel="external">单线程</a>，那就用同步上传的方法，js异步改成同步的话有嵌套或者回调，我用了<a href="http://caolan.github.io/async/" target="_blank" rel="external">async</a>库，用法很简单:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">async.series([</div><div class="line">    function(callback) &#123; ... &#125;,</div><div class="line">    function(callback) &#123; ... &#125;</div><div class="line">]);</div></pre></td></tr></table></figure></p>
@@ -409,6 +412,10 @@
 
     
 </div>
+
+<script>
+    $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=0&height=66');
+</script>
 
 
                 
@@ -521,7 +528,7 @@
             
                 <li>
                     <a href="/about" target="_self" title="关于我">
-                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">person</i>
                         关于我
                     </a>
                 </li>
@@ -556,7 +563,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-            <a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">4</span></a>
+            <a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">7</span></a>
         </ul>
     </li>
 
@@ -619,7 +626,7 @@
     <li>
         <a href="/archives">
             文章总数
-            <span class="sidebar-badge">4</span>
+            <span class="sidebar-badge">7</span>
         </a>
     </li>
 </ul>

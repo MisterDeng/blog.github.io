@@ -10,7 +10,7 @@
     
     <title>
         
-            links | 
+            一个人的时候 | 
         
         你的名字。
     </title>
@@ -53,7 +53,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://loveswift.site">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="links | 你的名字。">
+    <meta property="og:title" content="一个人的时候 | 你的名字。">
     <meta property="og:description" content="null">
 
     <!--[if lte IE 9]>
@@ -202,125 +202,281 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一个人的思考"><span class="post-toc-number">1.</span> <span class="post-toc-text">一个人的思考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一个人的行为"><span class="post-toc-number">2.</span> <span class="post-toc-text">一个人的行为</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一个人的总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">一个人的总结</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Single Links Page -->
-    <style>
-    .md-links {
-        min-height: calc(100% - 120px - 5pc - 6em);
-        text-align: center;
-        overflow: auto;
-        padding: 0;
-        margin: 0 auto;
-        max-width: 320px;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (min-width: 640px) {
-        .md-links {
-            max-width: 640px;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    @media screen and (min-width: 960px) {
-        .md-links {
-            max-width: 960px;
-        }
-    }
-
-    @media screen and (min-width: 1280px) {
-        .md-links {
-            max-width: 1280px;
-        }
-    }
-
-    @media screen and (min-width: 1600px) {
-        .md-links {
-            max-width: 1600px;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        .md-links {
-            min-height: calc(100% - 200px - 5pc - 6em);
-            margin-top: 6em;
-        }
-    }
-
-    .md-links-item {
-        background: #fff;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-        height: 72px;
-        line-height: 15px;
-        margin: 20px 10px;
-        padding: 0px 0px;
-        transition: box-shadow 0.25s;
-    }
-
-    .md-links a {
-        color: #333;
-        text-decoration: none;
-    }
-
-    .md-links li {
-        width: 300px;
-        float: left;
-        list-style: none;
-    }
-
-    .md-links-item img {
-        float: left;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 11px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-    }
-
-    .md-links-item:hover {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .md-links-item a:hover{
-        cursor: pointer;
-    }
-
-    .md-links-title {
-        font-size: 20px;
-        line-height: 50px;
-    }
-
-    #scheme-Paradox .mdl-mini-footer{
-        clear: left;
-    }
-    #bottom{
-        position: relative;
-    }
-</style>
-
-<ul class="md-links">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
-            <li class="md-links-item">
-                <a href="www.loveswift.site" title="君の名は。" target="_blank">
-                    <img src="http://olg4t9xt4.bkt.clouddn.com/5835570118d7f.jpg?imageView2/1/w/800/h/800/q/100&amp;raw=true" alt="君の名は。" width="72px"/>
-                    <span class="md-links-title">君の名は。</span><br />
-                    <span>没有描述</span>
-                </a>
-            </li>
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 105 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + 'http://od50s29vd.bkt.clouddn.com/material-' + randomNum + '.png?thum' + ')');
+</script>
+
         
+    
+            <p class="article-headline-p">
+                一个人的时候
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>2月 19, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aS5bCMAwEwNz/0jMHYMa05E8Cr7JiAY4ri8i0dP189XXh4eHh4eHh4eE9jHfF1+v3/1vnj1sOV3v93NsbHh4e3knem1dtvIlkhR4+XxkPDw/vJC+/TV4Axusn3y/vDQ8PD+9hvOohOC8MyWc8PDy8T+T1goMqBg8PD+9TeIU//EXATDR8NGvBw8PDi3kzAcHuzzf09/Dw8PCGvPJIU6tBlReSxUNXeHh4eBt446PtfEssaZiN755/Hw8PD+8ML/9Z/tJfFsgGA154eHh453kzg6RjUv4Qk0eTjyPg4eHhneTlbf6ZoKHaEisXDzw8PLzNvFWwvKjkIUVz4AAPDw9vMy85yOaNsd62knvlwTEeHh7ebl4Sj1aRyco5u7wHPDw8vCO8JFzotfZnDu7NEoWHh4e3mZcfgqvI3hhBvgc8PDy8u3h5QFAdHahucVWEgYeHh3eGN/+aroazOw7feHh4eGd41dd63qzKy0Z19GrL6AAeHh5e68zZ2+L8AEEeZ0S7wsPDw9vM6xWG5Le9ACJn/LsmHh4e3mZevq1V4UJ1BCFfBw8PD+8krxq/9gpGUh56ZQMPDw/vJG9VwJofnVe13/Dw8PDu4lWv8RZnmme9glSYjMDDw8NbxLviKy8bvaZaMtoVBRZ4eHh4R3h5MajGuNWIdibAxcPDwzvPq4YLq7bYK06FyQg8PDy8W3nz26qOEVTDETw8PLxn8pKCMTMK8KbFNW6k4eHh4R3kFV6+xTC3GvVOhR14eHh4R3i9ICCPWQsjU/HDKhQGPDw8vKW877vw8PDw8PDw8PAecP0Cz2GvW5cdVt0AAAAASUVORK5CYII=">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/思考/">思考</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/生活/">生活</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/02/19/一个人的时候/" class="leancloud-views_num" data-flag-title="一个人的时候">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=一个人的时候&url=http://loveswift.site//2017/02/19/一个人的时候/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=一个人的时候&url=http://loveswift.site//2017/02/19/一个人的时候/index.html&via=你的名字。" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://loveswift.site//2017/02/19/一个人的时候/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://loveswift.site//2017/02/19/一个人的时候/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
     
 </ul>
 
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+    
+
+    
+        <h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，不管你是否单身，当你一个人独处的时候，你会想什么，做什么。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">放一首音乐吧，舒缓你紧张神经</div><div class="line"></div><div class="line">读一本书吧，带你去书中的世界</div><div class="line"></div><div class="line">看一场电影吧，体验惊险刺激</div><div class="line"></div><div class="line">写一篇文章吧，记录下你的生活</div></pre></td></tr></table></figure>
+<p><strong>思考人生吧</strong></p>
+<p><code>人是一枝有思想的芦苇</code>，对于生命，我们和其它万物又有什么区别，也不知道怎么滴变异，人类才诞生了智慧，如果不思考，机械的上班，学习，玩，猴子🐒也可以做到啊。</p>
+<h2 id="一个人的行为"><a href="#一个人的行为" class="headerlink" title="一个人的行为"></a>一个人的行为</h2><p><code>君子独处,守正不挠</code>，出自：《汉书·刘向传》有德行的人单居独处，也坚守正道，不肯屈从。</p>
+<p>一个人独处的时候，才是你真正释放自己的时候，你可能再也不用伪装，不用约束自己。这些都没有关系，但是当你一个人独处时变成了另外一个人似的，这真的需要你好好反思了。</p>
+<h2 id="一个人的总结"><a href="#一个人的总结" class="headerlink" title="一个人的总结"></a>一个人的总结</h2><p>以上都是扯淡，就是希望自己一个人过周末的时候<code>多读书多看报少吃零食多睡觉</code></p>
+<ul>
+<li>思考一些问题</li>
+<li>约束自己的行为</li>
+<li>变得勤劳</li>
+<li>做些有意思、有意义的事情</li>
+</ul>
+
+    
+
+    
+</div>
+
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=0&height=66');
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #BAEED6 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #BAEED6 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #BAEED6 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://loveswift.site/2017/02/19/一个人的时候/"
+        data-title="一个人的时候">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/02/19/Markdown语法/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -529,6 +685,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 

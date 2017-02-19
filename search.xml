@@ -4,6 +4,189 @@
   
     
     <entry>
+      <title><![CDATA[一个人的时候]]></title>
+      <url>http://loveswift.site/2017/02/19/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%B6%E5%80%99/</url>
+      <content type="html"><![CDATA[<h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，不管你是否单身，当你一个人独处的时候，你会想什么，做什么。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">放一首音乐吧，舒缓你紧张神经</div><div class="line"></div><div class="line">读一本书吧，带你去书中的世界</div><div class="line"></div><div class="line">看一场电影吧，体验惊险刺激</div><div class="line"></div><div class="line">写一篇文章吧，记录下你的生活</div></pre></td></tr></table></figure>
+<p><strong>思考人生吧</strong></p>
+<p><code>人是一枝有思想的芦苇</code>，对于生命，我们和其它万物又有什么区别，也不知道怎么滴变异，人类才诞生了智慧，如果不思考，机械的上班，学习，玩，猴子🐒也可以做到啊。</p>
+<h2 id="一个人的行为"><a href="#一个人的行为" class="headerlink" title="一个人的行为"></a>一个人的行为</h2><p><code>君子独处,守正不挠</code>，出自：《汉书·刘向传》有德行的人单居独处，也坚守正道，不肯屈从。</p>
+<p>一个人独处的时候，才是你真正释放自己的时候，你可能再也不用伪装，不用约束自己。这些都没有关系，但是当你一个人独处时变成了另外一个人似的，这真的需要你好好反思了。</p>
+<h2 id="一个人的总结"><a href="#一个人的总结" class="headerlink" title="一个人的总结"></a>一个人的总结</h2><p>以上都是扯淡，就是希望自己一个人过周末的时候<code>多读书多看报少吃零食多睡觉</code></p>
+<ul>
+<li>思考一些问题</li>
+<li>约束自己的行为</li>
+<li>变得勤劳</li>
+<li>做些有意思、有意义的事情</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 思考 </tag>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown语法]]></title>
+      <url>http://loveswift.site/2017/02/19/Markdown%E8%AF%AD%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>原来用的<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器，上面有很多快捷键，有图形化按钮，很方便。然后换了个逼格比较高德Typora，<strong>漂亮的不像实力派</strong>，因为少了按钮，那我必须记下来了，因为觉得<code>MWeb</code>的语法总结很好，所以以下是来自<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器的Markdown语法</p>
+<h2 id="Markdown-的设计哲学"><a href="#Markdown-的设计哲学" class="headerlink" title="Markdown 的设计哲学"></a>Markdown 的设计哲学</h2><blockquote>
+<p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="本文约定"><a href="#本文约定" class="headerlink" title="本文约定"></a>本文约定</h2><p>如果有写 <code>效果如下：</code>， 在 MWeb 编辑状态下只有用 <code>CMD + 4</code> 或 <code>CMD + R</code> 预览才可以看效果。</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 第一级标题 `&lt;h1&gt;` </div><div class="line">## 第二级标题 `&lt;h2&gt;` </div><div class="line">###### 第六级标题 `&lt;h6&gt;`</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<h1 id="第一级标题-lt-h1-gt"><a href="#第一级标题-lt-h1-gt" class="headerlink" title="第一级标题 &lt;h1&gt;"></a>第一级标题 <code>&lt;h1&gt;</code></h1><h2 id="第二级标题-lt-h2-gt"><a href="#第二级标题-lt-h2-gt" class="headerlink" title="第二级标题 &lt;h2&gt;"></a>第二级标题 <code>&lt;h2&gt;</code></h2><h6 id="第六级标题-lt-h6-gt"><a href="#第六级标题-lt-h6-gt" class="headerlink" title="第六级标题 &lt;h6&gt;"></a>第六级标题 <code>&lt;h6&gt;</code></h6><h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">*这些文字会生成`&lt;em&gt;`*</div><div class="line">_这些文字会生成`&lt;u&gt;`_</div><div class="line"></div><div class="line">**这些文字会生成`&lt;strong&gt;`**</div><div class="line">__这些文字会生成`&lt;strong&gt;`__</div></pre></td></tr></table></figure>
+<p>在 MWeb 中的快捷键为： <code>CMD + U</code>、<code>CMD + I</code>、<code>CMD + B</code><br>效果如下：</p>
+<p><em>这些文字会生成<code>&lt;em&gt;</code></em><br><em>这些文字会生成<code>&lt;u&gt;</code></em></p>
+<p><strong>这些文字会生成<code>&lt;strong&gt;</code></strong><br><strong>这些文字会生成<code>&lt;strong&gt;</code></strong></p>
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>四个及以上空格加回车。<br>如果不想打这么多空格，只要回车就为换行，请勾选：<code>Preferences</code> - <code>Themes</code> - <code>Translate newlines to &lt;br&gt; tags</code></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* 项目一 无序列表 `* + 空格键`</div><div class="line">* 项目二</div><div class="line">* 项目二的子项目一 无序列表 `TAB + * + 空格键`</div><div class="line">* 项目二的子项目二</div></pre></td></tr></table></figure>
+<p>在 MWeb 中的快捷键为： <code>Option + U</code><br>效果如下：</p>
+<ul>
+<li>项目一 无序列表 <code>* + 空格键</code></li>
+<li>项目二</li>
+<li>项目二的子项目一 无序列表 <code>TAB + * + 空格键</code></li>
+<li>项目二的子项目二</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. 项目一 有序列表 `数字 + . + 空格键`</div><div class="line">2. 项目二 </div><div class="line">3. 项目三</div><div class="line">1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`</div><div class="line">2. 项目三的子项目二</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<ol>
+<li>项目一 有序列表 <code>数字 + . + 空格键</code></li>
+<li>项目二 </li>
+<li>项目三</li>
+<li>项目三的子项目一 有序列表 <code>TAB + 数字 + . + 空格键</code></li>
+<li>项目三的子项目二</li>
+</ol>
+<h3 id="任务列表（Task-lists）"><a href="#任务列表（Task-lists）" class="headerlink" title="任务列表（Task lists）"></a>任务列表（Task lists）</h3><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- [ ] 任务一 未做任务 `- + 空格 + [ ]`</div><div class="line">- [x] 任务二 已做任务 `- + 空格 + [x]`</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<ul>
+<li>[ ] 任务一 未做任务 <code>- + 空格 + [ ]</code></li>
+<li>[x] 任务二 已做任务 <code>- + 空格 + [x]</code></li>
+</ul>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)</div><div class="line">格式: ![Alt Text](url)</div></pre></td></tr></table></figure>
+<p><code>Control + Shift + I</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，还可以用拖放图片、<code>CMD + V</code> 粘贴、<code>CMD + Option + I</code> 导入这三种方式来增加图片。<br>效果如下：</p>
+<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up"></p>
+<p>MWeb 引入的特别的语法来设置图片宽度，方法是在图片描述后加 <code>-w + 图片宽度</code> 即可，比如说要设置上面的图片的宽度为 140，语法如下：</p>
+<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up-w140"></p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">email &lt;example@example.com&gt;</div><div class="line">[GitHub](http://github.com)</div><div class="line">自动生成连接  &lt;http://www.github.com/&gt;</div></pre></td></tr></table></figure>
+<p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
+<p>Email 连接： <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
+<p>某某说:</p>
+<blockquote>
+<p>第一行引用<br>第二行费用文字</p>
+</blockquote>
+<p><code>CMD + Shift + B</code> 可插入Markdown语法。<br>效果如下：</p>
+<p>某某说:</p>
+<blockquote>
+<p>第一行引用<br>第二行费用文字</p>
+</blockquote>
+<h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">像这样即可：`&lt;addr&gt;` `code`</div></pre></td></tr></table></figure>
+<p><code>CMD + K</code> 可插入Markdown语法。<br>效果如下：</p>
+<p>像这样即可：<code>&lt;addr&gt;</code> <code>code</code></p>
+<h2 id="多行或者一段代码"><a href="#多行或者一段代码" class="headerlink" title="多行或者一段代码"></a>多行或者一段代码</h2><p>Markdown 语法：</p>
+<pre><code>​<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(arg) &#123;</div><div class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">​</div></pre></td></tr></table></figure>
+</code></pre><p><code>CMD + Shift + K</code> 可插入Markdown语法。<br>效果如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(arg) &#123;</div><div class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="顺序图或流程图"><a href="#顺序图或流程图" class="headerlink" title="顺序图或流程图"></a>顺序图或流程图</h2><p>Markdown 语法：</p>
+<pre><code>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</div><div class="line">Note right of 李四: 李四愣了一下，说：</div><div class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</div><div class="line">​</div></pre></td></tr></table></figure>
+
+
+​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line">op=&gt;operation: 我的操作</div><div class="line">cond=&gt;condition: 确认？</div><div class="line"></div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div><div class="line">​</div></pre></td></tr></table></figure>
+</code></pre><p>效果如下（ <code>Preferences</code> - <code>Themes</code> - <code>Enable sequence &amp; flow chart</code> 才会看到效果 ）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</div><div class="line">Note right of 李四: 李四愣了一下，说：</div><div class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line">op=&gt;operation: 我的操作</div><div class="line">cond=&gt;condition: 确认？</div><div class="line"></div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div></pre></td></tr></table></figure>
+<p>更多请参考：<a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="external">http://bramp.github.io/js-sequence-diagrams/</a>, <a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="external">http://adrai.github.io/flowchart.js/</a></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">第一格表头 | 第二格表头</div><div class="line">--------- | -------------</div><div class="line">内容单元格 第一列第一格 | 内容单元格第二列第一格</div><div class="line">内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<table>
+<thead>
+<tr>
+<th>第一格表头</th>
+<th>第二格表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容单元格 第一列第一格</td>
+<td>内容单元格第二列第一格</td>
+</tr>
+<tr>
+<td>内容单元格 第一列第二格 多加文字</td>
+<td>内容单元格第二列第二格</td>
+</tr>
+</tbody>
+</table>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>Markdown 语法：</p>
+<p>加删除线像这样用： <del>删除这些</del></p>
+<p>效果如下：</p>
+<p>加删除线像这样用： <del>删除这些</del></p>
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>以下三种方式都可以生成分隔线：</p>
+<p>``</p>
+<hr>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-------</div><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">***</div><div class="line"></div><div class="line">*****</div><div class="line"></div><div class="line">- - -</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">## MathJax</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure>
+<p>块级公式：<br>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+<p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =<br>1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}<br>{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
+<p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下（`Preferences` - `Themes` - `Enable MathJax` 才会看到效果）：</div><div class="line"></div><div class="line">块级公式：</div><div class="line">$$	x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$</div><div class="line"></div><div class="line">\\[ \frac&#123;1&#125;&#123;\Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;\frac25 \pi&#125;&#125; =</div><div class="line">1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-6\pi&#125;&#125;</div><div class="line">&#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125; &#123;1+\ldots&#125; &#125; &#125; &#125; \\]</div><div class="line"></div><div class="line"></div><div class="line">行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</div><div class="line"></div><div class="line"></div><div class="line">-------</div><div class="line"></div><div class="line">## 脚注（Footnote）</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure></p>
+<p>这是一个脚注：[^sample_footnote]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">这是一个脚注：[^sample_footnote]</div><div class="line"></div><div class="line">[^sample_footnote]: 这里是脚注信息</div><div class="line"></div><div class="line"></div><div class="line">## 注释和阅读更多</div><div class="line"></div><div class="line">&lt;!-- comment --&gt;</div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">Actions-&gt;Insert Read More Comment *或者* `Command + .`</div><div class="line">**注** 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。</div><div class="line"></div><div class="line">## TOC</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure></p>
+<p>[TOC]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">[TOC]</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo文章添加音乐插件]]></title>
+      <url>http://loveswift.site/2017/02/19/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo添加音乐插件方法网上已经有一大堆了，此文章是定制化的在文章中插入音乐，比如<a href="http://loveswift.site/about/index.html">这样的</a>文章。只需要在文章加入<code>music: xxx</code>就可以设置你想要的音乐了（xxx为网易某个歌曲id）</p>
+<h2 id="定制化"><a href="#定制化" class="headerlink" title="定制化"></a>定制化</h2><p>定制化基于我的主题<a href="https://material.viosey.com/" target="_blank" rel="external">Material</a>，网易云音乐的外链想必不用说了，我复制下来的是这样的:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=29567192&amp;auto=0&amp;height=66"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>打开<code>themes/material/layout/_partial/post-content.ejs</code>复制如下代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"post-content"</span> <span class="attr">class</span>=<span class="string">"markdown-&lt;%= theme.reading.markdown %&gt; mdl-color-text--grey-700 mdl-card__supporting-text fade out"</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">page.music</span> != <span class="string">null)</span> &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">class</span>=<span class="string">"music"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.scheme</span> === <span class="string">'Paradox'</span>) &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.content</span> %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.scheme</span> === <span class="string">'Isolation'</span>) &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-content_wrapper"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"post-title"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.title</span> %&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.content</span> %&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></span></div><div class="line">    $('.music').attr('src', '//music.163.com/outchain/player?type=2&amp;id=' + <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.music</span> %&gt;</span> + '&amp;auto=0&amp;height=66');</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>然后在文章添加music就行了：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 关于我</div><div class="line">date: 2017-02-19 08:00:13</div><div class="line"><span class="section">music: 29567192</span></div><div class="line">---</div></pre></td></tr></table></figure>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>网易云音乐喜欢了很久，日推很赞，质量很好，最重要的是评论让你觉得不是一个人在听歌，如果想要查看歌曲id，直接在客户端上的歌曲上复制链接地址就ok</p>
+<p>这里有个小bug，插件有时会刷新两遍，有很多种可能的原因，算了，先放过它吧</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo设置多说shortname]]></title>
       <url>http://loveswift.site/2017/02/18/Hexo%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%AF%B4shortname/</url>
       <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>本来是很简单的问题，但是浪费我不少时间，所以有必要记录一下，防止下次出错。<br>刚开始配置多说<code>shortname</code>压根没有在意，因为上一个主题的这个是随便填的，而且成功了（黑人问号）。<br>所以这次也是随便写的，怎么都失败，还看了控制台、源代码，后来突然觉得这个<code>shortname</code>这个单词好奇怪,然后百度了一下。</p>
@@ -61,9 +244,9 @@
         
         <tags>
             
-            <tag> 动漫 </tag>
-            
             <tag> 生活 </tag>
+            
+            <tag> 动漫 </tag>
             
         </tags>
         
@@ -82,9 +265,9 @@
         
         <tags>
             
-            <tag> 动漫 </tag>
-            
             <tag> 生活 </tag>
+            
+            <tag> 动漫 </tag>
             
         </tags>
         

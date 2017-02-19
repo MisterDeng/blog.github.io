@@ -10,7 +10,7 @@
     
     <title>
         
-            关于我 | 
+            Markdown语法 | 
         
         你的名字。
     </title>
@@ -53,7 +53,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://loveswift.site">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="关于我 | 你的名字。">
+    <meta property="og:title" content="Markdown语法 | 你的名字。">
     <meta property="og:description" content="null">
 
     <!--[if lte IE 9]>
@@ -202,6 +202,41 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#起因"><span class="post-toc-number">1.</span> <span class="post-toc-text">起因</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Markdown-的设计哲学"><span class="post-toc-number">2.</span> <span class="post-toc-text">Markdown 的设计哲学</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本文约定"><span class="post-toc-number">3.</span> <span class="post-toc-text">本文约定</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标题"><span class="post-toc-number">4.</span> <span class="post-toc-text">标题</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一级标题-lt-h1-gt"><span class="post-toc-number"></span> <span class="post-toc-text">第一级标题 <h1></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二级标题-lt-h2-gt"><span class="post-toc-number">1.</span> <span class="post-toc-text">第二级标题 <h2></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#第六级标题-lt-h6-gt"><span class="post-toc-number">1.0.0.0.1.</span> <span class="post-toc-text">第六级标题 <h6></span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#强调"><span class="post-toc-number">2.</span> <span class="post-toc-text">强调</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#换行"><span class="post-toc-number">3.</span> <span class="post-toc-text">换行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列表"><span class="post-toc-number">4.</span> <span class="post-toc-text">列表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无序列表"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">无序列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#有序列表"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">有序列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#任务列表（Task-lists）"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">任务列表（Task lists）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图片"><span class="post-toc-number">5.</span> <span class="post-toc-text">图片</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#链接"><span class="post-toc-number">6.</span> <span class="post-toc-text">链接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#区块引用"><span class="post-toc-number">7.</span> <span class="post-toc-text">区块引用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行内代码"><span class="post-toc-number">8.</span> <span class="post-toc-text">行内代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多行或者一段代码"><span class="post-toc-number">9.</span> <span class="post-toc-text">多行或者一段代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#顺序图或流程图"><span class="post-toc-number">10.</span> <span class="post-toc-text">顺序图或流程图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表格"><span class="post-toc-number">11.</span> <span class="post-toc-text">表格</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除线"><span class="post-toc-number">12.</span> <span class="post-toc-text">删除线</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分隔线"><span class="post-toc-number">13.</span> <span class="post-toc-text">分隔线</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
 
 <!-- Layouts -->
 
@@ -227,7 +262,7 @@
         
     
             <p class="article-headline-p">
-                关于我
+                Markdown语法
             </p>
         </div>
 
@@ -267,7 +302,7 @@
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
             <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB6klEQVR42u3awXLDIAwE0Pz/T7fXXkxXCCcxPE4dTxrzethKiNfPFuuFgYGBgYGBgfE1jFe8rn7r6snf51fvau0BAwPjMMY/0XbxmfHzhNTZAwYGxpmMcSCOo3Yc4klY53vAwMDASF4zDtlxYdcpHzEwMDCqgTveUBLWGBgYGHc0sdWt5OXgW3txDAyMBzLmCru1P791voGBgfEoRvmKQ3HMmQwGPnBnBAMD41GMPPj6+P6fBgMD40xG3nZ2jtuScnO89ag0xMDA2JQxd6k0D+vOgVq5NMTAwNiUkYwBVg0MkrcUvgEDA+MYRn/0WD1oyw/jFvTiGBgYWzDyEi1vdDujhUIQY2BgYDReuWoYsCxwMTAwNmJEBVkM6ARxqxfHwMDYjjF30D8XrNUBQKsXx8DA2I4xdwmsUzJ2rvhjYGCcyUi2WD2AWxvThf8bGBgYWzOqF7/yo7oOe9llCwwMjI0Yc4DqsDMvBy95GBgYxzCqq1rqJdud+zwGBsY5jOqxV97o5tde58IdAwPjNEYesskrE97cER4GBgZGMj4sHIc1BpkL7oxgYGBgBJvLvzPZyY2Bi4GBsSljVchWm2EMDAyMfBjQCdY8cDEwMDDmBgN5O7qq0b1lvoGBgfEoxnMXBgYGBgYGBsZH1y9E8jDdzXDY6gAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQXLDIBAEQP//08kDHEszgJDKaU6plE22OQCZ5fXz1eOFh4eHh4eHh4f3MN4rHu/f+mPqw9+/z/bp56na8PDw8LbwTrbaw8+8l5gsyjFspjY8PDy8nbx2+/703XwhTgota8PDw8N7Mi9hHF9/k8MADw8P7z/w8uKSOfHw8PCez2vjhjZy/fT5/JJ9edaCh4eHF/Py4vb/vLW/h4eHhxfw6idNcfzaBhaXPLrCw8PDu4CXb8QtKZln5pqOh4eHdxcv2bjzS/DiRwBjRw4eHh7exbyxllWLbC/NU004PDw8vI289nFAXtxMXFtf9/Hw8PBu4uWk9gHWfKhxsoh4eHh4G3ljm/5YQYPPAvDw8PAewGsvu2NHSNsAyxcoSqnx8PDwlvJmHqrOP2+dP5bw8PDw9vPyAyCPWZOZc2obK+Ph4eFdzcsLSp4UtCFC/rfy4wQPDw9vJ689EtoIY1XMUf/HgIeHh3cBb2yLT0a+fG2wOxjj4uHh4S3irWpfJZHBybZeNr0WvIzAw8PDW8TLC80PlfZbY4uFh4eHdy9vPnJtI+P8udXUlRoPDw9vES9/2JRs92MlvuKxoL+Hh4eHN80bi1PbiCG/aufLgYeHh7eT146k0HyG46ChDUHw8PDw9vBmtuO2lTUWB9ctNDw8PLwtvGQrzxv5STRch7N5gw0PDw9vIy/foOebYXkN7SUeDw8P78m8/AlCG2S0xwkeHh7e83nzTbK1hwEeHh7eXbxkm26D2vwAaMNlPDw8vHt5+XRtUyqf8/jISZ5b4eHh4e3hfd/Aw8PDw8PDw8N7wPgF1hb3E88VkkAAAAAASUVORK5CYII=">
         </ul>
     
 
@@ -279,7 +314,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/Markdown/">Markdown</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
     </ul>
     
 
@@ -293,7 +328,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/about/index.html" class="leancloud-views_num" data-flag-title="关于我">
+                <span id="/2017/02/19/Markdown语法/" class="leancloud-views_num" data-flag-title="Markdown语法">
      &nbsp;浏览量
 </span>
 
@@ -307,7 +342,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=关于我&url=http://loveswift.site//about/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Markdown语法&url=http://loveswift.site//2017/02/19/Markdown语法/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -316,7 +351,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=关于我&url=http://loveswift.site//about/index.html&via=你的名字。" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Markdown语法&url=http://loveswift.site//2017/02/19/Markdown语法/index.html&via=你的名字。" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -325,7 +360,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://loveswift.site//about/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://loveswift.site//2017/02/19/Markdown语法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -334,7 +369,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://loveswift.site//about/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://loveswift.site//2017/02/19/Markdown语法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -359,11 +394,121 @@
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
     
-        <iframe class="music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86></iframe>
-    
 
     
-        <p><strong>三体小小监听员<br>如果看到这条消息<br>请不要回答！<br>不要回答！<br>不要回答！</strong></p>
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>原来用的<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器，上面有很多快捷键，有图形化按钮，很方便。然后换了个逼格比较高德Typora，<strong>漂亮的不像实力派</strong>，因为少了按钮，那我必须记下来了，因为觉得<code>MWeb</code>的语法总结很好，所以以下是来自<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器的Markdown语法</p>
+<h2 id="Markdown-的设计哲学"><a href="#Markdown-的设计哲学" class="headerlink" title="Markdown 的设计哲学"></a>Markdown 的设计哲学</h2><blockquote>
+<p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="本文约定"><a href="#本文约定" class="headerlink" title="本文约定"></a>本文约定</h2><p>如果有写 <code>效果如下：</code>， 在 MWeb 编辑状态下只有用 <code>CMD + 4</code> 或 <code>CMD + R</code> 预览才可以看效果。</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 第一级标题 `&lt;h1&gt;` </div><div class="line">## 第二级标题 `&lt;h2&gt;` </div><div class="line">###### 第六级标题 `&lt;h6&gt;`</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<h1 id="第一级标题-lt-h1-gt"><a href="#第一级标题-lt-h1-gt" class="headerlink" title="第一级标题 &lt;h1&gt;"></a>第一级标题 <code>&lt;h1&gt;</code></h1><h2 id="第二级标题-lt-h2-gt"><a href="#第二级标题-lt-h2-gt" class="headerlink" title="第二级标题 &lt;h2&gt;"></a>第二级标题 <code>&lt;h2&gt;</code></h2><h6 id="第六级标题-lt-h6-gt"><a href="#第六级标题-lt-h6-gt" class="headerlink" title="第六级标题 &lt;h6&gt;"></a>第六级标题 <code>&lt;h6&gt;</code></h6><h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">*这些文字会生成`&lt;em&gt;`*</div><div class="line">_这些文字会生成`&lt;u&gt;`_</div><div class="line"></div><div class="line">**这些文字会生成`&lt;strong&gt;`**</div><div class="line">__这些文字会生成`&lt;strong&gt;`__</div></pre></td></tr></table></figure>
+<p>在 MWeb 中的快捷键为： <code>CMD + U</code>、<code>CMD + I</code>、<code>CMD + B</code><br>效果如下：</p>
+<p><em>这些文字会生成<code>&lt;em&gt;</code></em><br><em>这些文字会生成<code>&lt;u&gt;</code></em></p>
+<p><strong>这些文字会生成<code>&lt;strong&gt;</code></strong><br><strong>这些文字会生成<code>&lt;strong&gt;</code></strong></p>
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>四个及以上空格加回车。<br>如果不想打这么多空格，只要回车就为换行，请勾选：<code>Preferences</code> - <code>Themes</code> - <code>Translate newlines to &lt;br&gt; tags</code></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* 项目一 无序列表 `* + 空格键`</div><div class="line">* 项目二</div><div class="line">* 项目二的子项目一 无序列表 `TAB + * + 空格键`</div><div class="line">* 项目二的子项目二</div></pre></td></tr></table></figure>
+<p>在 MWeb 中的快捷键为： <code>Option + U</code><br>效果如下：</p>
+<ul>
+<li>项目一 无序列表 <code>* + 空格键</code></li>
+<li>项目二</li>
+<li>项目二的子项目一 无序列表 <code>TAB + * + 空格键</code></li>
+<li>项目二的子项目二</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. 项目一 有序列表 `数字 + . + 空格键`</div><div class="line">2. 项目二 </div><div class="line">3. 项目三</div><div class="line">1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`</div><div class="line">2. 项目三的子项目二</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<ol>
+<li>项目一 有序列表 <code>数字 + . + 空格键</code></li>
+<li>项目二 </li>
+<li>项目三</li>
+<li>项目三的子项目一 有序列表 <code>TAB + 数字 + . + 空格键</code></li>
+<li>项目三的子项目二</li>
+</ol>
+<h3 id="任务列表（Task-lists）"><a href="#任务列表（Task-lists）" class="headerlink" title="任务列表（Task lists）"></a>任务列表（Task lists）</h3><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- [ ] 任务一 未做任务 `- + 空格 + [ ]`</div><div class="line">- [x] 任务二 已做任务 `- + 空格 + [x]`</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<ul>
+<li>[ ] 任务一 未做任务 <code>- + 空格 + [ ]</code></li>
+<li>[x] 任务二 已做任务 <code>- + 空格 + [x]</code></li>
+</ul>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)</div><div class="line">格式: ![Alt Text](url)</div></pre></td></tr></table></figure>
+<p><code>Control + Shift + I</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，还可以用拖放图片、<code>CMD + V</code> 粘贴、<code>CMD + Option + I</code> 导入这三种方式来增加图片。<br>效果如下：</p>
+<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up"></p>
+<p>MWeb 引入的特别的语法来设置图片宽度，方法是在图片描述后加 <code>-w + 图片宽度</code> 即可，比如说要设置上面的图片的宽度为 140，语法如下：</p>
+<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up-w140"></p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">email &lt;example@example.com&gt;</div><div class="line">[GitHub](http://github.com)</div><div class="line">自动生成连接  &lt;http://www.github.com/&gt;</div></pre></td></tr></table></figure>
+<p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
+<p>Email 连接： <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
+<p>某某说:</p>
+<blockquote>
+<p>第一行引用<br>第二行费用文字</p>
+</blockquote>
+<p><code>CMD + Shift + B</code> 可插入Markdown语法。<br>效果如下：</p>
+<p>某某说:</p>
+<blockquote>
+<p>第一行引用<br>第二行费用文字</p>
+</blockquote>
+<h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">像这样即可：`&lt;addr&gt;` `code`</div></pre></td></tr></table></figure>
+<p><code>CMD + K</code> 可插入Markdown语法。<br>效果如下：</p>
+<p>像这样即可：<code>&lt;addr&gt;</code> <code>code</code></p>
+<h2 id="多行或者一段代码"><a href="#多行或者一段代码" class="headerlink" title="多行或者一段代码"></a>多行或者一段代码</h2><p>Markdown 语法：</p>
+<pre><code>​<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(arg) &#123;</div><div class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">​</div></pre></td></tr></table></figure>
+</code></pre><p><code>CMD + Shift + K</code> 可插入Markdown语法。<br>效果如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(arg) &#123;</div><div class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="顺序图或流程图"><a href="#顺序图或流程图" class="headerlink" title="顺序图或流程图"></a>顺序图或流程图</h2><p>Markdown 语法：</p>
+<pre><code>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</div><div class="line">Note right of 李四: 李四愣了一下，说：</div><div class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</div><div class="line">​</div></pre></td></tr></table></figure>
+
+
+​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line">op=&gt;operation: 我的操作</div><div class="line">cond=&gt;condition: 确认？</div><div class="line"></div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div><div class="line">​</div></pre></td></tr></table></figure>
+</code></pre><p>效果如下（ <code>Preferences</code> - <code>Themes</code> - <code>Enable sequence &amp; flow chart</code> 才会看到效果 ）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</div><div class="line">Note right of 李四: 李四愣了一下，说：</div><div class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line">op=&gt;operation: 我的操作</div><div class="line">cond=&gt;condition: 确认？</div><div class="line"></div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div></pre></td></tr></table></figure>
+<p>更多请参考：<a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="external">http://bramp.github.io/js-sequence-diagrams/</a>, <a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="external">http://adrai.github.io/flowchart.js/</a></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>Markdown 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">第一格表头 | 第二格表头</div><div class="line">--------- | -------------</div><div class="line">内容单元格 第一列第一格 | 内容单元格第二列第一格</div><div class="line">内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<table>
+<thead>
+<tr>
+<th>第一格表头</th>
+<th>第二格表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容单元格 第一列第一格</td>
+<td>内容单元格第二列第一格</td>
+</tr>
+<tr>
+<td>内容单元格 第一列第二格 多加文字</td>
+<td>内容单元格第二列第二格</td>
+</tr>
+</tbody>
+</table>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>Markdown 语法：</p>
+<p>加删除线像这样用： <del>删除这些</del></p>
+<p>效果如下：</p>
+<p>加删除线像这样用： <del>删除这些</del></p>
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>以下三种方式都可以生成分隔线：</p>
+<p>``</p>
+<hr>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-------</div><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">***</div><div class="line"></div><div class="line">*****</div><div class="line"></div><div class="line">- - -</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">## MathJax</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure>
+<p>块级公式：<br>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+<p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =<br>1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}<br>{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
+<p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下（`Preferences` - `Themes` - `Enable MathJax` 才会看到效果）：</div><div class="line"></div><div class="line">块级公式：</div><div class="line">$$	x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$</div><div class="line"></div><div class="line">\\[ \frac&#123;1&#125;&#123;\Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;\frac25 \pi&#125;&#125; =</div><div class="line">1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-6\pi&#125;&#125;</div><div class="line">&#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125; &#123;1+\ldots&#125; &#125; &#125; &#125; \\]</div><div class="line"></div><div class="line"></div><div class="line">行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</div><div class="line"></div><div class="line"></div><div class="line">-------</div><div class="line"></div><div class="line">## 脚注（Footnote）</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure></p>
+<p>这是一个脚注：[^sample_footnote]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">这是一个脚注：[^sample_footnote]</div><div class="line"></div><div class="line">[^sample_footnote]: 这里是脚注信息</div><div class="line"></div><div class="line"></div><div class="line">## 注释和阅读更多</div><div class="line"></div><div class="line">&lt;!-- comment --&gt;</div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">Actions-&gt;Insert Read More Comment *或者* `Command + .`</div><div class="line">**注** 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。</div><div class="line"></div><div class="line">## TOC</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure></p>
+<p>[TOC]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">[TOC]</div></pre></td></tr></table></figure></p>
 
     
 
@@ -371,7 +516,7 @@
 </div>
 
 <script>
-    $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' + 29567192 + '&auto=0&height=66');
+    $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=0&height=66');
 </script>
 
 
@@ -397,8 +542,8 @@
     <!-- 多说评论框 start -->
     <div class="ds-thread"
         data-thread-key=""
-        data-url="http://loveswift.site/about/index.html"
-        data-title="关于我">
+        data-url="http://loveswift.site/2017/02/19/Markdown语法/"
+        data-title="Markdown语法">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -414,11 +559,27 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2017/02/19/一个人的时候/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/02/19/Hexo文章添加音乐插件/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -632,6 +793,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
