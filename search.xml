@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[一个人的时候]]></title>
       <url>http://sayyourname.cn/2017/02/19/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%B6%E5%80%99/</url>
-      <content type="html"><![CDATA[<h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，不管你是否单身，当你一个人独处的时候，你会想什么，做什么。</p>
+      <content type="html"><![CDATA[<h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，当你一个人独处的时候，你会想什么，做什么。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">放一首音乐吧，舒缓你紧张神经</div><div class="line"></div><div class="line">读一本书吧，带你去书中的世界</div><div class="line"></div><div class="line">看一场电影吧，体验惊险刺激</div><div class="line"></div><div class="line">写一篇文章吧，记录下你的生活</div></pre></td></tr></table></figure>
 <p><strong>思考人生吧</strong></p>
 <p><code>人是一枝有思想的芦苇</code>，对于生命，我们和其它万物又有什么区别，也不知道怎么滴变异，人类才诞生了智慧，如果不思考，机械的上班，学习，玩，猴子🐒也可以做到啊。</p>
@@ -173,7 +173,7 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>网易云音乐喜欢了很久，日推很赞，质量很好，最重要的是评论让你觉得不是一个人在听歌，如果想要查看歌曲id，直接在客户端上的歌曲上复制链接地址就ok</p>
 <p>这里有个小bug，插件有时会刷新两遍，有很多种可能的原因，算了，先放过它吧</p>
 <hr>
-<p>补充：已经解决了问题，看了下大概是因为分享会remove一个class，然后重绘了界面（黑人问号），初学前端，第一个接手就是Vue.js，不太了解jQuery</p>
+<p>补充：已经解决了问题，看了下大概是因为分享会remove一个class，然后重绘了界面</p>
 <p>解决办法在<code>window.onload</code>方法里执行js就ok，这样保证它在重绘后生效</p>
 ]]></content>
       
