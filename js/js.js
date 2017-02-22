@@ -101,9 +101,6 @@ $(document).ready(function() {
         "background": hljsbgc,
         "color": hljsc
     })
-
-    // 更新网易云音乐
-    $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' + <%- page.music %> + '&auto=1&height=66');
 });
 
 //**********************************

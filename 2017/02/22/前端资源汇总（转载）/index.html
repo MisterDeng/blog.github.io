@@ -1,12 +1,408 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  
-  
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
+
+    <!-- Title -->
     
-    <entry>
-      <title><![CDATA[前端资源汇总（转载）]]></title>
-      <url>http://sayyourname.cn/2017/02/22/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/</url>
-      <content type="html"><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><hr>
+    <title>
+        
+            前端资源汇总（转载） | 
+        
+        你的名字。
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" rel="stylesheet" type="text/css"/>
+    
+
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#BAEED6">
+    <meta name="author" content="你的名字。">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="你的名字。">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://sayyourname.cn">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="前端资源汇总（转载） | 你的名字。">
+    <meta property="og:description" content="null">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    a {
+        color: #FF5376;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #BAEED6 !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #BAEED6 !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #BAEED6 !important;
+    }
+
+    .toTop {
+        background: #FF5376 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #FF5376;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #FF5376;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #FF5376;
+    }
+
+    .post-toc a:hover {
+        color: #FF5376;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-image: url('/img/random/background/material-5.jpg');
+        }
+    </style>
+    <!-- <script type="text/javascript">
+        document.onready = function () {
+
+        document.getElementById("scheme-Paradox").style.backgroundImage ='url(' + '/img/random/background/material-5.jpg' + '.jpg' + ')'
+        }
+        
+    </script> -->
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/highlight/atelier-lakeside-light.css">
+
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-目录"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-入门类"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 入门类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-HTML-5-部分"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. HTML 5 部分</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-CSS-3-部分"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. CSS 3 部分</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-JQuery"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. JQuery</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-Angular-JS"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. Angular JS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-React"><span class="post-toc-number">8.</span> <span class="post-toc-text">8. React</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-Vue"><span class="post-toc-number">9.</span> <span class="post-toc-text">9. Vue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-Node-JS"><span class="post-toc-number">10.</span> <span class="post-toc-text">10. Node JS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11-JS-Template"><span class="post-toc-number">11.</span> <span class="post-toc-text">11. JS Template</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#12-移动端"><span class="post-toc-number">12.</span> <span class="post-toc-text">12. 移动端</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13-移动端-API"><span class="post-toc-number">13.</span> <span class="post-toc-text">13. 移动端 API</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#14-综合-API"><span class="post-toc-number">14.</span> <span class="post-toc-text">14. 综合 API</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#15-其他-API"><span class="post-toc-number">15.</span> <span class="post-toc-text">15. 其他 API</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#16-综合类"><span class="post-toc-number">16.</span> <span class="post-toc-text">16. 综合类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#17-工具类"><span class="post-toc-number">17.</span> <span class="post-toc-text">17. 工具类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#18-综合效果搜索平台"><span class="post-toc-number">18.</span> <span class="post-toc-text">18. 综合效果搜索平台</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#19-团队-BLOG"><span class="post-toc-number">19.</span> <span class="post-toc-text">19. 团队 BLOG</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#20-开发中心"><span class="post-toc-number">20.</span> <span class="post-toc-text">20. 开发中心</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#21-ECMAScript"><span class="post-toc-number">21.</span> <span class="post-toc-text">21. ECMAScript</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#22-D3"><span class="post-toc-number">22.</span> <span class="post-toc-text">22. D3</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#23-RequrieJS"><span class="post-toc-number">23.</span> <span class="post-toc-text">23. RequrieJS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#24-SeaJS"><span class="post-toc-number">24.</span> <span class="post-toc-text">24. SeaJS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#25-Less-amp-Sass"><span class="post-toc-number">25.</span> <span class="post-toc-text">25. Less & Sass</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#26-Markdown"><span class="post-toc-number">26.</span> <span class="post-toc-text">26. Markdown</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#27-兼容性"><span class="post-toc-number">27.</span> <span class="post-toc-text">27. 兼容性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#28-UI相关"><span class="post-toc-number">28.</span> <span class="post-toc-text">28. UI相关</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#29-图表类"><span class="post-toc-number">29.</span> <span class="post-toc-text">29. 图表类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#30-正则表达式"><span class="post-toc-number">30.</span> <span class="post-toc-text">30. 正则表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#31-前端规范"><span class="post-toc-number">31.</span> <span class="post-toc-text">31. 前端规范</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#32-PHP"><span class="post-toc-number">32.</span> <span class="post-toc-text">32. PHP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#33-各大公司开源项目"><span class="post-toc-number">33.</span> <span class="post-toc-text">33. 各大公司开源项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#34-常用"><span class="post-toc-number">34.</span> <span class="post-toc-text">34. 常用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#35-算法"><span class="post-toc-number">35.</span> <span class="post-toc-text">35. 算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#36-JSON"><span class="post-toc-number">36.</span> <span class="post-toc-text">36. JSON</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#37-Ext-EasyUI-J-UI-及其它各种UI方案"><span class="post-toc-number">37.</span> <span class="post-toc-text">37. Ext, EasyUI, J-UI 及其它各种UI方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#38-页面-社会化-分享功能"><span class="post-toc-number">38.</span> <span class="post-toc-text">38. 页面 社会化 分享功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#39-富文本编辑器"><span class="post-toc-number">39.</span> <span class="post-toc-text">39. 富文本编辑器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#40-前端概述"><span class="post-toc-number">40.</span> <span class="post-toc-text">40. 前端概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#41-Gulp"><span class="post-toc-number">41.</span> <span class="post-toc-text">41. Gulp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#42-Grunt"><span class="post-toc-number">42.</span> <span class="post-toc-text">42. Grunt</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#43-Fis"><span class="post-toc-number">43.</span> <span class="post-toc-text">43. Fis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#44-pc图轮"><span class="post-toc-number">44.</span> <span class="post-toc-text">44. pc图轮</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#45-移动端图轮"><span class="post-toc-number">45.</span> <span class="post-toc-text">45. 移动端图轮</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#46-文件上传"><span class="post-toc-number">46.</span> <span class="post-toc-text">46. 文件上传</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#47-模拟select"><span class="post-toc-number">47.</span> <span class="post-toc-text">47. 模拟select</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#48-取色插件"><span class="post-toc-number">48.</span> <span class="post-toc-text">48. 取色插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#49-城市联动"><span class="post-toc-number">49.</span> <span class="post-toc-text">49. 城市联动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#50-剪贴板"><span class="post-toc-number">50.</span> <span class="post-toc-text">50. 剪贴板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#51-简繁转换"><span class="post-toc-number">51.</span> <span class="post-toc-text">51. 简繁转换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#52-表格-Grid"><span class="post-toc-number">52.</span> <span class="post-toc-text">52. 表格 Grid</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#53-在线演示"><span class="post-toc-number">53.</span> <span class="post-toc-text">53. 在线演示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#54-常规优化"><span class="post-toc-number">54.</span> <span class="post-toc-text">54. 常规优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#55-优化工具"><span class="post-toc-number">55.</span> <span class="post-toc-text">55. 优化工具</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#56-在线工具"><span class="post-toc-number">56.</span> <span class="post-toc-text">56. 在线工具</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#57-前端架构"><span class="post-toc-number">57.</span> <span class="post-toc-text">57. 前端架构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#58-推荐作品"><span class="post-toc-number">58.</span> <span class="post-toc-text">58. 推荐作品</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#59-简历模板"><span class="post-toc-number">59.</span> <span class="post-toc-text">59. 简历模板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#60-求职"><span class="post-toc-number">60.</span> <span class="post-toc-text">60. 求职</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#61-面试题"><span class="post-toc-number">61.</span> <span class="post-toc-text">61. 面试题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#62-iconfont"><span class="post-toc-number">62.</span> <span class="post-toc-text">62. iconfont</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#63-Fiddler"><span class="post-toc-number">63.</span> <span class="post-toc-text">63. Fiddler</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#64-Chrome"><span class="post-toc-number">64.</span> <span class="post-toc-text">64. Chrome</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#65-Firebug"><span class="post-toc-number">65.</span> <span class="post-toc-text">65. Firebug</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#66-移动-微信调试"><span class="post-toc-number">66.</span> <span class="post-toc-text">66. 移动,微信调试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#67-iOS-Simulator"><span class="post-toc-number">67.</span> <span class="post-toc-text">67. iOS Simulator</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#68-Image"><span class="post-toc-number">68.</span> <span class="post-toc-text">68. Image</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#69-浏览器同步"><span class="post-toc-number">69.</span> <span class="post-toc-text">69. 浏览器同步</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#70-在线PPT制作"><span class="post-toc-number">70.</span> <span class="post-toc-text">70. 在线PPT制作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#71-前端导航网站"><span class="post-toc-number">71.</span> <span class="post-toc-text">71. 前端导航网站</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#72-常用CDN"><span class="post-toc-number">72.</span> <span class="post-toc-text">72. 常用CDN</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#73-Git"><span class="post-toc-number">73.</span> <span class="post-toc-text">73. Git</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#74-各种日期日历"><span class="post-toc-number">74.</span> <span class="post-toc-text">74. 各种日期日历</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#75-Date-library"><span class="post-toc-number">75.</span> <span class="post-toc-text">75. Date library</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#76-其它"><span class="post-toc-number">76.</span> <span class="post-toc-text">76. 其它</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#77-效果类"><span class="post-toc-number">77.</span> <span class="post-toc-text">77. 效果类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#78-弹出层"><span class="post-toc-number">78.</span> <span class="post-toc-text">78. 弹出层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#79-优秀JavaScript项目"><span class="post-toc-number">79.</span> <span class="post-toc-text">79. 优秀JavaScript项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#80-其他一些推荐"><span class="post-toc-number">80.</span> <span class="post-toc-text">80. 其他一些推荐</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 99 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/article/material-' + randomNum + '.jpg' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                前端资源汇总（转载）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>2月 22, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC30lEQVR42u3awVLjQAwE0Pz/T+9eqWJJukeGDfLziQJjz5tU0Uiax59bXg9sbGxsbGxsbGzst2Q/4uvz/R+/89XTkns+/vTz/fkTXjwTGxsbezX7xZ/+p4BkO/I3nm1K8hZsbGzsO7Db+CnKgGDjcny7ZmxsbGzsfHFngZcXHtjY2NjYVwVY0vrJAfM1YGNjY2PXDZpBufI8tM62+9t7adjY2Nhvz24Hve/w9X+Yb2NjY2O/JfvsmhQM+fBgMpD4x1uwsbGxl7Kfv2YebGcb2hYw0cgBGxsbeym7DYn89clS5sd6cgU2Njb2VnYSS5PxQB5++dZEY92zXho2Njb2InYeNm38tGGZRF30UWFjY2OvZifx0DZ0rm1CJdQ6wLCxsbFXsOcD13wY0AZPdBDnLMCwsbGxF7GTxyUlStsSaqn5Or98OzY2NvZSdvGv/I/g2+EBNjY2NvYkSM4O7rTbetXgARsbG3s3Ox+yJr/VtpnawLsswLCxsbFXsCfRdTYkbsOvHUsX821sbGzsRey2nGgHrvnxmsm44sVbsLGxsW/MbqMrHza0BUyyiUUpgo2Njb2IncdAEipnA4aziMq3DxsbG3srux2g5hGVjx9aXjsAxsbGxt7Nngx0J22ppFBpP4A6t7GxsbHXsedHKs/i6tpgq8cD2NjY2EvZRds9btknLaoIUK4QGxsb+w7stu2ehEd+9CcPs3zlozOn2NjY2L+QPQmwedjkJVC+Zd+e29jY2Ni/it1GUdLcP9uC9lgPNjY29h3Y8xFv2+ifFBh5ZGJjY2Pfhz0/7N62mc4KjAuGzdjY2Nir2WehlZcN84ZUOzwuxgPY2NjYi9h5U6k9Ipls8VnI5VGKjY2NjT0Jlah9PzgqFLWrsLGxsbHHB33Ontke68HGxsa+Mztv9+QLPWtUTba7LkWwsbGxV7DnRxvzBlPehEqenx/cwcbGxt7Kvs+FjY2NjY2NjY2N/TbXXznl4pUfn9DrAAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/前端/">前端</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/02/22/前端资源汇总（转载）/" class="leancloud-views_num" data-flag-title="前端资源汇总（转载）">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=前端资源汇总（转载）&url=http://sayyourname.cn//2017/02/22/前端资源汇总（转载）/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=前端资源汇总（转载）&url=http://sayyourname.cn//2017/02/22/前端资源汇总（转载）/index.html&via=你的名字。" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://sayyourname.cn//2017/02/22/前端资源汇总（转载）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://sayyourname.cn//2017/02/22/前端资源汇总（转载）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+    
+
+    
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><hr>
 <p>转载自<a href="http://www.jianshu.com/p/6cb49271cd2a#" target="_blank" rel="external">史上最全的前端资源大汇总</a>，收藏之用</p>
 <h2 id="2-目录"><a href="#2-目录" class="headerlink" title="2. 目录"></a>2. 目录</h2><hr>
 <p>首先我们先来看一下文章的分区，以方便我们进行检索。</p>
@@ -1084,292 +1480,724 @@
 <li><a href="http://www.jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/" target="_blank" rel="external">Win下必备神器之Cmder</a></li>
 <li><a href="http://www.jeffjade.com/2015/10/19/2015-10-18-chrome-vimium/" target="_blank" rel="external">Vimium~让您的Chrome起飞</a></li>
 </ul>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 技术 </tag>
-            
-            <tag> 前端 </tag>
-            
-        </tags>
-        
-    </entry>
+
     
-    <entry>
-      <title><![CDATA[一个人的时候]]></title>
-      <url>http://sayyourname.cn/2017/02/19/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%B6%E5%80%99/</url>
-      <content type="html"><![CDATA[<h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，当你一个人独处的时候，你会想什么，做什么。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">放一首音乐吧，舒缓你紧张神经</div><div class="line"></div><div class="line">读一本书吧，带你去书中的世界</div><div class="line"></div><div class="line">看一场电影吧，体验惊险刺激</div><div class="line"></div><div class="line">写一篇文章吧，记录下你的生活</div></pre></td></tr></table></figure>
-<p><strong>思考人生吧</strong></p>
-<p><code>人是一枝有思想的芦苇</code>，对于生命，我们和其它万物又有什么区别，也不知道怎么滴变异，人类才诞生了智慧，如果不思考，机械的上班，学习，玩，猴子🐒也可以做到啊。</p>
-<h2 id="一个人的行为"><a href="#一个人的行为" class="headerlink" title="一个人的行为"></a>一个人的行为</h2><p><code>君子独处,守正不挠</code>，出自：《汉书·刘向传》有德行的人单居独处，也坚守正道，不肯屈从。</p>
-<p>一个人独处的时候，才是你真正释放自己的时候，你可能再也不用伪装，不用约束自己。这些都没有关系，但是当你一个人独处时变成了另外一个人似的，这真的需要你好好反思了。</p>
-<h2 id="一个人的总结"><a href="#一个人的总结" class="headerlink" title="一个人的总结"></a>一个人的总结</h2><p>以上都是扯淡，就是希望自己一个人过周末的时候<code>多读书多看报少吃零食多睡觉</code></p>
-<ul>
-<li>思考一些问题</li>
-<li>约束自己的行为</li>
-<li>变得勤劳</li>
-<li>做些有意思、有意义的事情</li>
-</ul>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 思考 </tag>
-            
-            <tag> 生活 </tag>
-            
-        </tags>
-        
-    </entry>
+
     
-    <entry>
-      <title><![CDATA[Markdown语法]]></title>
-      <url>http://sayyourname.cn/2017/02/19/Markdown%E8%AF%AD%E6%B3%95/</url>
-      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原来用的<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器，上面有很多快捷键，有图形化按钮，很方便。然后换了个逼格比较高的Typora，<strong>漂亮的不像实力派</strong>，因为少了按钮，那我必须记下来了，因为觉得<code>MWeb</code>的语法总结很好，所以以下是来自<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器的Markdown语法</p>
-<h2 id="Markdown-的设计哲学"><a href="#Markdown-的设计哲学" class="headerlink" title="Markdown 的设计哲学"></a>Markdown 的设计哲学</h2><blockquote>
-<p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
-</blockquote>
-<h2 id="本文约定"><a href="#本文约定" class="headerlink" title="本文约定"></a>本文约定</h2><p>如果有写 <code>效果如下：</code>， 在 MWeb 编辑状态下只有用 <code>CMD + 4</code> 或 <code>CMD + R</code> 预览才可以看效果。</p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 第一级标题 `&lt;h1&gt;` </div><div class="line">## 第二级标题 `&lt;h2&gt;` </div><div class="line">###### 第六级标题 `&lt;h6&gt;`</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<h1 id="第一级标题-lt-h1-gt"><a href="#第一级标题-lt-h1-gt" class="headerlink" title="第一级标题 &lt;h1&gt;"></a>第一级标题 <code>&lt;h1&gt;</code></h1><h2 id="第二级标题-lt-h2-gt"><a href="#第二级标题-lt-h2-gt" class="headerlink" title="第二级标题 &lt;h2&gt;"></a>第二级标题 <code>&lt;h2&gt;</code></h2><h6 id="第六级标题-lt-h6-gt"><a href="#第六级标题-lt-h6-gt" class="headerlink" title="第六级标题 &lt;h6&gt;"></a>第六级标题 <code>&lt;h6&gt;</code></h6><h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">*这些文字会生成`&lt;em&gt;`*</div><div class="line">_这些文字会生成`&lt;u&gt;`_</div><div class="line"></div><div class="line">**这些文字会生成`&lt;strong&gt;`**</div><div class="line">__这些文字会生成`&lt;strong&gt;`__</div></pre></td></tr></table></figure>
-<p>在 MWeb 中的快捷键为： <code>CMD + U</code>、<code>CMD + I</code>、<code>CMD + B</code><br>效果如下：</p>
-<p><em>这些文字会生成<code>&lt;em&gt;</code></em><br><em>这些文字会生成<code>&lt;u&gt;</code></em></p>
-<p><strong>这些文字会生成<code>&lt;strong&gt;</code></strong><br><strong>这些文字会生成<code>&lt;strong&gt;</code></strong></p>
-<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>四个及以上空格加回车。<br>如果不想打这么多空格，只要回车就为换行，请勾选：<code>Preferences</code> - <code>Themes</code> - <code>Translate newlines to &lt;br&gt; tags</code></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* 项目一 无序列表 `* + 空格键`</div><div class="line">* 项目二</div><div class="line">* 项目二的子项目一 无序列表 `TAB + * + 空格键`</div><div class="line">* 项目二的子项目二</div></pre></td></tr></table></figure>
-<p>在 MWeb 中的快捷键为： <code>Option + U</code><br>效果如下：</p>
-<ul>
-<li>项目一 无序列表 <code>* + 空格键</code></li>
-<li>项目二</li>
-<li>项目二的子项目一 无序列表 <code>TAB + * + 空格键</code></li>
-<li>项目二的子项目二</li>
-</ul>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. 项目一 有序列表 `数字 + . + 空格键`</div><div class="line">2. 项目二 </div><div class="line">3. 项目三</div><div class="line">1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`</div><div class="line">2. 项目三的子项目二</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<ol>
-<li>项目一 有序列表 <code>数字 + . + 空格键</code></li>
-<li>项目二 </li>
-<li>项目三</li>
-<li>项目三的子项目一 有序列表 <code>TAB + 数字 + . + 空格键</code></li>
-<li>项目三的子项目二</li>
-</ol>
-<h3 id="任务列表（Task-lists）"><a href="#任务列表（Task-lists）" class="headerlink" title="任务列表（Task lists）"></a>任务列表（Task lists）</h3><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- [ ] 任务一 未做任务 `- + 空格 + [ ]`</div><div class="line">- [x] 任务二 已做任务 `- + 空格 + [x]`</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<ul>
-<li>[ ] 任务一 未做任务 <code>- + 空格 + [ ]</code></li>
-<li>[x] 任务二 已做任务 <code>- + 空格 + [x]</code></li>
-</ul>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)</div><div class="line">格式: ![Alt Text](url)</div></pre></td></tr></table></figure>
-<p><code>Control + Shift + I</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，还可以用拖放图片、<code>CMD + V</code> 粘贴、<code>CMD + Option + I</code> 导入这三种方式来增加图片。<br>效果如下：</p>
-<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up"></p>
-<p>MWeb 引入的特别的语法来设置图片宽度，方法是在图片描述后加 <code>-w + 图片宽度</code> 即可，比如说要设置上面的图片的宽度为 140，语法如下：</p>
-<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up-w140"></p>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">email &lt;example@example.com&gt;</div><div class="line">[GitHub](http://github.com)</div><div class="line">自动生成连接  &lt;http://www.github.com/&gt;</div></pre></td></tr></table></figure>
-<p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#101;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">&#101;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
-<h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
-<p>某某说:</p>
-<blockquote>
-<p>第一行引用<br>第二行费用文字</p>
-</blockquote>
-<p><code>CMD + Shift + B</code> 可插入Markdown语法。<br>效果如下：</p>
-<p>某某说:</p>
-<blockquote>
-<p>第一行引用<br>第二行费用文字</p>
-</blockquote>
-<h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">像这样即可：`&lt;addr&gt;` `code`</div></pre></td></tr></table></figure>
-<p><code>CMD + K</code> 可插入Markdown语法。<br>效果如下：</p>
-<p>像这样即可：<code>&lt;addr&gt;</code> <code>code</code></p>
-<h2 id="多行或者一段代码"><a href="#多行或者一段代码" class="headerlink" title="多行或者一段代码"></a>多行或者一段代码</h2><p>Markdown 语法：</p>
-<pre><code>​<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(arg) &#123;</div><div class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">​</div></pre></td></tr></table></figure>
-</code></pre><p><code>CMD + Shift + K</code> 可插入Markdown语法。<br>效果如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(arg) &#123;</div><div class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="顺序图或流程图"><a href="#顺序图或流程图" class="headerlink" title="顺序图或流程图"></a>顺序图或流程图</h2><p>Markdown 语法：</p>
-<pre><code>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</div><div class="line">Note right of 李四: 李四愣了一下，说：</div><div class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</div><div class="line">​</div></pre></td></tr></table></figure>
+</div>
+
+<script>
+    window.onload = function () {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
+    }
+</script>
 
 
-​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line">op=&gt;operation: 我的操作</div><div class="line">cond=&gt;condition: 确认？</div><div class="line"></div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div><div class="line">​</div></pre></td></tr></table></figure>
-</code></pre><p>效果如下（ <code>Preferences</code> - <code>Themes</code> - <code>Enable sequence &amp; flow chart</code> 才会看到效果 ）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</div><div class="line">Note right of 李四: 李四愣了一下，说：</div><div class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line">op=&gt;operation: 我的操作</div><div class="line">cond=&gt;condition: 确认？</div><div class="line"></div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div></pre></td></tr></table></figure>
-<p>更多请参考：<a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="external">http://bramp.github.io/js-sequence-diagrams/</a>, <a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="external">http://adrai.github.io/flowchart.js/</a></p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">第一格表头 | 第二格表头</div><div class="line">--------- | -------------</div><div class="line">内容单元格 第一列第一格 | 内容单元格第二列第一格</div><div class="line">内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<table>
-<thead>
-<tr>
-<th>第一格表头</th>
-<th>第二格表头</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>内容单元格 第一列第一格</td>
-<td>内容单元格第二列第一格</td>
-</tr>
-<tr>
-<td>内容单元格 第一列第二格 多加文字</td>
-<td>内容单元格第二列第二格</td>
-</tr>
-</tbody>
-</table>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>Markdown 语法：</p>
-<p>加删除线像这样用： <del>删除这些</del></p>
-<p>效果如下：</p>
-<p>加删除线像这样用： <del>删除这些</del></p>
-<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>以下三种方式都可以生成分隔线：</p>
-<p>``</p>
-<hr>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-------</div><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">***</div><div class="line"></div><div class="line">*****</div><div class="line"></div><div class="line">- - -</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">## MathJax</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure>
-<p>块级公式：<br>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
-<p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =<br>1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}<br>{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
-<p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下（`Preferences` - `Themes` - `Enable MathJax` 才会看到效果）：</div><div class="line"></div><div class="line">块级公式：</div><div class="line">$$	x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$</div><div class="line"></div><div class="line">\\[ \frac&#123;1&#125;&#123;\Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;\frac25 \pi&#125;&#125; =</div><div class="line">1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-6\pi&#125;&#125;</div><div class="line">&#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125; &#123;1+\ldots&#125; &#125; &#125; &#125; \\]</div><div class="line"></div><div class="line"></div><div class="line">行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</div><div class="line"></div><div class="line"></div><div class="line">-------</div><div class="line"></div><div class="line">## 脚注（Footnote）</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure></p>
-<p>这是一个脚注：[^sample_footnote]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">这是一个脚注：[^sample_footnote]</div><div class="line"></div><div class="line">[^sample_footnote]: 这里是脚注信息</div><div class="line"></div><div class="line"></div><div class="line">## 注释和阅读更多</div><div class="line"></div><div class="line">&lt;!-- comment --&gt;</div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">Actions-&gt;Insert Read More Comment *或者* `Command + .`</div><div class="line">**注** 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。</div><div class="line"></div><div class="line">## TOC</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure></p>
-<p>[TOC]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">[TOC]</div></pre></td></tr></table></figure></p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 技术 </tag>
-            
-            <tag> Markdown </tag>
-            
-        </tags>
-        
-    </entry>
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #BAEED6 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #BAEED6 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #BAEED6 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://sayyourname.cn/2017/02/22/前端资源汇总（转载）/"
+        data-title="前端资源汇总（转载）">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-    <entry>
-      <title><![CDATA[Hexo文章添加音乐插件]]></title>
-      <url>http://sayyourname.cn/2017/02/19/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
-      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo添加音乐插件方法网上已经有一大堆了，此文章是定制化的在文章中插入音乐，比如<a href="http://sayyourname.cn/about/index.html">这样的</a>文章。只需要在文章加入<code>music: xxx</code>就可以设置你想要的音乐了（xxx为网易某个歌曲id）</p>
-<h2 id="定制化"><a href="#定制化" class="headerlink" title="定制化"></a>定制化</h2><p>定制化基于我的主题<a href="https://material.viosey.com/" target="_blank" rel="external">Material</a>，网易云音乐的外链想必不用说了，我复制下来的是这样的:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=29567192&amp;auto=0&amp;height=66"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>打开<code>themes/material/layout/_partial/post-content.ejs</code>复制如下代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"post-content"</span> <span class="attr">class</span>=<span class="string">"markdown-&lt;%= theme.reading.markdown %&gt; mdl-color-text--grey-700 mdl-card__supporting-text fade out"</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">page.music</span> != <span class="string">null)</span> &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">class</span>=<span class="string">"music"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.scheme</span> === <span class="string">'Paradox'</span>) &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.content</span> %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.scheme</span> === <span class="string">'Isolation'</span>) &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-content_wrapper"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"post-title"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.title</span> %&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.content</span> %&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></span></div><div class="line">    $('.music').attr('src', '//music.163.com/outchain/player?type=2&amp;id=' + <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.music</span> %&gt;</span> + '&amp;auto=0&amp;height=66');</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>然后在文章添加music就行了：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 关于我</div><div class="line">date: 2017-02-19 08:00:13</div><div class="line"><span class="section">music: 29567192</span></div><div class="line">---</div></pre></td></tr></table></figure>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>网易云音乐喜欢了很久，日推很赞，质量很好，最重要的是评论让你觉得不是一个人在听歌，如果想要查看歌曲id，直接在客户端上的歌曲上复制链接地址就ok</p>
-<p>这里有个小bug，插件有时会刷新两遍，有很多种可能的原因，算了，先放过它吧</p>
-<hr>
-<p>补充：已经解决了问题，看了下大概是因为分享会remove一个class，然后重绘了界面</p>
-<p>解决办法在<code>window.onload</code>方法里执行js就ok，这样保证它在重绘后生效</p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> 技术 </tag>
-            
-        </tags>
-        
-    </entry>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
     
-    <entry>
-      <title><![CDATA[Hexo设置多说shortname]]></title>
-      <url>http://sayyourname.cn/2017/02/18/Hexo%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%AF%B4shortname/</url>
-      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本来是很简单的问题，但是浪费我不少时间，所以有必要记录一下，防止下次出错。<br>刚开始配置多说<code>shortname</code>压根没有在意，因为上一个主题的这个是随便填的，而且成功了（黑人问号）。<br>所以这次也是随便写的，怎么都失败，还看了控制台、源代码，后来突然觉得这个<code>shortname</code>这个单词好奇怪,然后百度了一下。</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>比如我的多说二级域名是xxx.duoshuo.com，<code>shortname</code>就是<code>xxx</code>。<br>最后吐槽一下，<code>short</code>不是短的意思吗，短名字？，<em>are you sure？</em></p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> 技术 </tag>
-            
-        </tags>
-        
-    </entry>
+        <a href="/2017/02/19/一个人的时候/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
-    <entry>
-      <title><![CDATA[Node.js上传图片到七牛]]></title>
-      <url>http://sayyourname.cn/2017/02/17/Node.js%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E4%B8%83%E7%89%9B/</url>
-      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>主题基于 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a> ，作者使用的是<a href="https://www.instagram.com/" target="_blank" rel="external">Instagram</a>拉取的相册，捣鼓了半天，翻墙申请账号，最后发现图片爬不下来，后来发现<a href="https://yq.aliyun.com/articles/8607" target="_blank" rel="external">一篇</a>七牛上传的node脚本，因为需要上传的图片太多，然后改成了自己需要的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (stats.isFile()) &#123;</div><div class="line">    <span class="keyword">var</span> suffix = getFilenameSuffix(files[index]);</div><div class="line">    <span class="keyword">if</span>(!(suffix==<span class="string">'.js'</span>|| suffix == <span class="string">'.DS_Store'</span>))&#123;</div><div class="line">      <span class="comment">//要上传文件的本地路径</span></div><div class="line">      filePath = path+<span class="string">'/'</span>+files[index];</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'抓取到文件: '</span>+files[index]);</div><div class="line">      <span class="comment">//上传到七牛后保存的文件名</span></div><div class="line">      key = files[index];</div><div class="line">      <span class="comment">//生成上传 Token</span></div><div class="line">      token = uptoken(bucket, key);</div><div class="line">      <span class="comment">// 异步执行</span></div><div class="line">      uploadFile(token, key, filePath);</div><div class="line">      arr.push(files[index]);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>这是上传图片的主要代码，主要问题有在<code>photos</code>文件中如果新增了图片，会把以前的图片再次上传一遍，所以做了检查重复不会上传：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 判断数组中是否包含某元素</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_contain</span>(<span class="params">array, obj</span>)</span>&#123;</div><div class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</div><div class="line">     <span class="keyword">if</span> (array[i] == obj)<span class="comment">//如果要求数据类型也一致，这里可使用恒等号===</span></div><div class="line">         <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后愉快的开始执行，因为<code>photos</code>文件里大约有1000多张图片，理所当然的电脑直接死机。因为执行了一千次异步方法，js又是<a href="http://m.blog.csdn.net/article/details?id=53522759" target="_blank" rel="external">单线程</a>，那就用同步上传的方法，js异步改成同步的话有嵌套或者回调，我用了<a href="http://caolan.github.io/async/" target="_blank" rel="external">async</a>库，用法很简单:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span>.series([</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; ... &#125;,</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; ... &#125;</div><div class="line">]);</div></pre></td></tr></table></figure></p>
-<p>要求传入函数数组，而不是对象Object数组，所以我把上传图片方法改成了闭包:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//构造上传函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">uploadFile</span>(<span class="params">uptoken, key, localFile</span>) </span>&#123;</div><div class="line">   <span class="keyword">var</span> extra = <span class="keyword">new</span> qiniu.io.PutExtra();</div><div class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; qiniu.io.putFile(uptoken, key, localFile, extra, <span class="function"><span class="keyword">function</span>(<span class="params">err, ret</span>) </span>&#123;</div><div class="line">     <span class="keyword">if</span>(!err) &#123;</div><div class="line">       <span class="comment">// 上传成功， 处理返回值</span></div><div class="line">       <span class="built_in">console</span>.log(<span class="string">'上传成功 : '</span>,ret.hash, ret.key);</div><div class="line">       callback();</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">       <span class="comment">// 上传失败， 处理返回代码</span></div><div class="line">       <span class="built_in">console</span>.log(err);</div><div class="line">       callback();</div><div class="line">     &#125;</div><div class="line"> &#125;);</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当读取完图片之后执行上传：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (index == files.length) &#123;</div><div class="line">     <span class="comment">// 执行上传</span></div><div class="line">     <span class="built_in">console</span>.log(funArr.length);</div><div class="line">     <span class="keyword">async</span>.series(funArr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(<span class="string">"上传完成"</span>);</div><div class="line">       fs.writeFile(<span class="string">"./ins.json"</span>, <span class="built_in">JSON</span>.stringify(arr, <span class="literal">null</span>, <span class="string">"\t"</span>));</div><div class="line">       <span class="keyword">return</span>;</div><div class="line">     &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>修改过后的tool.js脚本代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line">    <span class="keyword">const</span> photosPath = <span class="string">"images/photos"</span>;</div><div class="line">    <span class="keyword">const</span> blogPath = <span class="string">"images/blog"</span>;</div><div class="line">    <span class="keyword">var</span> qiniu = <span class="built_in">require</span>(<span class="string">"qiniu"</span>);</div><div class="line">    <span class="keyword">var</span> <span class="keyword">async</span> = <span class="built_in">require</span>(<span class="string">"async"</span>);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//需要填写你的 Access Key 和 Secret Key</span></div><div class="line">    qiniu.conf.ACCESS_KEY = <span class="string">''</span>;</div><div class="line">    qiniu.conf.SECRET_KEY = <span class="string">''</span>;</div><div class="line"></div><div class="line">    <span class="comment">//构建上传策略函数</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">uptoken</span>(<span class="params">bucket, key</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> putPolicy = <span class="keyword">new</span> qiniu.rs.PutPolicy(bucket+<span class="string">":"</span>+key);</div><div class="line">      <span class="keyword">return</span> putPolicy.token();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//构造上传函数</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">uploadFile</span>(<span class="params">uptoken, key, localFile, arr, filename</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> extra = <span class="keyword">new</span> qiniu.io.PutExtra();</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; qiniu.io.putFile(uptoken, key, localFile, extra, <span class="function"><span class="keyword">function</span>(<span class="params">err, ret</span>) </span>&#123;</div><div class="line">          <span class="keyword">if</span>(!err) &#123;</div><div class="line">            <span class="comment">// 上传成功， 处理返回值</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'上传成功 : '</span>,ret.hash, ret.key);</div><div class="line">            arr.push(filename);</div><div class="line">            callback();</div><div class="line">          &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 上传失败， 处理返回代码</span></div><div class="line">            <span class="built_in">console</span>.log(err);</div><div class="line">            callback();</div><div class="line">          &#125;</div><div class="line">      &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 读取文件后缀名称，并转化成小写</div><div class="line">     * @param file_name</div><div class="line">     * @returns</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getFilenameSuffix</span>(<span class="params">file_name</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span>(file_name==<span class="string">'.DS_Store'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'.DS_Store'</span>;</div><div class="line">      &#125;</div><div class="line">        <span class="keyword">if</span> (file_name == <span class="literal">null</span> || file_name.length == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">        <span class="keyword">var</span> result = <span class="regexp">/\.[^\.]+/</span>.exec(file_name);</div><div class="line">        <span class="keyword">return</span> result == <span class="literal">null</span> ? <span class="literal">null</span> : (result + <span class="string">""</span>).toLowerCase();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 判断数组中是否包含某元素</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">array_contain</span>(<span class="params">array, obj</span>)</span>&#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</div><div class="line">          <span class="keyword">if</span> (array[i] == obj)<span class="comment">//如果要求数据类型也一致，这里可使用恒等号===</span></div><div class="line">              <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line">    读取photos内的图片</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">startUploadImg</span>(<span class="params">path, file_name, updload_path</span>) </span>&#123;</div><div class="line">      fs.readdir(path, <span class="function"><span class="keyword">function</span> (<span class="params">err, files</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (err) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//要上传的空间</span></div><div class="line">        bucket = updload_path;</div><div class="line"></div><div class="line">        <span class="comment">// 读取json文件</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">          <span class="keyword">var</span> data = fs.readFileSync(file_name, <span class="string">'utf-8'</span>);</div><div class="line">          <span class="keyword">var</span> arr = <span class="built_in">JSON</span>.parse(data);</div><div class="line">        &#125; <span class="keyword">catch</span> (err) &#123;</div><div class="line">          <span class="keyword">var</span> arr = [];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line"></div><div class="line">        <span class="keyword">var</span> funArr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line">        (<span class="function"><span class="keyword">function</span> <span class="title">iterator</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">          <span class="keyword">if</span> (index == files.length) &#123;</div><div class="line">                <span class="comment">// 执行上传</span></div><div class="line">                <span class="built_in">console</span>.log(funArr.length);</div><div class="line">                <span class="keyword">async</span>.series(funArr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">                  <span class="built_in">console</span>.log(<span class="string">"上传完成"</span>);</div><div class="line">                  fs.writeFile(file_name, <span class="built_in">JSON</span>.stringify(arr, <span class="literal">null</span>, <span class="string">"\t"</span>));</div><div class="line">                  <span class="keyword">return</span>;</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">            fs.stat(path + <span class="string">"/"</span> + files[index], <span class="function"><span class="keyword">function</span> (<span class="params">err, stats</span>) </span>&#123;</div><div class="line">                <span class="keyword">if</span> (err) &#123;</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (stats.isFile() &amp;&amp; !array_contain(arr, files[index])) &#123;</div><div class="line">                  <span class="keyword">var</span> suffix = getFilenameSuffix(files[index]);</div><div class="line">                  <span class="keyword">if</span>(!(suffix==<span class="string">'.js'</span>|| suffix == <span class="string">'.DS_Store'</span>))&#123;</div><div class="line">                    <span class="comment">//要上传文件的本地路径</span></div><div class="line">                    filePath = path+<span class="string">'/'</span>+files[index];</div><div class="line">                    <span class="comment">//上传到七牛后保存的文件名</span></div><div class="line">                    key = files[index];</div><div class="line">                    </div><div class="line">                    <span class="keyword">if</span> (updload_path == <span class="string">'misterdeng'</span>) &#123;</div><div class="line">                      <span class="keyword">if</span> (!array_contain(arr, <span class="string">'http://od50s29vd.bkt.clouddn.com/'</span>+files[index])) &#123;</div><div class="line">                        <span class="comment">//生成上传 Token</span></div><div class="line">                        token = uptoken(bucket, key);</div><div class="line">                        <span class="comment">// 异步执行</span></div><div class="line">                        funArr.push(uploadFile(token, key, filePath, arr, <span class="string">'http://od50s29vd.bkt.clouddn.com/'</span>+files[index]));</div><div class="line">                      &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        <span class="built_in">console</span>.log(<span class="string">'这个博客图片已经上传过了'</span>);</div><div class="line">                      &#125;</div><div class="line">                      </div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                      <span class="comment">//生成上传 Token</span></div><div class="line">                      token = uptoken(bucket, key);</div><div class="line">                      <span class="comment">// 异步执行</span></div><div class="line">                      funArr.push(uploadFile(token, key, filePath, arr, files[index]));</div><div class="line">                    &#125;</div><div class="line">                    </div><div class="line">                &#125;</div><div class="line"></div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                      <span class="built_in">console</span>.log(<span class="string">'不是文件或者已经上传过了: '</span>+files[index]);</div><div class="line">                    &#125;</div><div class="line">                iterator(index + <span class="number">1</span>);</div><div class="line">            &#125;)</div><div class="line">        &#125;(<span class="number">0</span>));</div><div class="line"></div><div class="line">    &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">      <span class="comment">// 执行方法</span></div><div class="line">      startUploadImg(blogPath, <span class="string">'blog.json'</span>, <span class="string">'misterdeng'</span>);</div><div class="line">      startUploadImg(photosPath, <span class="string">'source/photos/ins.json'</span>, <span class="string">'hexo'</span>);</div></pre></td></tr></table></figure>
-<hr>
-<p>刚刚把tool修改成了直接可以上传两个文件夹的图片，一个文章引用，一个是相册，附上一张效果图：<br><img src="http://od50s29vd.bkt.clouddn.com/QQ20170217-101138@2x.png" alt=""></p>
-<p>​    </p>
-]]></content>
-      
-        
-        <tags>
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="你的名字。's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        251075144@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
             
-            <tag> 技术 </tag>
+                <li>
+                    <a href="/about" target="_self" title="关于我">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">person</i>
+                        关于我
+                    </a>
+                </li>
             
-            <tag> Node </tag>
-            
-        </tags>
-        
-    </entry>
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">8</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
     
-    <entry>
-      <title><![CDATA[秒速五厘米]]></title>
-      <url>http://sayyourname.cn/2017/02/16/%E7%A7%92%E9%80%9F%E4%BA%94%E5%8E%98%E7%B1%B3/</url>
-      <content type="html"><![CDATA[<p><img src="http://pic1.win4000.com/wallpaper/b/566a5bd61ba86.jpg" alt=""></p>
-<hr>
-<blockquote>
-<p>在这几年里<br>我光顾着低头前行<br>只想着得到那无法得到的东西<br>但是又不知道那究竟是什么<br>而这个不知从何而来的想法<br>逐渐地变成一种压迫<br>让我只能靠不停工作来解脱<br>等我惊觉之时<br>逐渐僵硬的心只能感觉到痛苦<br>然后在一天早上<br>我发现曾经那刻骨铭心的感情<br>已然完全失却</p>
-</blockquote>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 生活 </tag>
-            
-            <tag> 动漫 </tag>
-            
-        </tags>
-        
-    </entry>
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/tags/生活/index.html" title="生活">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                生活
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/tags/技术/index.html" title="技术">
+                
+                    <i class="material-icons sidebar-material-icons">keyboard</i>
+                
+                技术
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">loyalty</i>
+                
+                标签
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/photos/index.html" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                相册
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/links" title="友军">
+                
+                    <i class="material-icons sidebar-material-icons">face</i>
+                
+                友军
+            </a>
+        </li>
+  	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">8</span>
+        </a>
+    </li>
+</ul>
+
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        原之质   物之渊
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
     
-    <entry>
-      <title><![CDATA[清晨 醒来的时候]]></title>
-      <url>http://sayyourname.cn/2017/02/15/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/</url>
-      <content type="html"><![CDATA[<p><img src="http://pic1.win4000.com/wallpaper/2/5835570118d7f.jpg" alt=""></p>
-<hr>
-<blockquote>
-<p>清晨 醒来的时候<br>不知道自己为什么会哭<br>时常会有这样的情况<br>做过的梦总回想不起<br>只是<br>只是<br>一种有什么要消失的丧失感<br>即使醒来后 也一直存在<br>我一直在寻找 寻找着某个人<br>陷入这种情绪<br>应该是从那天开始的<br>那天 彗星划过天空的那天<br>那就像<br>就像梦幻一般的景色一般<br>那真是 无与伦比<br>美到极致的景色</p>
-</blockquote>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 生活 </tag>
-            
-            <tag> 动漫 </tag>
-            
-        </tags>
-        
-    </entry>
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
     
-  
-  
-</search>
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;你的名字。
+            <div id="days"></div>
+            <script src="https://cdn.bootcss.com/moment.js/2.17.0/moment.min.js">
+            //这里调用了公共库中现成的 js 文件，也可以直接调用站点中的 js 文件
+            </script>
+            <script>
+                var begin = moment([2017,01,15]); //定义博客开始时间
+                var now = moment(); //使用 moment() 获取当前时间
+                document.getElementById('days').innerHTML ="博客已运行 "+now.diff(begin,'days')+" 天"
+            // 使用 now.diff(begin,'days') 函数获取天数，这里天数考虑了闰年
+            </script>
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize("HItjVLlERF4Y44n2cVDAWfxG-gzGzoHsz", "sWXxXtHuGSEbId2dNbxEgcue");
+    </script>
+    <script>
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'sayyourname'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+    <script>
+    var searchFunc = function(path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title != '' && data_content != '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content +'...</p>' +'</a>';
+                            }
+                        }
+                    });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
+
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <div class="pswp__container">
+            <!-- don't modify these 3 pswp__item elements, data is added later on -->
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+</div>
+
+        </body>
+    
+</html>
