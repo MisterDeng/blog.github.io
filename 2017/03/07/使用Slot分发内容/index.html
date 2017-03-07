@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: 思考 | 
+            使用Slot分发内容 | 
         
         你的名字。
     </title>
@@ -53,7 +53,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 思考 | 你的名字。">
+    <meta property="og:title" content="使用Slot分发内容 | 你的名字。">
     <meta property="og:description" content="null">
 
     <!--[if lte IE 9]>
@@ -206,93 +206,281 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
         
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 99 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/article/material-' + randomNum + '.jpg' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                使用Slot分发内容
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>3月 07, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0ElEQVR42u3aW1JCQQwFQPa/aV2AAifJFSHT98uyEKbHKo953L6OfG7Y2NjY2NjY2NjYb8m+xc/jn3r8/V8O8eOn7r0m+fTozNjY2Nir2U/+9AeAe1dwD1C9oOSaHp8ZGxsb+wR2AuiB8+PmAVY9MzY2NjZ2tZxIDj0pUbCxsbGxr2VXQ2jSJMLGxsbGnjSVqqHSC7MkGl/aS8PGxsZ+e/YkPP7r65fOt7GxsbHfmN17kpWdyWD4Lx5sbGzsrex8jJqPAfLYqwbSaGyMjY2NvZo9afrkbZ0EmY8ZqpeCjY2NvZWdx1jvOnqLm9VYTUbL2NjY2Oewk6Z875WvKWMKvTRsbGzsReze4apxctV6ZTUUsbGxsXeze1ExCareMmXv14ONjY19GntenCTxMy9CegtD2NjY2FvZV0XIfBCbR9EFKzvY2NjYi9g9wLWlQvU68nYVNjY29gnsPDDy1ZzqMKDaeLp4ZQcbGxv7w9nzEqLa+pmUE6OYxMbGxl7Nrh50slKTx1KvqdScb2NjY2MvYieNnrycaC5Kxp+eLwBhY2Njb2XnLZvqkuVVA938Ipq9NGxsbOxF7Ekg5VGXv09v2FwOMGxsbOwPZ1fHAI9fWQ2/3tMbM2BjY2NvZV8VGL0FzeQiqqOCUSmCjY2N/bHsvH0zCaFq8ZN/YjQ2wMbGxl7Kzge9hZHqoPHUGwBHpRQ2Njb2UnYyOs1DazIqrhYhSTGDjY2NfQK79299PsTNV23m1/3kfbCxsbGXsqvPX1xBtfBoljHY2NjYS9mTRZlqSVONq0koYmNjY5/G7q3XzAfA1aBKPrE8FcHGxsZexC68RXEAUA3FpMlVDldsbGxs7NaB8uiqrgflA2ZsbGxs7Mk4NilsqufpBSQ2Njb2Cex50z9v7iekpHmURBc2Njb2Ceyriofq+0xaReWrxMbGxl7KPufBxsbGxsbGxsbGfpvnG5qAmt3kMZqIAAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Vue/">Vue</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/03/07/使用Slot分发内容/" class="leancloud-views_num" data-flag-title="使用Slot分发内容">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
         
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/19/一个人的时候/">一个人的时候</a></p>
-    </div>
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用Slot分发内容&url=http://sayyourname.cn//2017/03/07/使用Slot分发内容/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            一个人的思...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/19/一个人的时候/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 19, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=使用Slot分发内容&url=http://sayyourname.cn//2017/03/07/使用Slot分发内容/index.html&via=你的名字。" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
 
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://sayyourname.cn//2017/03/07/使用Slot分发内容/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://sayyourname.cn//2017/03/07/使用Slot分发内容/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-        
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
     
 
     
+        <p>比如你自己做了个一个button组件，在根组件里注册为vButton，从而复用。那么各个button上的文字肯定是不同的，但是这些文字大部分情况下也是不需要动态更新的，那么就不必用props之类的方法从根组件向子组件传递文字，直接用slot即可。</p>
+<p>假定 <code>my-component</code> 组件有下面模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;h2&gt;我是子组件的标题&lt;/h2&gt;</div><div class="line">  &lt;slot&gt;</div><div class="line">    只有在没有要分发的内容时才会显示。</div><div class="line">  &lt;/slot&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>父组件模版：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;h1&gt;我是父组件的标题&lt;/h1&gt;</div><div class="line">  &lt;my-component&gt;</div><div class="line">    &lt;p&gt;这是一些初始内容&lt;/p&gt;</div><div class="line">    &lt;p&gt;这是更多的初始内容&lt;/p&gt;</div><div class="line">  &lt;/my-component&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>渲染结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;h1&gt;我是父组件的标题&lt;/h1&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    &lt;h2&gt;我是子组件的标题&lt;/h2&gt;</div><div class="line">    &lt;p&gt;这是一些初始内容&lt;/p&gt;</div><div class="line">    &lt;p&gt;这是更多的初始内容&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>这是最简单的一个用法示例，<code>my-component</code>里面的所有内容会替代slot。</p>
 
     
-        <script>
-    var randomNum;
 
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 6; i++) {
-        randomNum = Math.floor(Math.random() * 99 + 1);
+    
+</div>
 
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/article/material-' + randomNum + '.jpg'  + ')')
-
-        locatePost = locatePost.next();
+<script>
+    window.onload = function () {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
     }
 </script>
 
-    
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #BAEED6 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #BAEED6 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #BAEED6 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://sayyourname.cn/2017/03/07/使用Slot分发内容/"
+        data-title="使用Slot分发内容">
+    </div>
+    <!-- 多说评论框 end -->
 </div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/03/Landing-Guy/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -500,6 +688,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
