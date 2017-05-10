@@ -13,7 +13,7 @@
     init();
 
     function init() {
-        css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);z-index:999;}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+        css(".heart{width: 25px;height: 25px;position: fixed;  background-size: 25px;z-index: 999;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
         attachEvent();
         gameloop();
     }
@@ -28,7 +28,7 @@
             hearts[i].y--;
             hearts[i].scale += 0.004;
             hearts[i].alpha -= 0.013;
-            hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+            hearts[i].el.style.cssText += "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale;
         }
         requestAnimationFrame(gameloop);
     }
@@ -44,13 +44,13 @@
     function createHeart(event) {
         var d = document.createElement("div");
         d.className = "heart";
+        d.style.cssText += "background-image: url(\"/img/mouse/icecream-"+ randomImg() +".svg\");";
         hearts.push({
             el: d,
             x: event.clientX - 5,
             y: event.clientY - 5,
             scale: 1,
-            alpha: 1,
-            color: randomColor()
+            alpha: 1
         });
         document.body.appendChild(d);
     }
@@ -66,7 +66,7 @@
         document.getElementsByTagName('head')[0].appendChild(style);
     }
 
-    function randomColor() {
-        return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+    function randomImg() {
+        return Math.floor(Math.random() * 20+1);
     }
 })(window, document);
