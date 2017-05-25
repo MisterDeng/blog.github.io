@@ -10,7 +10,7 @@
     
     <title>
         
-            Landing Guy | 
+            标签: Django | 
         
         你的名字。
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="你的名字。">
     <meta name="description" content="null">
-    <meta name="keywords" content="null,音乐,生活">
+    <meta name="keywords" content="null">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Landing Guy | 你的名字。">
+    <meta property="og:title" content="标签: Django | 你的名字。">
     <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="音乐"> <meta property="og:article:tag" content="生活"> 
+    
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -222,272 +222,155 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
+    <!-- Pin on top -->
+    
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+    <!-- Normal Post -->
+    
         
-
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script>
-    var randomNum = Math.floor(Math.random() * 101);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
         
     
-            <p class="article-headline-p">
-                Landing Guy
-            </p>
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/05/25/Django-rest-framework使用总结/">Django rest_framework使用总结</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Model...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/05/25/Django-rest-framework使用总结/" target="_self">Read More.</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.JPG" width="44px" height="44px" alt="你的名字。's avatar">
+            </div>
+            <div>
+                <strong>你的名字。</strong>
+                <span>5月 25, 2017</span>
+            </div>
         </div>
-
-
-
-
-
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
                 
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+            </span>
 
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.JPG" width="44px" height="44px" alt="Author Avatar"/>
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
     </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>你的名字。</strong>
-        <span>3月 03, 2017</span>
-    </div>
+</div>
 
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
+            
+            
+        
     
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">devices other</i>
-            <span class="visuallyhidden">devices other</span>
-        </button>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXUlEQVR42u3aUbKCMAwFUPa/6fcW4Ig3iUR0Tr8cBkoPH229zfH30+3Aw8PDw8PDw8O7Ge+I2+NTjz28ePFpb+fXC2PDw8PDW+Elw8qH22Pn18/vwcPDw9vkPZtwz3+fLxv5RH8+9GRseHh4eHfmJaS8h+qnxMPDw/sNXjU+ePYWPDw8vO/iJX/4kwHlm+xeSHFh1oKHh4cX86rT9+bv1fM9PDw8vIDXm6x77Ghaby0heHh4eJu8fCJOygLywqm8t/zADA8PD2+Hl4SzySKRs+f34OHh4d2B11sqkqk8/zTJh4uexcPDw1vh9UpOezFEUhAw2u7j4eHhrfDmr68GEL1lINp24+Hh4S3yomLQOLCobrirV/Dw8PA+y6t2dAxa8vZqfIyHh4f3Wd6kqHReRtCLj/Hw8PA+xZu/bFLCVS1HePoR8fDw8FZ41UUiDyDetZAU4hI8PDy8i3nVY6ckIOg9Ww1Hoi01Hh4e3mW83tFXdeKeFLw2i67w8PDwLuP1NtnV8oKElCw5L0aLh4eHt8Kbh6cJJlk2etEGHh4e3j5vfhwVHeq3il+rEQkeHh7ep3jzoCGf+pMopBBn4OHh4S3y3hXL5ox5n+XzPTw8PLwxr9reGx/04o/CwoCHh4d3Ae+IWzVcqC4V+XZ8VHSFh4eH9yZeL0itRhi9gBgPDw/vzrx8gs6v9DbZ1SUKDw8P71t41Zi1F/VWy8Lw8PDw7smrHvDPo4pC0IyHh4e3yEvCiF55Vu/Z3sYaDw8Pb4eXdzcptMo/Ux4c4+Hh4e3zfq/h4eHh4eHh4eHdoP0DvBftOXhfvZIAAAAASUVORK5CYII=">
-        </ul>
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/生活/">生活</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/音乐/">音乐</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    <!-- Leancloud Views -->
-        <a class="post_share-link" href="#">
-            <li class="mdl-menu__item">
-                <span id="/2017/03/03/Landing-Guy/" class="leancloud-views_num" data-flag-title="Landing Guy">
-     &nbsp;浏览量
-</span>
-
-            </li>
-        </a>
-    
-
-    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
         
     
 
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Landing Guy&url=http://sayyourname.cn//2017/03/03/Landing-Guy/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/05/24/如何优化-Django-REST-Framework-的性能？/">如何优化 Django REST Framework 的性能？</a></p>
+    </div>
 
-    <!-- Share Twitter -->
-    
-
-    <!-- Share Facebook -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            现在，Django REST Framework 帮助 Django 开发者给自己的应用开发出简单而强大的标准 REST APIs，...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/05/24/如何优化-Django-REST-Framework-的性能？/" target="_self">Read More.</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.JPG" width="44px" height="44px" alt="你的名字。's avatar">
+            </div>
+            <div>
+                <strong>你的名字。</strong>
+                <span>5月 24, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
                 
+            </span>
 
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+            
 
-  
-  <iframe class="music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86></iframe>
-  
+            
 
-    
-        <p>Right I die. My life before my eyes.<br>生命于我眼前支离破碎<br>As I was hang there,I see wonderland.<br>尚存一息我眼见了仙境<br>I don’t really see much of anything.<br>那里几乎空无一物<br>But I see you.That is crazy.<br>却出现了你. 这疯狂至极</p>
-<p>Your landing guy is home.<br>你的旅人已经回家<br>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
-<p>Your landing guy is home.<br>你的旅人已经回家<br>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
-<p>Night to day, and day to night.<br>白昼更迭里<br>All the sadness,you take my breath away.<br>你悲戚了我的窒息<br>So I cried .for all these time.<br>所以我不曾停止哭泣<br>Then I comes closes,you stare at me.<br>你注目着我的临近</p>
-<p>Are we falling in love?<br>我们是否滋生了爱<br>Oh,it’s magic.oh,that’ s magic.<br>这奇妙无比，光怪迷离</p>
-<p>Are we falling in love?<br>我们是否滋生了爱<br>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
-<p>Your landing guy is home.<br>你的旅人已经回家<br>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
-<p>Your landing guy is home.<br>你的旅人已经回家<br>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
-<p>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
-<p>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
-
-    
-
-    
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
 </div>
 
-<script>
-    window.onload=function() {
-        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' + 422428548 + '&auto=1&height=66');
+            
+            
+        
+    
+
+    
+
+    
+        <script>
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 6; i++) {
+        randomNum = Math.floor(Math.random() * 101 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
     }
 </script>
 
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-
-
-
-
-    <!-- 使用 网易云跟帖 -->
-    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-    <script>
-    var cloudTieConfig = {
-      url: document.location.href, 
-      sourceId: "",
-      productKey: "fb56b21a167746ef8f5ac8e116852380",
-      target: "cloud-tie-wrapper"
-    };
-    var yunManualLoad = true;
-    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-    </script>
-
-
-
-
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
     
-        <a href="/2017/05/22/总有你要的编程书单（GitHub）/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/02/22/前端资源汇总（转载）/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
+</div>
 
 
                     
@@ -1943,14 +1826,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
-
-                    
-                        <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 
