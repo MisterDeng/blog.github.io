@@ -7,33 +7,191 @@
       <title><![CDATA[Django rest_framework使用总结]]></title>
       <url>http://sayyourname.cn/2017/05/25/Django-rest-framework%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<h2 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h2><p>数据库表的字段</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 课程Model</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Course</span><span class="params">(models.Model)</span>:</span></div><div class="line">    course_org = models.ForeignKey(CourseOrg, verbose_name=<span class="string">'课程机构'</span>, null=<span class="keyword">True</span>, blank=<span class="keyword">True</span>)</div><div class="line">    name = models.CharField(max_length=<span class="number">52</span>, verbose_name=<span class="string">'课程名字'</span>)</div><div class="line">    desc = models.CharField(max_length=<span class="number">300</span>, verbose_name=<span class="string">'课程描述'</span>)</div><div class="line">    teacher = models.ForeignKey(Teacher, verbose_name=<span class="string">'讲师'</span>, null=<span class="keyword">True</span>, blank=<span class="keyword">True</span>)</div><div class="line">    detail = models.TextField(verbose_name=<span class="string">'课程详情'</span>)</div><div class="line">    degree = models.CharField(choices=((<span class="string">'cj'</span>, <span class="string">'初级'</span>), (<span class="string">'zj'</span>, <span class="string">'中级'</span>), (<span class="string">'gj'</span>, <span class="string">'高级'</span>)), max_length=<span class="number">2</span>, verbose_name=<span class="string">'难度'</span>)</div><div class="line">    learn_times = models.IntegerField(default=<span class="number">0</span>, verbose_name=<span class="string">'学习时长(分钟数)'</span>)</div><div class="line">    students = models.IntegerField(default=<span class="number">0</span>, verbose_name=<span class="string">'学习人数'</span>)</div><div class="line">    fav_nums = models.IntegerField(default=<span class="number">0</span>, verbose_name=<span class="string">'收藏人数'</span>)</div><div class="line">    image = models.ImageField(upload_to=<span class="string">'courses/%Y/%m'</span>, verbose_name=<span class="string">'封面图'</span>, max_length=<span class="number">100</span>)</div><div class="line">    click_nums = models.IntegerField(default=<span class="number">0</span>, verbose_name=<span class="string">'点击数'</span>)</div><div class="line">    is_banner = models.BooleanField(default=<span class="keyword">False</span>, verbose_name=<span class="string">u'是否是轮播图'</span>)</div><div class="line">    category = models.CharField(default=<span class="string">'后端'</span>, max_length=<span class="number">20</span>, verbose_name=<span class="string">'课程类别'</span>)</div><div class="line">    tag = models.CharField(default=<span class="string">''</span>, verbose_name=<span class="string">'课程标签'</span>, max_length=<span class="number">10</span>)</div><div class="line">    youneed_konw = models.CharField(default=<span class="string">''</span>, max_length=<span class="number">300</span>, verbose_name=<span class="string">'课前须知'</span>)</div><div class="line">    teacher_tell = models.CharField(default=<span class="string">''</span>, max_length=<span class="number">300</span>, verbose_name=<span class="string">'老师告诉你能学什么'</span>)</div><div class="line">    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="string">'添加时间'</span>)</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></div><div class="line">        verbose_name = <span class="string">'课程'</span></div><div class="line">        verbose_name_plural = verbose_name</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 章节Model</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lesson</span><span class="params">(models.Model)</span>:</span></div><div class="line">    course = models.ForeignKey(Course, verbose_name=<span class="string">'课程'</span>, related_name=<span class="string">'lessons'</span>)</div><div class="line">    name = models.CharField(max_length=<span class="number">100</span>, verbose_name=<span class="string">'章节名'</span>)</div><div class="line">    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="string">'添加时间'</span>)</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></div><div class="line">        verbose_name = <span class="string">'章节'</span></div><div class="line">        verbose_name_plural = verbose_name</div></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 课程Model</span>
+<span class="token keyword">class</span> <span class="token class-name">Course</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    course_org <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>CourseOrg<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程机构'</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">52</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程名字'</span><span class="token punctuation">)</span>
+    desc <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程描述'</span><span class="token punctuation">)</span>
+    teacher <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Teacher<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'讲师'</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    detail <span class="token operator">=</span> models<span class="token punctuation">.</span>TextField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'课程详情'</span><span class="token punctuation">)</span>
+    degree <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>choices<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'cj'</span><span class="token punctuation">,</span> <span class="token string">'初级'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'zj'</span><span class="token punctuation">,</span> <span class="token string">'中级'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'gj'</span><span class="token punctuation">,</span> <span class="token string">'高级'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'难度'</span><span class="token punctuation">)</span>
+    learn_times <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'学习时长(分钟数)'</span><span class="token punctuation">)</span>
+    students <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'学习人数'</span><span class="token punctuation">)</span>
+    fav_nums <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'收藏人数'</span><span class="token punctuation">)</span>
+    image <span class="token operator">=</span> models<span class="token punctuation">.</span>ImageField<span class="token punctuation">(</span>upload_to<span class="token operator">=</span><span class="token string">'courses/%Y/%m'</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'封面图'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
+    click_nums <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'点击数'</span><span class="token punctuation">)</span>
+    is_banner <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span>u<span class="token string">'是否是轮播图'</span><span class="token punctuation">)</span>
+    category <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token string">'后端'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程类别'</span><span class="token punctuation">)</span>
+    tag <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程标签'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+    youneed_konw <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课前须知'</span><span class="token punctuation">)</span>
+    teacher_tell <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'老师告诉你能学什么'</span><span class="token punctuation">)</span>
+    add_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>default<span class="token operator">=</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'添加时间'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        verbose_name <span class="token operator">=</span> <span class="token string">'课程'</span>
+        verbose_name_plural <span class="token operator">=</span> verbose_name
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 章节Model</span>
+<span class="token keyword">class</span> <span class="token class-name">Lesson</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    course <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Course<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程'</span><span class="token punctuation">,</span> related_name<span class="token operator">=</span><span class="token string">'lessons'</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'章节名'</span><span class="token punctuation">)</span>
+    add_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>default<span class="token operator">=</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'添加时间'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        verbose_name <span class="token operator">=</span> <span class="token string">'章节'</span>
+        verbose_name_plural <span class="token operator">=</span> verbose_name
+</code></pre>
 <h2 id="Serializers"><a href="#Serializers" class="headerlink" title="Serializers"></a>Serializers</h2><p>数据库字段的解析</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Course, Lesson</div><div class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> serializers</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LessonSerializers</span><span class="params">(serializers.ModelSerializer)</span>:</span></div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></div><div class="line">        model = Lesson</div><div class="line">        fields = (<span class="string">'id'</span>, <span class="string">'name'</span>, <span class="string">'add_time'</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CourseSerializers</span><span class="params">(serializers.ModelSerializer)</span>:</span></div><div class="line">    lessons = LessonSerializers(many=<span class="keyword">True</span>, read_only=<span class="keyword">True</span>)</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></div><div class="line">        model = Course</div><div class="line">        fields = (<span class="string">'id'</span>, <span class="string">'name'</span>, <span class="string">'desc'</span>, <span class="string">'lessons'</span>)</div></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> Course<span class="token punctuation">,</span> Lesson
+<span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> serializers
+
+
+<span class="token keyword">class</span> <span class="token class-name">LessonSerializers</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        model <span class="token operator">=</span> Lesson
+        fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'add_time'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">CourseSerializers</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lessons <span class="token operator">=</span> LessonSerializers<span class="token punctuation">(</span>many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        model <span class="token operator">=</span> Course
+        fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'desc'</span><span class="token punctuation">,</span> <span class="token string">'lessons'</span><span class="token punctuation">)</span>
+</code></pre>
 <h2 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h2><p>Api界面的展示 逻辑的处理</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CourseListApiView</span><span class="params">(generics.ListCreateAPIView)</span>:</span></div><div class="line">    queryset = Course.objects.all()</div><div class="line">    serializer_class = CourseSerializers</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CourseDetailApiView</span><span class="params">(generics.RetrieveUpdateDestroyAPIView)</span>:</span></div><div class="line">    queryset = Course.objects.all()</div><div class="line">    serializer_class = CourseSerializers</div></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">CourseListApiView</span><span class="token punctuation">(</span>generics<span class="token punctuation">.</span>ListCreateAPIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    queryset <span class="token operator">=</span> Course<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    serializer_class <span class="token operator">=</span> CourseSerializers
+
+
+<span class="token keyword">class</span> <span class="token class-name">CourseDetailApiView</span><span class="token punctuation">(</span>generics<span class="token punctuation">.</span>RetrieveUpdateDestroyAPIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    queryset <span class="token operator">=</span> Course<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    serializer_class <span class="token operator">=</span> CourseSerializers
+</code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="嵌套查询"><a href="#嵌套查询" class="headerlink" title="嵌套查询"></a>嵌套查询</h3><p>Lesson的外键必须设置<code>related_name=&#39;lessons&#39;</code>用来标识</p>
 <p>CourseSerializers设置<code>lessons = LessonSerializers(many=True, read_only=True)</code></p>
 <h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><a href="http://localhost:8000/course/list/" target="_blank" rel="external">http://localhost:8000/course/list/</a></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Python"</span>,</div><div class="line">        <span class="attr">"desc"</span>: <span class="string">"算法"</span>,</div><div class="line">        <span class="attr">"lessons"</span>: [</div><div class="line">            &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="number">1</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"1"</span>,</div><div class="line">                <span class="attr">"add_time"</span>: <span class="string">"2017-05-22T13:40:00"</span></div><div class="line">            &#125;,</div><div class="line">            &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="number">2</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"2"</span>,</div><div class="line">                <span class="attr">"add_time"</span>: <span class="string">"2017-05-22T13:40:00"</span></div><div class="line">            &#125;,</div><div class="line">            &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="number">3</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"3"</span>,</div><div class="line">                <span class="attr">"add_time"</span>: <span class="string">"2017-05-22T13:40:00"</span></div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line"> ]</div></pre></td></tr></table></figure>
-<h3 id="深度查询"><a href="#深度查询" class="headerlink" title="深度查询"></a>深度查询</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LessonSerializers</span><span class="params">(serializers.ModelSerializer)</span>:</span></div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></div><div class="line">        model = Lesson</div><div class="line">        depth = <span class="number">2</span></div><div class="line">        fields = (<span class="string">'id'</span>, <span class="string">'name'</span>, <span class="string">'add_time'</span>, <span class="string">'course'</span>)</div></pre></td></tr></table></figure>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python"</span><span class="token punctuation">,</span>
+        <span class="token property">"desc"</span><span class="token operator">:</span> <span class="token string">"算法"</span><span class="token punctuation">,</span>
+        <span class="token property">"lessons"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"3"</span><span class="token punctuation">,</span>
+                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">]</span>
+</code></pre>
+<h3 id="深度查询"><a href="#深度查询" class="headerlink" title="深度查询"></a>深度查询</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">LessonSerializers</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        model <span class="token operator">=</span> Lesson
+        depth <span class="token operator">=</span> <span class="token number">2</span>
+        fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'add_time'</span><span class="token punctuation">,</span> <span class="token string">'course'</span><span class="token punctuation">)</span>
+</code></pre>
 <h4 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h4><p><a href="http://localhost:8000/course/lesson/list/" target="_blank" rel="external">http://localhost:8000/course/lesson/list/</a></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="attr">"add_time"</span>: <span class="string">"2017-05-22T13:40:00"</span>,</div><div class="line">        <span class="attr">"course"</span>: &#123;</div><div class="line">            <span class="attr">"id"</span>: <span class="number">1</span>,</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"Python"</span>,</div><div class="line">            <span class="attr">"desc"</span>: <span class="string">"算法"</span>,</div><div class="line">            <span class="attr">"detail"</span>: <span class="string">"发多少飞"</span>,</div><div class="line">            <span class="attr">"degree"</span>: <span class="string">"cj"</span>,</div><div class="line">            <span class="attr">"learn_times"</span>: <span class="number">0</span>,</div><div class="line">            <span class="attr">"students"</span>: <span class="number">2</span>,</div><div class="line">            <span class="attr">"fav_nums"</span>: <span class="number">0</span>,</div><div class="line">            <span class="attr">"image"</span>: <span class="string">"http://localhost:8000/media/courses/2017/05/%E6%88%91%E7%9A%84%E6%8E%A8%E5%B9%BF%E5%BC%95%E5%AF%BC_rtZYmxW.jpg"</span>,</div><div class="line">            <span class="attr">"click_nums"</span>: <span class="number">4</span>,</div><div class="line">            <span class="attr">"is_banner"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"category"</span>: <span class="string">"后端"</span>,</div><div class="line">            <span class="attr">"tag"</span>: <span class="string">"发多少"</span>,</div><div class="line">            <span class="attr">"youneed_konw"</span>: <span class="string">"发送"</span>,</div><div class="line">            <span class="attr">"teacher_tell"</span>: <span class="string">"发送"</span>,</div><div class="line">            <span class="attr">"add_time"</span>: <span class="string">"2017-05-22T13:40:00"</span>,</div><div class="line">            <span class="attr">"course_org"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="number">1</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"慕课"</span>,</div><div class="line">                <span class="attr">"category"</span>: <span class="string">"pxjg"</span>,</div><div class="line">                <span class="attr">"desc"</span>: <span class="string">"发斯蒂芬"</span>,</div><div class="line">                <span class="attr">"tag"</span>: <span class="string">"全国知名"</span>,</div><div class="line">                <span class="attr">"click_nums"</span>: <span class="number">12</span>,</div><div class="line">                <span class="attr">"fav_nums"</span>: <span class="number">12</span>,</div><div class="line">                <span class="attr">"image"</span>: <span class="string">"http://localhost:8000/media/org/2017/05/%E6%88%91%E7%9A%84%E6%8E%A8%E5%B9%BF%E5%BC%95%E5%AF%BC.jpg"</span>,</div><div class="line">                <span class="attr">"address"</span>: <span class="string">"范德萨"</span>,</div><div class="line">                <span class="attr">"add_time"</span>: <span class="string">"2017-05-22T13:39:00"</span>,</div><div class="line">                <span class="attr">"students"</span>: <span class="number">342</span>,</div><div class="line">                <span class="attr">"city"</span>: <span class="number">1</span></div><div class="line">            &#125;,</div><div class="line">            <span class="attr">"teacher"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="number">1</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"发疯"</span>,</div><div class="line">                <span class="attr">"work_years"</span>: <span class="number">3</span>,</div><div class="line">                <span class="attr">"work_company"</span>: <span class="string">"发多少"</span>,</div><div class="line">                <span class="attr">"work_position"</span>: <span class="string">"发送"</span>,</div><div class="line">                <span class="attr">"points"</span>: <span class="string">"大师傅"</span>,</div><div class="line">                <span class="attr">"click_nums"</span>: <span class="number">3</span>,</div><div class="line">                <span class="attr">"fav_nums"</span>: <span class="number">0</span>,</div><div class="line">                <span class="attr">"age"</span>: <span class="number">30</span>,</div><div class="line">                <span class="attr">"image"</span>: <span class="string">"http://localhost:8000/media/teacher/2017/05/%E5%9B%BE%E5%B1%82-113x.png"</span>,</div><div class="line">                <span class="attr">"add_time"</span>: <span class="string">"2017-05-22T13:39:00"</span>,</div><div class="line">                <span class="attr">"org"</span>: <span class="number">1</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+        <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span><span class="token punctuation">,</span>
+        <span class="token property">"course"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span> <span class="token string">"算法"</span><span class="token punctuation">,</span>
+            <span class="token property">"detail"</span><span class="token operator">:</span> <span class="token string">"发多少飞"</span><span class="token punctuation">,</span>
+            <span class="token property">"degree"</span><span class="token operator">:</span> <span class="token string">"cj"</span><span class="token punctuation">,</span>
+            <span class="token property">"learn_times"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token property">"students"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            <span class="token property">"fav_nums"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token property">"image"</span><span class="token operator">:</span> <span class="token string">"http://localhost:8000/media/courses/2017/05/%E6%88%91%E7%9A%84%E6%8E%A8%E5%B9%BF%E5%BC%95%E5%AF%BC_rtZYmxW.jpg"</span><span class="token punctuation">,</span>
+            <span class="token property">"click_nums"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            <span class="token property">"is_banner"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"后端"</span><span class="token punctuation">,</span>
+            <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token string">"发多少"</span><span class="token punctuation">,</span>
+            <span class="token property">"youneed_konw"</span><span class="token operator">:</span> <span class="token string">"发送"</span><span class="token punctuation">,</span>
+            <span class="token property">"teacher_tell"</span><span class="token operator">:</span> <span class="token string">"发送"</span><span class="token punctuation">,</span>
+            <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span><span class="token punctuation">,</span>
+            <span class="token property">"course_org"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"慕课"</span><span class="token punctuation">,</span>
+                <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"pxjg"</span><span class="token punctuation">,</span>
+                <span class="token property">"desc"</span><span class="token operator">:</span> <span class="token string">"发斯蒂芬"</span><span class="token punctuation">,</span>
+                <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token string">"全国知名"</span><span class="token punctuation">,</span>
+                <span class="token property">"click_nums"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+                <span class="token property">"fav_nums"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+                <span class="token property">"image"</span><span class="token operator">:</span> <span class="token string">"http://localhost:8000/media/org/2017/05/%E6%88%91%E7%9A%84%E6%8E%A8%E5%B9%BF%E5%BC%95%E5%AF%BC.jpg"</span><span class="token punctuation">,</span>
+                <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"范德萨"</span><span class="token punctuation">,</span>
+                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:39:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"students"</span><span class="token operator">:</span> <span class="token number">342</span><span class="token punctuation">,</span>
+                <span class="token property">"city"</span><span class="token operator">:</span> <span class="token number">1</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">"teacher"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"发疯"</span><span class="token punctuation">,</span>
+                <span class="token property">"work_years"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                <span class="token property">"work_company"</span><span class="token operator">:</span> <span class="token string">"发多少"</span><span class="token punctuation">,</span>
+                <span class="token property">"work_position"</span><span class="token operator">:</span> <span class="token string">"发送"</span><span class="token punctuation">,</span>
+                <span class="token property">"points"</span><span class="token operator">:</span> <span class="token string">"大师傅"</span><span class="token punctuation">,</span>
+                <span class="token property">"click_nums"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                <span class="token property">"fav_nums"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token property">"age"</span><span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+                <span class="token property">"image"</span><span class="token operator">:</span> <span class="token string">"http://localhost:8000/media/teacher/2017/05/%E5%9B%BE%E5%B1%82-113x.png"</span><span class="token punctuation">,</span>
+                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:39:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"org"</span><span class="token operator">:</span> <span class="token number">1</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
 <p>也可以在LessonSerializers中<code>name = serializers.ReadOnlyField(source=&#39;course.name&#39;)</code>  增加外健的字段</p>
 <h3 id="视图重写"><a href="#视图重写" class="headerlink" title="视图重写"></a>视图重写</h3><p>ListCreateAPIView封装了get的方法可以选择重写</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CourseListApiView</span><span class="params">(generics.ListCreateAPIView)</span>:</span></div><div class="line">    queryset = Course.objects.all()</div><div class="line">    serializer_class = CourseSerializers</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">list</span><span class="params">(self, request, *args, **kwargs)</span>:</span></div><div class="line">        queryset = self.filter_queryset(self.get_queryset())</div><div class="line"></div><div class="line">        page = self.paginate_queryset(queryset)</div><div class="line">        <span class="keyword">if</span> page <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">            serializer = self.get_serializer(page, many=<span class="keyword">True</span>)</div><div class="line">            <span class="keyword">return</span> self.get_paginated_response(serializer.data)</div><div class="line"></div><div class="line">        serializer = self.get_serializer(queryset, many=<span class="keyword">True</span>)</div><div class="line">        <span class="keyword">return</span> Response(&#123;<span class="string">'data'</span>: serializer.data, <span class="string">'message'</span>: <span class="string">'获取成功'</span>&#125;)</div></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">CourseListApiView</span><span class="token punctuation">(</span>generics<span class="token punctuation">.</span>ListCreateAPIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    queryset <span class="token operator">=</span> Course<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    serializer_class <span class="token operator">=</span> CourseSerializers
+
+    <span class="token keyword">def</span> <span class="token function">list</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        queryset <span class="token operator">=</span> self<span class="token punctuation">.</span>filter_queryset<span class="token punctuation">(</span>self<span class="token punctuation">.</span>get_queryset<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        page <span class="token operator">=</span> self<span class="token punctuation">.</span>paginate_queryset<span class="token punctuation">(</span>queryset<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> page <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            serializer <span class="token operator">=</span> self<span class="token punctuation">.</span>get_serializer<span class="token punctuation">(</span>page<span class="token punctuation">,</span> many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>get_paginated_response<span class="token punctuation">(</span>serializer<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+
+        serializer <span class="token operator">=</span> self<span class="token punctuation">.</span>get_serializer<span class="token punctuation">(</span>queryset<span class="token punctuation">,</span> many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> Response<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'data'</span><span class="token punctuation">:</span> serializer<span class="token punctuation">.</span>data<span class="token punctuation">,</span> <span class="token string">'message'</span><span class="token punctuation">:</span> <span class="token string">'获取成功'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
 <h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>导入<code>from rest_framework.pagination import PageNumberPagination</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LargeResultsSetPagination</span><span class="params">(PageNumberPagination)</span>:</span></div><div class="line">    page_size = <span class="number">1</span></div><div class="line">    page_size_query_param = <span class="string">'page_size'</span></div><div class="line">    max_page_size = <span class="number">2</span></div></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">LargeResultsSetPagination</span><span class="token punctuation">(</span>PageNumberPagination<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    page_size <span class="token operator">=</span> <span class="token number">1</span>
+    page_size_query_param <span class="token operator">=</span> <span class="token string">'page_size'</span>
+    max_page_size <span class="token operator">=</span> <span class="token number">2</span>
+</code></pre>
 <p>CourseListApiView设置<code>pagination_class = LargeResultsSetPagination</code></p>
 ]]></content>
       
         
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -51,8 +209,12 @@
 <p>这种情况发生就是因为 Django 的 ORM 是惰性的，它只取出当前查询所需响应最小的数据。它不知道你是否有成百上千的相同或相似的数据也需要取出来。</p>
 <p>况且如今，当我们谈到数据库型网站时，一般情况下，最重要的响应指标就是<strong>数据库的访问次数</strong>。</p>
 <p>在 DRF 视图中，我们每次序列化有嵌套关系的数据时都会出现问题，如下面的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class CustomerSerializer(serializers.ModelSerializer):  </div><div class="line">    # This can kill performance!</div><div class="line">    order_descriptions = serializers.StringRelatedField(many=True) </div><div class="line">    # So can this, same exact problem...</div><div class="line">    orders = OrderSerializer(many=True, read_only=True) # This can kill performance!</div></pre></td></tr></table></figure>
-<p>CustomerSerializer 函数里面是这么运行的：</p>
+<pre><code>class CustomerSerializer(serializers.ModelSerializer):  
+    # This can kill performance!
+    order_descriptions = serializers.StringRelatedField(many=True) 
+    # So can this, same exact problem...
+    orders = OrderSerializer(many=True, read_only=True) # This can kill performance!
+</code></pre><p>CustomerSerializer 函数里面是这么运行的：</p>
 <ul>
 <li>获取所有的 <code>customers</code> (需要往返到数据库)</li>
 <li>对于第一个返回的客户，获取他们的 <code>orders</code> (又需要去往返一趟数据库)</li>
@@ -65,8 +227,8 @@
 </ul>
 <p>而且这个很快就变的更糟，如果你 <code>OrderSerializer</code> 本身又有一个嵌套关系，那你就有了嵌套循环，那么即使数据量很小，你也很快就陷入麻烦之中。这有一个经验，一个拥有适度流量的网站，在进入真正的麻烦前也就可以负担起50次到数据库的访问。</p>
 <h3 id="解决-Django-「懒惰」的基本方法"><a href="#解决-Django-「懒惰」的基本方法" class="headerlink" title="解决 Django 「懒惰」的基本方法"></a>解决 Django 「懒惰」的基本方法</h3><p>现在我们解决这个问题的方法就是「预加载」。从本质上讲，就是你提前警告 Django ORM 你要一遍又一遍的告诉它同样无聊的指令。在上面的例子中，在 DRF 开始获取前很简单地加上这句话就搞定了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">queryset = queryset.prefetch_related(&apos;orders&apos;)</div></pre></td></tr></table></figure>
-<p>当 DRF 调用上述相同序列化 customers 时，出现的是这种情况：</p>
+<pre><code>queryset = queryset.prefetch_related(&#39;orders&#39;)
+</code></pre><p>当 DRF 调用上述相同序列化 customers 时，出现的是这种情况：</p>
 <ul>
 <li>获取所有 <code>customers</code>（执行两个往返数据库操作，第一个是获取 customers，第二个获取相关 customers 的所有相关的 orders。）</li>
 <li>对于第一个返回的 customers，获取其 <code>order</code>（不需要访问数据库，我们已经在上一步中获取了所需要的数据）</li>
@@ -79,22 +241,69 @@
 </ul>
 <p>其实 Django ORM 的「预备」是在第1步进行请求，它在本地高速缓存的数据能够提供步骤2+所要求的数据。与之前往返数据库相比从本地缓存数据中读取数据基本上是瞬时的，所以我们在有很多 customers 时就获得了巨大的性能加速。</p>
 <h3 id="解决-Django-REST-Framework-性能问题的标准化模式"><a href="#解决-Django-REST-Framework-性能问题的标准化模式" class="headerlink" title="解决 Django REST Framework 性能问题的标准化模式"></a>解决 Django REST Framework 性能问题的标准化模式</h3><p>我们已经确定了一个优化 Django REST Framework 性能问题的通用模式，那就是每当序列化查询嵌套字段时，我们就添加一个新的 <code>@staticmethod</code> 名叫 <code>setup_eager_loading</code>，像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class CustomerSerializer(serializers.ModelSerializer):  </div><div class="line">    orders = OrderSerializer(many=True, read_only=True)</div><div class="line"></div><div class="line">    def setup_eager_loading(cls, queryset):</div><div class="line">        &quot;&quot;&quot; Perform necessary eager loading of data. &quot;&quot;&quot;</div><div class="line">        queryset = queryset.prefetch_related(&apos;orders&apos;)</div><div class="line">        return queryset</div></pre></td></tr></table></figure>
-<p>这样，不管哪里要用到这个序列化，都只需在调用序列化前简单调用 <code>setup_eager_loading</code> ，就像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">customer_qs = Customers.objects.all()  </div><div class="line">customer_qs = CustomerSerializer.setup_eager_loading(customer_qs)  # Set up eager loading to avoid N+1 selects  </div><div class="line">post_data = CustomerSerializer(customer_qs, many=True).data</div></pre></td></tr></table></figure>
-<p>或者，如果你有一个 <code>APIView</code> 或 <code>ViewSet</code>，你可以在 <code>get_queryset</code> 方法里调用 <code>setup_eager_loading</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">def get_queryset(self):  </div><div class="line">    queryset = Customers.objects.all()</div><div class="line">    # Set up eager loading to avoid N+1 selects</div><div class="line">    queryset = self.get_serializer_class().setup_eager_loading(queryset)  </div><div class="line">    return queryset</div></pre></td></tr></table></figure>
-<h3 id="那么怎样编写-setup-eager-loading"><a href="#那么怎样编写-setup-eager-loading" class="headerlink" title="那么怎样编写 setup_eager_loading"></a>那么怎样编写 <code>setup_eager_loading</code></h3><p>想要解决 Django 的性能问题，最困难的部分就是要熟悉 <code>select_related</code> 和它的小伙伴儿们是如何工作的。在这儿，我们将详细介绍它们在 Django ORM 和 Django REST Framework 中怎样使用。</p>
+<pre><code>class CustomerSerializer(serializers.ModelSerializer):  
+    orders = OrderSerializer(many=True, read_only=True)
+
+    def setup_eager_loading(cls, queryset):
+        &quot;&quot;&quot; Perform necessary eager loading of data. &quot;&quot;&quot;
+        queryset = queryset.prefetch_related(&#39;orders&#39;)
+        return queryset
+</code></pre><p>这样，不管哪里要用到这个序列化，都只需在调用序列化前简单调用 <code>setup_eager_loading</code> ，就像这样：</p>
+<pre><code>customer_qs = Customers.objects.all()  
+customer_qs = CustomerSerializer.setup_eager_loading(customer_qs)  # Set up eager loading to avoid N+1 selects  
+post_data = CustomerSerializer(customer_qs, many=True).data
+</code></pre><p>或者，如果你有一个 <code>APIView</code> 或 <code>ViewSet</code>，你可以在 <code>get_queryset</code> 方法里调用 <code>setup_eager_loading</code>：</p>
+<pre><code>def get_queryset(self):  
+    queryset = Customers.objects.all()
+    # Set up eager loading to avoid N+1 selects
+    queryset = self.get_serializer_class().setup_eager_loading(queryset)  
+    return queryset
+</code></pre><h3 id="那么怎样编写-setup-eager-loading"><a href="#那么怎样编写-setup-eager-loading" class="headerlink" title="那么怎样编写 setup_eager_loading"></a>那么怎样编写 <code>setup_eager_loading</code></h3><p>想要解决 Django 的性能问题，最困难的部分就是要熟悉 <code>select_related</code> 和它的小伙伴儿们是如何工作的。在这儿，我们将详细介绍它们在 Django ORM 和 Django REST Framework 中怎样使用。</p>
 <ul>
 <li><code>select_related</code>：Django ORM 最简单的预加载工具，对于所有<strong>一对一</strong>或<strong>多对一</strong>的数据关系，你都需要从同一个父对象获取数据，如客户的公司名称。这个会被翻译成 SQL 的 join 操作，这样父对象的数据就和子对象的数据一起取回来了。（参见<a href="https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related" target="_blank" rel="external">官方文档</a>）</li>
 <li><code>prefetch_related</code>：对于更复杂的关系，即每个结果有多行（例如 many=True ），像<strong>多对一</strong>或<strong>多对多</strong>的数据关系，比如上述客户的订单，这转化一个二级 SQL 查询，通常有很长的 <code>WHERE ... IN</code> ，从中只选择相关的行。（参见<a href="https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related" target="_blank" rel="external">官方文档</a>）</li>
 <li><code>Prefetch</code>：用于复杂 <code>prefetch_related</code> 查询，例如过滤子集。它也可以嵌套<code>setup_eager_loading</code> 进行调用。 （参见<a href="https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related" target="_blank" rel="external">官方文档</a>）</li>
 </ul>
 <h3 id="一个合适的预加载模型"><a href="#一个合适的预加载模型" class="headerlink" title="一个合适的预加载模型"></a>一个合适的预加载模型</h3><p>在本例中，我们优化一个假想的活动规划网站（巧了，我们正在进行的项目 getfetcher.com 就是这样）的 Django REST Framework 相关的性能问题，我们有一个简单的数据库结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">from django.contrib.auth.models import User</div><div class="line"></div><div class="line">class Event:  </div><div class="line">    &quot;&quot;&quot; A single occasion that has many `attendees` from a number of organizations.&quot;&quot;&quot;</div><div class="line">    creator = models.ForeignKey(User)</div><div class="line">    name = models.TextField()</div><div class="line">    event_date = models.DateTimeField()</div><div class="line"></div><div class="line">class Attendee:  </div><div class="line">    &quot;&quot;&quot; A party-goer who (usually) represents an `organization`, who may attend many `events`.&quot;&quot;&quot;</div><div class="line">    events = models.ManyToManyField(Event, related_name=&apos;attendees&apos;)</div><div class="line">    organization = models.ForeignKey(Organization, null=True)</div><div class="line"></div><div class="line">class Organization:  </div><div class="line">    name = models.TextField()</div></pre></td></tr></table></figure>
-<p>在这个例子中，为了获取所有的事件，我们的预加载代码长这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">class EventSerializer(serializers.ModelSerializer):  </div><div class="line">    creator = serializers.StringRelatedField()</div><div class="line">    attendees = AttendeeSerializer(many=True)</div><div class="line">    unaffiliated_attendees = AttendeeSerializer(many=True)</div><div class="line"></div><div class="line">    @staticmethod</div><div class="line">    def setup_eager_loading(queryset):</div><div class="line">        &quot;&quot;&quot; Perform necessary eager loading of data. &quot;&quot;&quot;</div><div class="line">        # select_related for &quot;to-one&quot; relationships</div><div class="line">        queryset = queryset.select_related(&apos;creator&apos;)</div><div class="line"></div><div class="line">        # prefetch_related for &quot;to-many&quot; relationships</div><div class="line">        queryset = queryset.prefetch_related(</div><div class="line">            &apos;attendees&apos;,</div><div class="line">            &apos;attendees__organization&apos;)</div><div class="line"></div><div class="line">        # Prefetch for subsets of relationships</div><div class="line">        queryset = queryset.prefetch_related(</div><div class="line">            Prefetch(&apos;unaffiliated_attendees&apos;, </div><div class="line">                queryset=Attendee.objects.filter(organization__isnull=True))</div><div class="line">            )</div><div class="line">        return queryset</div></pre></td></tr></table></figure>
-<p>当我们使用 EventSerializer 之前确定调用 <code>setup_eager_loading</code>，这样我们只会有两个大的查询，而不是 N+1 个小的查询，而且我们的表现通常会好很多！</p>
+<pre><code>from django.contrib.auth.models import User
+
+class Event:  
+    &quot;&quot;&quot; A single occasion that has many `attendees` from a number of organizations.&quot;&quot;&quot;
+    creator = models.ForeignKey(User)
+    name = models.TextField()
+    event_date = models.DateTimeField()
+
+class Attendee:  
+    &quot;&quot;&quot; A party-goer who (usually) represents an `organization`, who may attend many `events`.&quot;&quot;&quot;
+    events = models.ManyToManyField(Event, related_name=&#39;attendees&#39;)
+    organization = models.ForeignKey(Organization, null=True)
+
+class Organization:  
+    name = models.TextField()
+</code></pre><p>在这个例子中，为了获取所有的事件，我们的预加载代码长这样：</p>
+<pre><code>class EventSerializer(serializers.ModelSerializer):  
+    creator = serializers.StringRelatedField()
+    attendees = AttendeeSerializer(many=True)
+    unaffiliated_attendees = AttendeeSerializer(many=True)
+
+    @staticmethod
+    def setup_eager_loading(queryset):
+        &quot;&quot;&quot; Perform necessary eager loading of data. &quot;&quot;&quot;
+        # select_related for &quot;to-one&quot; relationships
+        queryset = queryset.select_related(&#39;creator&#39;)
+
+        # prefetch_related for &quot;to-many&quot; relationships
+        queryset = queryset.prefetch_related(
+            &#39;attendees&#39;,
+            &#39;attendees__organization&#39;)
+
+        # Prefetch for subsets of relationships
+        queryset = queryset.prefetch_related(
+            Prefetch(&#39;unaffiliated_attendees&#39;, 
+                queryset=Attendee.objects.filter(organization__isnull=True))
+            )
+        return queryset
+</code></pre><p>当我们使用 EventSerializer 之前确定调用 <code>setup_eager_loading</code>，这样我们只会有两个大的查询，而不是 N+1 个小的查询，而且我们的表现通常会好很多！</p>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>预加载是 Django REST Framework 通用的<a href="http://www.oneapm.com/brand/apm.html" target="_blank" rel="external">性能优化</a>方式，<a href="http://www.oneapm.com/ai/python.html?utm_source=Community&amp;utm_medium=Article&amp;utm_term=%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%20Django%20REST%20Framework%20%20%E7%9A%84%E6%80%A7%E8%83%BD%EF%BC%9F&amp;utm_campaign=AiPythonArti&amp;from=jsclifxvcj" target="_blank" rel="external">OneAPM Python Agent</a> 也是国内通用的性能监控工具，而且支持 Django REST Framework ，下面是一个简单 demo 的截图。</p>
 <p><img src="http://blog.oneapm.com/content/images/2015/12/-----2015-12-11---2-29-18.png" alt="如何优化 Django REST Framework 的性能？ 技术分享"></p>
 <p>任何时候你通过 ORM 查询嵌套关系时，你都应该考虑建立适合的预加载。根据现有经验，这是现在小型和中型 Web 开发中最常见的性能相关问题。</p>
@@ -109,9 +318,9 @@
         
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -1762,8 +1971,14 @@
       <title><![CDATA[一个人的时候]]></title>
       <url>http://sayyourname.cn/2017/02/19/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%B6%E5%80%99/</url>
       <content type="html"><![CDATA[<h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，当你一个人独处的时候，你会想什么，做什么。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">放一首音乐吧，舒缓你紧张神经</div><div class="line"></div><div class="line">读一本书吧，带你去书中的世界</div><div class="line"></div><div class="line">看一场电影吧，体验惊险刺激</div><div class="line"></div><div class="line">写一篇文章吧，记录下你的生活</div></pre></td></tr></table></figure>
-<p><strong>思考人生吧</strong></p>
+<pre><code>放一首音乐吧，舒缓你紧张神经
+
+读一本书吧，带你去书中的世界
+
+看一场电影吧，体验惊险刺激
+
+写一篇文章吧，记录下你的生活
+</code></pre><p><strong>思考人生吧</strong></p>
 <p><code>人是一枝有思想的芦苇</code>，对于生命，我们和其它万物又有什么区别，也不知道怎么滴变异，人类才诞生了智慧，如果不思考，机械的上班，学习，玩，猴子🐒也可以做到啊。</p>
 <h2 id="一个人的行为"><a href="#一个人的行为" class="headerlink" title="一个人的行为"></a>一个人的行为</h2><p><code>君子独处,守正不挠</code>，出自：《汉书·刘向传》有德行的人单居独处，也坚守正道，不肯屈从。</p>
 <p>一个人独处的时候，才是你真正释放自己的时候，你可能再也不用伪装，不用约束自己。这些都没有关系，但是当你一个人独处时变成了另外一个人似的，这真的需要你好好反思了。</p>
@@ -1796,17 +2011,26 @@
 </blockquote>
 <h2 id="本文约定"><a href="#本文约定" class="headerlink" title="本文约定"></a>本文约定</h2><p>如果有写 <code>效果如下：</code>， 在 MWeb 编辑状态下只有用 <code>CMD + 4</code> 或 <code>CMD + R</code> 预览才可以看效果。</p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 第一级标题 `&lt;h1&gt;` </div><div class="line">## 第二级标题 `&lt;h2&gt;` </div><div class="line">###### 第六级标题 `&lt;h6&gt;`</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
+<pre><code># 第一级标题 `&lt;h1&gt;` 
+## 第二级标题 `&lt;h2&gt;` 
+###### 第六级标题 `&lt;h6&gt;`
+</code></pre><p>效果如下：</p>
 <h1 id="第一级标题-lt-h1-gt"><a href="#第一级标题-lt-h1-gt" class="headerlink" title="第一级标题 &lt;h1&gt;"></a>第一级标题 <code>&lt;h1&gt;</code></h1><h2 id="第二级标题-lt-h2-gt"><a href="#第二级标题-lt-h2-gt" class="headerlink" title="第二级标题 &lt;h2&gt;"></a>第二级标题 <code>&lt;h2&gt;</code></h2><h6 id="第六级标题-lt-h6-gt"><a href="#第六级标题-lt-h6-gt" class="headerlink" title="第六级标题 &lt;h6&gt;"></a>第六级标题 <code>&lt;h6&gt;</code></h6><h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">*这些文字会生成`&lt;em&gt;`*</div><div class="line">_这些文字会生成`&lt;u&gt;`_</div><div class="line"></div><div class="line">**这些文字会生成`&lt;strong&gt;`**</div><div class="line">__这些文字会生成`&lt;strong&gt;`__</div></pre></td></tr></table></figure>
-<p>在 MWeb 中的快捷键为： <code>CMD + U</code>、<code>CMD + I</code>、<code>CMD + B</code><br>效果如下：</p>
+<pre><code>*这些文字会生成`&lt;em&gt;`*
+_这些文字会生成`&lt;u&gt;`_
+
+**这些文字会生成`&lt;strong&gt;`**
+__这些文字会生成`&lt;strong&gt;`__
+</code></pre><p>在 MWeb 中的快捷键为： <code>CMD + U</code>、<code>CMD + I</code>、<code>CMD + B</code><br>效果如下：</p>
 <p><em>这些文字会生成<code>&lt;em&gt;</code></em><br><em>这些文字会生成<code>&lt;u&gt;</code></em></p>
 <p><strong>这些文字会生成<code>&lt;strong&gt;</code></strong><br><strong>这些文字会生成<code>&lt;strong&gt;</code></strong></p>
 <h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>四个及以上空格加回车。<br>如果不想打这么多空格，只要回车就为换行，请勾选：<code>Preferences</code> - <code>Themes</code> - <code>Translate newlines to &lt;br&gt; tags</code></p>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* 项目一 无序列表 `* + 空格键`</div><div class="line">* 项目二</div><div class="line">* 项目二的子项目一 无序列表 `TAB + * + 空格键`</div><div class="line">* 项目二的子项目二</div></pre></td></tr></table></figure>
-<p>在 MWeb 中的快捷键为： <code>Option + U</code><br>效果如下：</p>
+<pre><code>* 项目一 无序列表 `* + 空格键`
+* 项目二
+* 项目二的子项目一 无序列表 `TAB + * + 空格键`
+* 项目二的子项目二
+</code></pre><p>在 MWeb 中的快捷键为： <code>Option + U</code><br>效果如下：</p>
 <ul>
 <li>项目一 无序列表 <code>* + 空格键</code></li>
 <li>项目二</li>
@@ -1814,8 +2038,12 @@
 <li>项目二的子项目二</li>
 </ul>
 <h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. 项目一 有序列表 `数字 + . + 空格键`</div><div class="line">2. 项目二 </div><div class="line">3. 项目三</div><div class="line">1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`</div><div class="line">2. 项目三的子项目二</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
+<pre><code>1. 项目一 有序列表 `数字 + . + 空格键`
+2. 项目二 
+3. 项目三
+1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`
+2. 项目三的子项目二
+</code></pre><p>效果如下：</p>
 <ol>
 <li>项目一 有序列表 <code>数字 + . + 空格键</code></li>
 <li>项目二 </li>
@@ -1824,22 +2052,26 @@
 <li>项目三的子项目二</li>
 </ol>
 <h3 id="任务列表（Task-lists）"><a href="#任务列表（Task-lists）" class="headerlink" title="任务列表（Task lists）"></a>任务列表（Task lists）</h3><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- [ ] 任务一 未做任务 `- + 空格 + [ ]`</div><div class="line">- [x] 任务二 已做任务 `- + 空格 + [x]`</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
+<pre><code>- [ ] 任务一 未做任务 `- + 空格 + [ ]`
+- [x] 任务二 已做任务 `- + 空格 + [x]`
+</code></pre><p>效果如下：</p>
 <ul>
 <li>[ ] 任务一 未做任务 <code>- + 空格 + [ ]</code></li>
 <li>[x] 任务二 已做任务 <code>- + 空格 + [x]</code></li>
 </ul>
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)</div><div class="line">格式: ![Alt Text](url)</div></pre></td></tr></table></figure>
-<p><code>Control + Shift + I</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，还可以用拖放图片、<code>CMD + V</code> 粘贴、<code>CMD + Option + I</code> 导入这三种方式来增加图片。<br>效果如下：</p>
+<pre><code>![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)
+格式: ![Alt Text](url)
+</code></pre><p><code>Control + Shift + I</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，还可以用拖放图片、<code>CMD + V</code> 粘贴、<code>CMD + Option + I</code> 导入这三种方式来增加图片。<br>效果如下：</p>
 <p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up"></p>
 <p>MWeb 引入的特别的语法来设置图片宽度，方法是在图片描述后加 <code>-w + 图片宽度</code> 即可，比如说要设置上面的图片的宽度为 140，语法如下：</p>
 <p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up-w140"></p>
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">email &lt;example@example.com&gt;</div><div class="line">[GitHub](http://github.com)</div><div class="line">自动生成连接  &lt;http://www.github.com/&gt;</div></pre></td></tr></table></figure>
-<p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#111;&#x6d;">&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<pre><code>email &lt;example@example.com&gt;
+[GitHub](http://github.com)
+自动生成连接  &lt;http://www.github.com/&gt;
+</code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
+<p>Email 连接： <a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x65;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x40;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x65;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x40;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
@@ -1851,25 +2083,64 @@
 <p>第一行引用<br>第二行费用文字</p>
 </blockquote>
 <h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">像这样即可：`&lt;addr&gt;` `code`</div></pre></td></tr></table></figure>
-<p><code>CMD + K</code> 可插入Markdown语法。<br>效果如下：</p>
+<pre><code>像这样即可：`&lt;addr&gt;` `code`
+</code></pre><p><code>CMD + K</code> 可插入Markdown语法。<br>效果如下：</p>
 <p>像这样即可：<code>&lt;addr&gt;</code> <code>code</code></p>
 <h2 id="多行或者一段代码"><a href="#多行或者一段代码" class="headerlink" title="多行或者一段代码"></a>多行或者一段代码</h2><p>Markdown 语法：</p>
-<pre><code>​<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(arg) &#123;</div><div class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">​</div></pre></td></tr></table></figure>
+<pre><code>​```js
+function fancyAlert(arg) {
+    if(arg) {
+    $.facebox({div:&#39;#foo&#39;})
+    }
+
+}
+​```
 </code></pre><p><code>CMD + Shift + K</code> 可插入Markdown语法。<br>效果如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyAlert</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(arg) &#123;</div><div class="line">    $.facebox(&#123;<span class="attr">div</span>:<span class="string">'#foo'</span>&#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fancyAlert</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $<span class="token punctuation">.</span><span class="token function">facebox</span><span class="token punctuation">(</span><span class="token punctuation">{</span>div<span class="token punctuation">:</span><span class="token string">'#foo'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="顺序图或流程图"><a href="#顺序图或流程图" class="headerlink" title="顺序图或流程图"></a>顺序图或流程图</h2><p>Markdown 语法：</p>
-<pre><code>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</div><div class="line">Note right of 李四: 李四愣了一下，说：</div><div class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</div><div class="line">​</div></pre></td></tr></table></figure>
+<pre><code>​```sequence
+张三-&gt;李四: 嘿，小四儿, 写博客了没?
+Note right of 李四: 李四愣了一下，说：
+李四--&gt;张三: 忙得吐血，哪有时间写。
+​```
 
+​```flow
+st=&gt;start: 开始
+e=&gt;end: 结束
+op=&gt;operation: 我的操作
+cond=&gt;condition: 确认？
 
-​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line">op=&gt;operation: 我的操作</div><div class="line">cond=&gt;condition: 确认？</div><div class="line"></div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div><div class="line">​</div></pre></td></tr></table></figure>
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+​```
 </code></pre><p>效果如下（ <code>Preferences</code> - <code>Themes</code> - <code>Enable sequence &amp; flow chart</code> 才会看到效果 ）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</div><div class="line">Note right of 李四: 李四愣了一下，说：</div><div class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e=&gt;end: 结束</div><div class="line">op=&gt;operation: 我的操作</div><div class="line">cond=&gt;condition: 确认？</div><div class="line"></div><div class="line">st-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;op</div></pre></td></tr></table></figure>
+<pre class=" language-sequence"><code class="language-sequence">张三->李四: 嘿，小四儿, 写博客了没?
+Note right of 李四: 李四愣了一下，说：
+李四-->张三: 忙得吐血，哪有时间写。
+</code></pre>
+<pre class=" language-flow"><code class="language-flow">st=>start: 开始
+e=>end: 结束
+op=>operation: 我的操作
+cond=>condition: 确认？
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+</code></pre>
 <p>更多请参考：<a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="external">http://bramp.github.io/js-sequence-diagrams/</a>, <a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="external">http://adrai.github.io/flowchart.js/</a></p>
 <h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>Markdown 语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">第一格表头 | 第二格表头</div><div class="line">--------- | -------------</div><div class="line">内容单元格 第一列第一格 | 内容单元格第二列第一格</div><div class="line">内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
+<pre><code>第一格表头 | 第二格表头
+--------- | -------------
+内容单元格 第一列第一格 | 内容单元格第二列第一格
+内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格
+</code></pre><p>效果如下：</p>
 <table>
 <thead>
 <tr>
@@ -1896,13 +2167,70 @@
 <p>``</p>
 <hr>
 <hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-------</div><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">***</div><div class="line"></div><div class="line">*****</div><div class="line"></div><div class="line">- - -</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">## MathJax</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure>
-<p>块级公式：<br>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+<pre><code>
+-------
+
+效果如下：
+
+***
+
+*****
+
+- - -
+
+
+
+## MathJax
+
+Markdown 语法：
+</code></pre><p>块级公式：<br>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
 <p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =<br>1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}<br>{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
-<p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下（`Preferences` - `Themes` - `Enable MathJax` 才会看到效果）：</div><div class="line"></div><div class="line">块级公式：</div><div class="line">$$	x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$</div><div class="line"></div><div class="line">\\[ \frac&#123;1&#125;&#123;\Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;\frac25 \pi&#125;&#125; =</div><div class="line">1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-6\pi&#125;&#125;</div><div class="line">&#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125; &#123;1+\ldots&#125; &#125; &#125; &#125; \\]</div><div class="line"></div><div class="line"></div><div class="line">行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</div><div class="line"></div><div class="line"></div><div class="line">-------</div><div class="line"></div><div class="line">## 脚注（Footnote）</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure></p>
-<p>这是一个脚注：[^sample_footnote]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">这是一个脚注：[^sample_footnote]</div><div class="line"></div><div class="line">[^sample_footnote]: 这里是脚注信息</div><div class="line"></div><div class="line"></div><div class="line">## 注释和阅读更多</div><div class="line"></div><div class="line">&lt;!-- comment --&gt;</div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">Actions-&gt;Insert Read More Comment *或者* `Command + .`</div><div class="line">**注** 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。</div><div class="line"></div><div class="line">## TOC</div><div class="line"></div><div class="line">Markdown 语法：</div></pre></td></tr></table></figure></p>
-<p>[TOC]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果如下：</div><div class="line"></div><div class="line">[TOC]</div></pre></td></tr></table></figure></p>
-]]></content>
+<p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</p>
+<pre><code>
+效果如下（`Preferences` - `Themes` - `Enable MathJax` 才会看到效果）：
+
+块级公式：
+$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+\\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } \\]
+
+
+行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+
+
+-------
+
+## 脚注（Footnote）
+
+Markdown 语法：
+</code></pre><p>这是一个脚注：[^sample_footnote]</p>
+<pre><code>
+效果如下：
+
+这是一个脚注：[^sample_footnote]
+
+[^sample_footnote]: 这里是脚注信息
+
+
+## 注释和阅读更多
+
+&lt;!-- comment --&gt;
+&lt;!-- more --&gt;
+
+Actions-&gt;Insert Read More Comment *或者* `Command + .`
+**注** 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。
+
+## TOC
+
+Markdown 语法：
+</code></pre><p>[TOC]</p>
+<pre><code>
+效果如下：
+
+[TOC]
+</code></pre>]]></content>
       
         
         <tags>
@@ -1920,11 +2248,40 @@
       <url>http://sayyourname.cn/2017/02/19/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo添加音乐插件方法网上已经有一大堆了，此文章是定制化的在文章中插入音乐，比如<a href="http://sayyourname.cn/about/index.html">这样的</a>文章。只需要在文章加入<code>music: xxx</code>就可以设置你想要的音乐了（xxx为网易某个歌曲id）</p>
 <h2 id="定制化"><a href="#定制化" class="headerlink" title="定制化"></a>定制化</h2><p>定制化基于我的主题<a href="https://material.viosey.com/" target="_blank" rel="external">Material</a>，网易云音乐的外链想必不用说了，我复制下来的是这样的:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=29567192&amp;auto=0&amp;height=66"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">marginwidth</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">marginheight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span>330</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span>86</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>//music.163.com/outchain/player?type<span class="token punctuation">=</span>2&amp;id<span class="token punctuation">=</span>29567192&amp;auto<span class="token punctuation">=</span>0&amp;height<span class="token punctuation">=</span>66<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>打开<code>themes/material/layout/_partial/post-content.ejs</code>复制如下代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"post-content"</span> <span class="attr">class</span>=<span class="string">"markdown-&lt;%= theme.reading.markdown %&gt; mdl-color-text--grey-700 mdl-card__supporting-text fade out"</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">page.music</span> != <span class="string">null)</span> &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">class</span>=<span class="string">"music"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.scheme</span> === <span class="string">'Paradox'</span>) &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.content</span> %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.scheme</span> === <span class="string">'Isolation'</span>) &#123; %&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-content_wrapper"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"post-title"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.title</span> %&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.content</span> %&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></span></div><div class="line">    $('.music').attr('src', '//music.163.com/outchain/player?type=2&amp;id=' + <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.music</span> %&gt;</span> + '&amp;auto=0&amp;height=66');</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>markdown-&lt;%<span class="token punctuation">=</span> theme.reading.markdown %<span class="token punctuation">></span> mdl-color-text--grey-700 mdl-card__supporting-text fade out<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    &lt;% if(page.music != null) { %>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>music<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">marginwidth</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">marginheight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span>330</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span>86</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">}</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+
+    &lt;% if(theme.scheme === 'Paradox') { %>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%-</span> <span class="token attr-name">page.content</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">}</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+
+    &lt;% if(theme.scheme === 'Isolation') { %>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post-content_wrapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%-</span> <span class="token attr-name">page.title</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%-</span> <span class="token attr-name">page.content</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">}</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+    $('.music').attr('src', '//music.163.com/outchain/player?type=2&amp;id=' + <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%-</span> <span class="token attr-name">page.music</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span> + '&amp;auto=0&amp;height=66');
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>然后在文章添加music就行了：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 关于我</div><div class="line">date: 2017-02-19 08:00:13</div><div class="line"><span class="section">music: 29567192</span></div><div class="line">---</div></pre></td></tr></table></figure>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>
+title: 关于我
+date: 2017-02-19 08:00:13
+<span class="token title important">music: 29567192
+<span class="token punctuation">---</span></span>
+</code></pre>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>网易云音乐喜欢了很久，日推很赞，质量很好，最重要的是评论让你觉得不是一个人在听歌，如果想要查看歌曲id，直接在客户端上的歌曲上复制链接地址就ok</p>
 <p>这里有个小bug，插件有时会刷新两遍，有很多种可能的原因，算了，先放过它吧</p>
 <hr>
@@ -1935,9 +2292,9 @@
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
@@ -1953,9 +2310,9 @@
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
@@ -1964,15 +2321,211 @@
     <entry>
       <title><![CDATA[Node.js上传图片到七牛]]></title>
       <url>http://sayyourname.cn/2017/02/17/Node.js%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E4%B8%83%E7%89%9B/</url>
-      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>主题基于 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a> ，作者使用的是<a href="https://www.instagram.com/" target="_blank" rel="external">Instagram</a>拉取的相册，捣鼓了半天，翻墙申请账号，最后发现图片爬不下来，后来发现<a href="https://yq.aliyun.com/articles/8607" target="_blank" rel="external">一篇</a>七牛上传的node脚本，因为需要上传的图片太多，然后改成了自己需要的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (stats.isFile()) &#123;</div><div class="line">    <span class="keyword">var</span> suffix = getFilenameSuffix(files[index]);</div><div class="line">    <span class="keyword">if</span>(!(suffix==<span class="string">'.js'</span>|| suffix == <span class="string">'.DS_Store'</span>))&#123;</div><div class="line">      <span class="comment">//要上传文件的本地路径</span></div><div class="line">      filePath = path+<span class="string">'/'</span>+files[index];</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'抓取到文件: '</span>+files[index]);</div><div class="line">      <span class="comment">//上传到七牛后保存的文件名</span></div><div class="line">      key = files[index];</div><div class="line">      <span class="comment">//生成上传 Token</span></div><div class="line">      token = uptoken(bucket, key);</div><div class="line">      <span class="comment">// 异步执行</span></div><div class="line">      uploadFile(token, key, filePath);</div><div class="line">      arr.push(files[index]);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>这是上传图片的主要代码，主要问题有在<code>photos</code>文件中如果新增了图片，会把以前的图片再次上传一遍，所以做了检查重复不会上传：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 判断数组中是否包含某元素</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_contain</span>(<span class="params">array, obj</span>)</span>&#123;</div><div class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</div><div class="line">     <span class="keyword">if</span> (array[i] == obj)<span class="comment">//如果要求数据类型也一致，这里可使用恒等号===</span></div><div class="line">         <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后愉快的开始执行，因为<code>photos</code>文件里大约有1000多张图片，理所当然的电脑直接死机。因为执行了一千次异步方法，js又是<a href="http://m.blog.csdn.net/article/details?id=53522759" target="_blank" rel="external">单线程</a>，那就用同步上传的方法，js异步改成同步的话有嵌套或者回调，我用了<a href="http://caolan.github.io/async/" target="_blank" rel="external">async</a>库，用法很简单:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span>.series([</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; ... &#125;,</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; ... &#125;</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>主题基于 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a> ，作者使用的是<a href="https://www.instagram.com/" target="_blank" rel="external">Instagram</a>拉取的相册，捣鼓了半天，翻墙申请账号，最后发现图片爬不下来，后来发现<a href="https://yq.aliyun.com/articles/8607" target="_blank" rel="external">一篇</a>七牛上传的node脚本，因为需要上传的图片太多，然后改成了自己需要的。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> suffix <span class="token operator">=</span> <span class="token function">getFilenameSuffix</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>suffix<span class="token operator">==</span><span class="token string">'.js'</span><span class="token operator">||</span> suffix <span class="token operator">==</span> <span class="token string">'.DS_Store'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">//要上传文件的本地路径</span>
+      filePath <span class="token operator">=</span> path<span class="token operator">+</span><span class="token string">'/'</span><span class="token operator">+</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'抓取到文件: '</span><span class="token operator">+</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//上传到七牛后保存的文件名</span>
+      key <span class="token operator">=</span> files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//生成上传 Token</span>
+      token <span class="token operator">=</span> <span class="token function">uptoken</span><span class="token punctuation">(</span>bucket<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// 异步执行</span>
+      <span class="token function">uploadFile</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> key<span class="token punctuation">,</span> filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>这是上传图片的主要代码，主要问题有在<code>photos</code>文件中如果新增了图片，会把以前的图片再次上传一遍，所以做了检查重复不会上传：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/**
+* 判断数组中是否包含某元素
+*/</span>
+<span class="token keyword">function</span> <span class="token function">array_contain</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token keyword">if</span> <span class="token punctuation">(</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> obj<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//如果要求数据类型也一致，这里可使用恒等号===</span>
+         <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>然后愉快的开始执行，因为<code>photos</code>文件里大约有1000多张图片，理所当然的电脑直接死机。因为执行了一千次异步方法，js又是<a href="http://m.blog.csdn.net/article/details?id=53522759" target="_blank" rel="external">单线程</a>，那就用同步上传的方法，js异步改成同步的话有嵌套或者回调，我用了<a href="http://caolan.github.io/async/" target="_blank" rel="external">async</a>库，用法很简单:</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">async</span><span class="token punctuation">.</span><span class="token function">series</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token keyword">function</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token keyword">function</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>要求传入函数数组，而不是对象Object数组，所以我把上传图片方法改成了闭包:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//构造上传函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">uploadFile</span>(<span class="params">uptoken, key, localFile</span>) </span>&#123;</div><div class="line">   <span class="keyword">var</span> extra = <span class="keyword">new</span> qiniu.io.PutExtra();</div><div class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; qiniu.io.putFile(uptoken, key, localFile, extra, <span class="function"><span class="keyword">function</span>(<span class="params">err, ret</span>) </span>&#123;</div><div class="line">     <span class="keyword">if</span>(!err) &#123;</div><div class="line">       <span class="comment">// 上传成功， 处理返回值</span></div><div class="line">       <span class="built_in">console</span>.log(<span class="string">'上传成功 : '</span>,ret.hash, ret.key);</div><div class="line">       callback();</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">       <span class="comment">// 上传失败， 处理返回代码</span></div><div class="line">       <span class="built_in">console</span>.log(err);</div><div class="line">       callback();</div><div class="line">     &#125;</div><div class="line"> &#125;);</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//构造上传函数</span>
+<span class="token keyword">function</span> <span class="token function">uploadFile</span><span class="token punctuation">(</span>uptoken<span class="token punctuation">,</span> key<span class="token punctuation">,</span> localFile<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">var</span> extra <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">qiniu<span class="token punctuation">.</span>io<span class="token punctuation">.</span>PutExtra</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token punctuation">{</span> qiniu<span class="token punctuation">.</span>io<span class="token punctuation">.</span><span class="token function">putFile</span><span class="token punctuation">(</span>uptoken<span class="token punctuation">,</span> key<span class="token punctuation">,</span> localFile<span class="token punctuation">,</span> extra<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> ret<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">// 上传成功， 处理返回值</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'上传成功 : '</span><span class="token punctuation">,</span>ret<span class="token punctuation">.</span>hash<span class="token punctuation">,</span> ret<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">// 上传失败， 处理返回代码</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>当读取完图片之后执行上传：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (index == files.length) &#123;</div><div class="line">     <span class="comment">// 执行上传</span></div><div class="line">     <span class="built_in">console</span>.log(funArr.length);</div><div class="line">     <span class="keyword">async</span>.series(funArr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(<span class="string">"上传完成"</span>);</div><div class="line">       fs.writeFile(<span class="string">"./ins.json"</span>, <span class="built_in">JSON</span>.stringify(arr, <span class="literal">null</span>, <span class="string">"\t"</span>));</div><div class="line">       <span class="keyword">return</span>;</div><div class="line">     &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> files<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">// 执行上传</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>funArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">async</span><span class="token punctuation">.</span><span class="token function">series</span><span class="token punctuation">(</span>funArr<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"上传完成"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token string">"./ins.json"</span><span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">return</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
 <p>修改过后的tool.js脚本代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line">    <span class="keyword">const</span> photosPath = <span class="string">"images/photos"</span>;</div><div class="line">    <span class="keyword">const</span> blogPath = <span class="string">"images/blog"</span>;</div><div class="line">    <span class="keyword">var</span> qiniu = <span class="built_in">require</span>(<span class="string">"qiniu"</span>);</div><div class="line">    <span class="keyword">var</span> <span class="keyword">async</span> = <span class="built_in">require</span>(<span class="string">"async"</span>);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//需要填写你的 Access Key 和 Secret Key</span></div><div class="line">    qiniu.conf.ACCESS_KEY = <span class="string">''</span>;</div><div class="line">    qiniu.conf.SECRET_KEY = <span class="string">''</span>;</div><div class="line"></div><div class="line">    <span class="comment">//构建上传策略函数</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">uptoken</span>(<span class="params">bucket, key</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> putPolicy = <span class="keyword">new</span> qiniu.rs.PutPolicy(bucket+<span class="string">":"</span>+key);</div><div class="line">      <span class="keyword">return</span> putPolicy.token();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//构造上传函数</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">uploadFile</span>(<span class="params">uptoken, key, localFile, arr, filename</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> extra = <span class="keyword">new</span> qiniu.io.PutExtra();</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123; qiniu.io.putFile(uptoken, key, localFile, extra, <span class="function"><span class="keyword">function</span>(<span class="params">err, ret</span>) </span>&#123;</div><div class="line">          <span class="keyword">if</span>(!err) &#123;</div><div class="line">            <span class="comment">// 上传成功， 处理返回值</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'上传成功 : '</span>,ret.hash, ret.key);</div><div class="line">            arr.push(filename);</div><div class="line">            callback();</div><div class="line">          &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 上传失败， 处理返回代码</span></div><div class="line">            <span class="built_in">console</span>.log(err);</div><div class="line">            callback();</div><div class="line">          &#125;</div><div class="line">      &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 读取文件后缀名称，并转化成小写</div><div class="line">     * @param file_name</div><div class="line">     * @returns</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getFilenameSuffix</span>(<span class="params">file_name</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span>(file_name==<span class="string">'.DS_Store'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'.DS_Store'</span>;</div><div class="line">      &#125;</div><div class="line">        <span class="keyword">if</span> (file_name == <span class="literal">null</span> || file_name.length == <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">        <span class="keyword">var</span> result = <span class="regexp">/\.[^\.]+/</span>.exec(file_name);</div><div class="line">        <span class="keyword">return</span> result == <span class="literal">null</span> ? <span class="literal">null</span> : (result + <span class="string">""</span>).toLowerCase();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 判断数组中是否包含某元素</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">array_contain</span>(<span class="params">array, obj</span>)</span>&#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</div><div class="line">          <span class="keyword">if</span> (array[i] == obj)<span class="comment">//如果要求数据类型也一致，这里可使用恒等号===</span></div><div class="line">              <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line">    读取photos内的图片</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">startUploadImg</span>(<span class="params">path, file_name, updload_path</span>) </span>&#123;</div><div class="line">      fs.readdir(path, <span class="function"><span class="keyword">function</span> (<span class="params">err, files</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (err) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//要上传的空间</span></div><div class="line">        bucket = updload_path;</div><div class="line"></div><div class="line">        <span class="comment">// 读取json文件</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">          <span class="keyword">var</span> data = fs.readFileSync(file_name, <span class="string">'utf-8'</span>);</div><div class="line">          <span class="keyword">var</span> arr = <span class="built_in">JSON</span>.parse(data);</div><div class="line">        &#125; <span class="keyword">catch</span> (err) &#123;</div><div class="line">          <span class="keyword">var</span> arr = [];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line"></div><div class="line">        <span class="keyword">var</span> funArr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line">        (<span class="function"><span class="keyword">function</span> <span class="title">iterator</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">          <span class="keyword">if</span> (index == files.length) &#123;</div><div class="line">                <span class="comment">// 执行上传</span></div><div class="line">                <span class="built_in">console</span>.log(funArr.length);</div><div class="line">                <span class="keyword">async</span>.series(funArr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">                  <span class="built_in">console</span>.log(<span class="string">"上传完成"</span>);</div><div class="line">                  fs.writeFile(file_name, <span class="built_in">JSON</span>.stringify(arr, <span class="literal">null</span>, <span class="string">"\t"</span>));</div><div class="line">                  <span class="keyword">return</span>;</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">            fs.stat(path + <span class="string">"/"</span> + files[index], <span class="function"><span class="keyword">function</span> (<span class="params">err, stats</span>) </span>&#123;</div><div class="line">                <span class="keyword">if</span> (err) &#123;</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (stats.isFile() &amp;&amp; !array_contain(arr, files[index])) &#123;</div><div class="line">                  <span class="keyword">var</span> suffix = getFilenameSuffix(files[index]);</div><div class="line">                  <span class="keyword">if</span>(!(suffix==<span class="string">'.js'</span>|| suffix == <span class="string">'.DS_Store'</span>))&#123;</div><div class="line">                    <span class="comment">//要上传文件的本地路径</span></div><div class="line">                    filePath = path+<span class="string">'/'</span>+files[index];</div><div class="line">                    <span class="comment">//上传到七牛后保存的文件名</span></div><div class="line">                    key = files[index];</div><div class="line">                    </div><div class="line">                    <span class="keyword">if</span> (updload_path == <span class="string">'misterdeng'</span>) &#123;</div><div class="line">                      <span class="keyword">if</span> (!array_contain(arr, <span class="string">'http://od50s29vd.bkt.clouddn.com/'</span>+files[index])) &#123;</div><div class="line">                        <span class="comment">//生成上传 Token</span></div><div class="line">                        token = uptoken(bucket, key);</div><div class="line">                        <span class="comment">// 异步执行</span></div><div class="line">                        funArr.push(uploadFile(token, key, filePath, arr, <span class="string">'http://od50s29vd.bkt.clouddn.com/'</span>+files[index]));</div><div class="line">                      &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        <span class="built_in">console</span>.log(<span class="string">'这个博客图片已经上传过了'</span>);</div><div class="line">                      &#125;</div><div class="line">                      </div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                      <span class="comment">//生成上传 Token</span></div><div class="line">                      token = uptoken(bucket, key);</div><div class="line">                      <span class="comment">// 异步执行</span></div><div class="line">                      funArr.push(uploadFile(token, key, filePath, arr, files[index]));</div><div class="line">                    &#125;</div><div class="line">                    </div><div class="line">                &#125;</div><div class="line"></div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                      <span class="built_in">console</span>.log(<span class="string">'不是文件或者已经上传过了: '</span>+files[index]);</div><div class="line">                    &#125;</div><div class="line">                iterator(index + <span class="number">1</span>);</div><div class="line">            &#125;)</div><div class="line">        &#125;(<span class="number">0</span>));</div><div class="line"></div><div class="line">    &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">      <span class="comment">// 执行方法</span></div><div class="line">      startUploadImg(blogPath, <span class="string">'blog.json'</span>, <span class="string">'misterdeng'</span>);</div><div class="line">      startUploadImg(photosPath, <span class="string">'source/photos/ins.json'</span>, <span class="string">'hexo'</span>);</div></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> photosPath <span class="token operator">=</span> <span class="token string">"images/photos"</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> blogPath <span class="token operator">=</span> <span class="token string">"images/blog"</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> qiniu <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"qiniu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> <span class="token keyword">async</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"async"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token comment" spellcheck="true">//需要填写你的 Access Key 和 Secret Key</span>
+    qiniu<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>ACCESS_KEY <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    qiniu<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>SECRET_KEY <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//构建上传策略函数</span>
+    <span class="token keyword">function</span> <span class="token function">uptoken</span><span class="token punctuation">(</span>bucket<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> putPolicy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">qiniu<span class="token punctuation">.</span>rs<span class="token punctuation">.</span>PutPolicy</span><span class="token punctuation">(</span>bucket<span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> putPolicy<span class="token punctuation">.</span><span class="token function">token</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+
+    <span class="token comment" spellcheck="true">//构造上传函数</span>
+    <span class="token keyword">function</span> <span class="token function">uploadFile</span><span class="token punctuation">(</span>uptoken<span class="token punctuation">,</span> key<span class="token punctuation">,</span> localFile<span class="token punctuation">,</span> arr<span class="token punctuation">,</span> filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> extra <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">qiniu<span class="token punctuation">.</span>io<span class="token punctuation">.</span>PutExtra</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token punctuation">{</span> qiniu<span class="token punctuation">.</span>io<span class="token punctuation">.</span><span class="token function">putFile</span><span class="token punctuation">(</span>uptoken<span class="token punctuation">,</span> key<span class="token punctuation">,</span> localFile<span class="token punctuation">,</span> extra<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> ret<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 上传成功， 处理返回值</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'上传成功 : '</span><span class="token punctuation">,</span>ret<span class="token punctuation">.</span>hash<span class="token punctuation">,</span> ret<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 上传失败， 处理返回代码</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 读取文件后缀名称，并转化成小写
+     * @param file_name
+     * @returns
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">getFilenameSuffix</span><span class="token punctuation">(</span>file_name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>file_name<span class="token operator">==</span><span class="token string">'.DS_Store'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">'.DS_Store'</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>file_name <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> file_name<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token regex">/\.[^\.]+/</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>file_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>result <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 判断数组中是否包含某元素
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">array_contain</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> obj<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//如果要求数据类型也一致，这里可使用恒等号===</span>
+              <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/*
+    读取photos内的图片
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">startUploadImg</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> file_name<span class="token punctuation">,</span> updload_path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      fs<span class="token punctuation">.</span><span class="token function">readdir</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> files<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">//要上传的空间</span>
+        bucket <span class="token operator">=</span> updload_path<span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 读取json文件</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          <span class="token keyword">var</span> data <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">var</span> arr <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token keyword">var</span> funArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">iterator</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> files<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 执行上传</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>funArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">async</span><span class="token punctuation">.</span><span class="token function">series</span><span class="token punctuation">(</span>funArr<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"上传完成"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token keyword">return</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            fs<span class="token punctuation">.</span><span class="token function">stat</span><span class="token punctuation">(</span>path <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> stats<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">array_contain</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  <span class="token keyword">var</span> suffix <span class="token operator">=</span> <span class="token function">getFilenameSuffix</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>suffix<span class="token operator">==</span><span class="token string">'.js'</span><span class="token operator">||</span> suffix <span class="token operator">==</span> <span class="token string">'.DS_Store'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//要上传文件的本地路径</span>
+                    filePath <span class="token operator">=</span> path<span class="token operator">+</span><span class="token string">'/'</span><span class="token operator">+</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//上传到七牛后保存的文件名</span>
+                    key <span class="token operator">=</span> files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>updload_path <span class="token operator">==</span> <span class="token string">'misterdeng'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">array_contain</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token string">'http://od50s29vd.bkt.clouddn.com/'</span><span class="token operator">+</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment" spellcheck="true">//生成上传 Token</span>
+                        token <span class="token operator">=</span> <span class="token function">uptoken</span><span class="token punctuation">(</span>bucket<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token comment" spellcheck="true">// 异步执行</span>
+                        funArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">uploadFile</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> key<span class="token punctuation">,</span> filePath<span class="token punctuation">,</span> arr<span class="token punctuation">,</span> <span class="token string">'http://od50s29vd.bkt.clouddn.com/'</span><span class="token operator">+</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'这个博客图片已经上传过了'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      <span class="token punctuation">}</span>
+
+                    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                      <span class="token comment" spellcheck="true">//生成上传 Token</span>
+                      token <span class="token operator">=</span> <span class="token function">uptoken</span><span class="token punctuation">(</span>bucket<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      <span class="token comment" spellcheck="true">// 异步执行</span>
+                      funArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">uploadFile</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> key<span class="token punctuation">,</span> filePath<span class="token punctuation">,</span> arr<span class="token punctuation">,</span> files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+
+                <span class="token punctuation">}</span>
+
+                    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'不是文件或者已经上传过了: '</span><span class="token operator">+</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token function">iterator</span><span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+      <span class="token comment" spellcheck="true">// 执行方法</span>
+      <span class="token function">startUploadImg</span><span class="token punctuation">(</span>blogPath<span class="token punctuation">,</span> <span class="token string">'blog.json'</span><span class="token punctuation">,</span> <span class="token string">'misterdeng'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">startUploadImg</span><span class="token punctuation">(</span>photosPath<span class="token punctuation">,</span> <span class="token string">'source/photos/ins.json'</span><span class="token punctuation">,</span> <span class="token string">'hexo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <hr>
 <p>刚刚把tool修改成了直接可以上传两个文件夹的图片，一个文章引用，一个是相册，附上一张效果图：<br><img src="http://od50s29vd.bkt.clouddn.com/QQ20170217-101138@2x.png" alt=""></p>
 <p>​    </p>
