@@ -523,7 +523,13 @@ a {
     min-height: 400px;
     flex-direction: column;
     align-items: stretch;
-    border-radius: 2px;
+    border-radius: 5px;
+}
+#scheme-Paradox .material-layout .mdl-card:hover {
+    transform: translateY(-2%);
+    box-shadow: 1px 4px 10px 2px #CCC;
+    -webkit-box-shadow: 1px 4px 10px 2px #CCC;
+    -moz-box-shadow: 1px 4px 10px 2px #CCC;
 }
 @media screen and (max-width: 480px) {
     #scheme-Paradox .material-post .mdl-card {

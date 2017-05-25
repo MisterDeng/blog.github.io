@@ -498,6 +498,11 @@ a {
     margin-bottom: 47.59px;
     margin-top: 0;
 }
+#scheme-Paradox .post_entry-module:hover {
+    transform: translateY(-2%);
+    // box-shadow: 1px 1px 10px 0px #CCC;
+    -webkit-transition: all .4s;
+}
 #scheme-Paradox .material-layout .material-post,
 #scheme-Paradox .material-layout .material-index {
     display: flex;
@@ -524,11 +529,6 @@ a {
     flex-direction: column;
     align-items: stretch;
     border-radius: 5px;
-}
-#scheme-Paradox .material-layout .mdl-card:hover {
-    transform: translateY(-2%);
-    // box-shadow: 1px 1px 10px 0px #CCC;
-    -webkit-transition: all .4s;
 }
 @media screen and (max-width: 480px) {
     #scheme-Paradox .material-post .mdl-card {
