@@ -475,7 +475,7 @@ a {
     }
 }
 #scheme-Paradox .index-top-block-slogan {
-    font-size: 40px;
+    font-size: 30px;
     line-height: 26px;
     font-weight: 400;
     margin: 0;
@@ -497,6 +497,11 @@ a {
 #scheme-Paradox .post_entry-module {
     margin-bottom: 47.59px;
     margin-top: 0;
+}
+#scheme-Paradox .post_entry-module:hover {
+    transform: translateY(-2%);
+    // box-shadow: 1px 1px 10px 0px #CCC;
+    -webkit-transition: all .4s;
 }
 #scheme-Paradox .material-layout .material-post,
 #scheme-Paradox .material-layout .material-index {
@@ -520,16 +525,17 @@ a {
 }
 #scheme-Paradox .material-layout .mdl-card {
     display: flex;
-    min-height: 400px;
+    min-height: 480px;
     flex-direction: column;
     align-items: stretch;
     border-radius: 5px;
 }
-#scheme-Paradox .material-layout .mdl-card:hover {
-    transform: translateY(-2%);
-    box-shadow: 1px 4px 10px 2px #CCC;
-    -webkit-box-shadow: 1px 4px 10px 2px #CCC;
-    -moz-box-shadow: 1px 4px 10px 2px #CCC;
+#scheme-Paradox .material-layout .header-card {
+    display: flex;
+    min-height: 400px;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 5px;
 }
 @media screen and (max-width: 480px) {
     #scheme-Paradox .material-post .mdl-card {
@@ -837,7 +843,8 @@ a {
 }
 #scheme-Paradox .material-layout .something-else {
     z-index: 7;
-    overflow: visible
+    overflow: visible;
+    background-color: white;
 }
 #scheme-Paradox .material-layout .amazing .mdl-card__title {
     background-color: #263238
@@ -1128,8 +1135,7 @@ a {
     }
 }
 #scheme-Paradox .article-headline-p {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 24px;
     font-weight: 400;
     margin: 0;
     text-shadow: 1px 1px 8px #444
@@ -1778,10 +1784,10 @@ a {
     box-sizing: border-box
 }
 .sidebar-material-icons {
-    margin-right: 2pc;
+    margin-right: 1pc;
     width: 24px;
     height: 24px;
-    top: 15%;
+    background-size: 24px 24px;
     position: relative
 }
 .sidebar-indent-left1pc-element {
