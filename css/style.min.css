@@ -525,6 +525,13 @@ a {
 }
 #scheme-Paradox .material-layout .mdl-card {
     display: flex;
+    min-height: 480px;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 5px;
+}
+#scheme-Paradox .material-layout .header-card {
+    display: flex;
     min-height: 400px;
     flex-direction: column;
     align-items: stretch;
@@ -836,7 +843,8 @@ a {
 }
 #scheme-Paradox .material-layout .something-else {
     z-index: 7;
-    overflow: visible
+    overflow: visible;
+    background-color: white;
 }
 #scheme-Paradox .material-layout .amazing .mdl-card__title {
     background-color: #263238
