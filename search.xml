@@ -4,6 +4,59 @@
   
     
     <entry>
+      <title><![CDATA[客从何处来]]></title>
+      <url>http://sayyourname.cn/2017/06/07/%E5%AE%A2%E4%BB%8E%E4%BD%95%E5%A4%84%E6%9D%A5/</url>
+      <content type="html"><![CDATA[<pre><code>作曲 : 燕池
+作词 : 蘅初
+编曲：李大亮、燕池
+风里藏着秘密，遇山散了
+花里喃着耳语，迎雾没了
+怀里拥着温度，沾露凉了
+手里攥着船票，入水化了
+散落的繁星，谱给无眠旅人的安眠曲
+松软的土地，呼吸青草芳香悦然前行
+故乡的过客，远方的归人
+无意间我说起的故事，你又是否相信
+远方，让我大闹一场悄然离去的故乡
+故乡，让我收藏荣耀戏谑人生的远方
+不辞而别的朋友，一见如故的路人
+轻声问起，客往何处去
+风里藏着秘密，遇山散了
+花里喃着耳语，迎雾没了
+怀里拥着温度，沾露凉了
+手里攥着船票，入水化了
+我若问自己，客从何处来
+被湮灭的理想，被阐释的爱情
+我若问自己，客从何处来
+被所相信的相信，被所否定的否定
+月应有圆缺，日不惧升落
+被所崇拜的崇拜，被所怀疑的怀疑
+客从何处来，客往何处去
+转身即是远方，前路亦是故乡
+故乡
+远方，让我大闹一场悄然离去的故乡
+故乡，让我收藏荣耀戏谑人生的远方
+不辞而别的朋友，一见如故的路人
+轻声问起，客往何处去
+远方，让我大闹一场悄然离去的故乡
+故乡，让我收藏荣耀戏谑人生的远方
+不辞而别的朋友，一见如故的路人
+轻声问起，客往何处去
+轻声问起，客往何处去
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 音乐 </tag>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Mac 上利用 launchctl 开启Scrapy定时任务]]></title>
       <url>http://sayyourname.cn/2017/05/30/Mac-%E4%B8%8A%E5%88%A9%E7%94%A8-launchctl-%E5%BC%80%E5%90%AFScrapy%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
       <content type="html"><![CDATA[<h3 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h3><p><code>Linux</code> 和 <code>Mac</code> 通用的 <code>crontab</code> 定时任务: <a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/crontab.html" target="_blank" rel="external">crontab 定时任务</a>这个方法是通用的，Mac提供了更加方便和易读的<code>launchctl</code>方法，<code>launchctl</code>通过 <code>plist</code> 属性列表（Property List）配置。 <code>Linux</code> 和 <code>Mac</code> 通用的 <code>crontab</code> 时间间隔可以精确到分钟，而 <code>launchctl</code> 时间间隔可以精确到 <strong>每秒</strong> 。</p>
@@ -2213,7 +2266,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;">&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#46;&#99;&#111;&#109;">&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#46;&#99;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
