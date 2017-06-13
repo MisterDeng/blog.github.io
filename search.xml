@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title><![CDATA[Django-RestFramework添加自定义字段]]></title>
+      <url>http://sayyourname.cn/2017/06/13/Django-RestFramework%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/</url>
+      <content type="html"><![CDATA[<p>添加自定义字段有两种方式</p>
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Create your models here.</span>
+<span class="token keyword">class</span> <span class="token class-name">Category</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    type <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        verbose_name <span class="token operator">=</span> <span class="token string">"分类"</span>
+        verbose_name_plural <span class="token operator">=</span> verbose_name
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">get_movie_image</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> Movie<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>type<span class="token operator">=</span>self<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>image
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>name
+</code></pre>
+<h2 id="Serializers"><a href="#Serializers" class="headerlink" title="Serializers"></a>Serializers</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">CategoryListSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    image <span class="token operator">=</span> serializers<span class="token punctuation">.</span>ReadOnlyField<span class="token punctuation">(</span>source<span class="token operator">=</span><span class="token string">'get_movie_image'</span><span class="token punctuation">)</span>
+    image2 <span class="token operator">=</span> serializers<span class="token punctuation">.</span>SerializerMethodField<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        model <span class="token operator">=</span> Category
+        fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'type'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'image'</span><span class="token punctuation">,</span> <span class="token string">'image2'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_image2</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> Movie<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>type<span class="token operator">=</span>obj<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>image
+</code></pre>
+<p>两种方式添加分别是image和image2</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Django </tag>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[我在桥上看风景]]></title>
       <url>http://sayyourname.cn/2017/06/12/%E6%88%91%E5%9C%A8%E6%A1%A5%E4%B8%8A%E7%9C%8B%E9%A3%8E%E6%99%AF/</url>
       <content type="html"><![CDATA[<pre><code>空气中还有一些尘埃 伴随风一起刮起来
@@ -423,9 +467,9 @@ $ launchctl remove xyz.hanks.spider
         
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -552,9 +596,9 @@ class Organization:
         
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -2305,7 +2349,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#x65;&#120;&#97;&#109;&#112;&#108;&#101;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;">&#x65;&#120;&#97;&#109;&#112;&#108;&#101;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#101;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#64;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#101;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#64;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
@@ -2526,9 +2570,9 @@ date: 2017-02-19 08:00:13
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
@@ -2544,9 +2588,9 @@ date: 2017-02-19 08:00:13
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
