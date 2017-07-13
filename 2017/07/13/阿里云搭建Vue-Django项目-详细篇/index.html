@@ -10,7 +10,7 @@
     
     <title>
         
-            Django rest_framework使用总结 | 
+            阿里云搭建Vue+Django项目(详细篇) | 
         
         你的名字。
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="你的名字。">
     <meta name="description" content="null">
-    <meta name="keywords" content="null,Django,技术">
+    <meta name="keywords" content="null,Django,技术,服务器,Vue">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/柠檬.png">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Django rest_framework使用总结 | 你的名字。">
+    <meta property="og:title" content="阿里云搭建Vue+Django项目(详细篇) | 你的名字。">
     <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="Django"> <meta property="og:article:tag" content="技术"> 
+    <meta property="og:article:tag" content="Django"> <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="服务器"> <meta property="og:article:tag" content="Vue"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -253,7 +253,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Models"><span class="post-toc-number">1.</span> <span class="post-toc-text">Models</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Serializers"><span class="post-toc-number">2.</span> <span class="post-toc-text">Serializers</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Views"><span class="post-toc-number">3.</span> <span class="post-toc-text">Views</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#嵌套查询"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">嵌套查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#结果"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">结果</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深度查询"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">深度查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#结果-1"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">结果</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图重写"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">视图重写</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分页"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">分页</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境搭建"><span class="post-toc-number">1.</span> <span class="post-toc-text">环境搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pip安装"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">pip安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Python3安装与默认"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Python3安装与默认</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Python第三方库安装"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Python第三方库安装</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vue与Django的搭建"><span class="post-toc-number">2.</span> <span class="post-toc-text">Vue与Django的搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Vue的build设置"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Vue的build设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Django替换模板视图-TemplateView"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Django替换模板视图 TemplateView</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Django跨域"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Django跨域</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运行开发服务器测试"><span class="post-toc-number">3.</span> <span class="post-toc-text">运行开发服务器测试</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#uwsgi部署"><span class="post-toc-number">4.</span> <span class="post-toc-text">uwsgi部署</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Nginx配置"><span class="post-toc-number">5.</span> <span class="post-toc-text">Nginx配置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#爬虫与定时任务"><span class="post-toc-number">6.</span> <span class="post-toc-text">爬虫与定时任务</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定时任务"><span class="post-toc-number">6.0.1.</span> <span class="post-toc-text">定时任务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#sh文件"><span class="post-toc-number">6.0.2.</span> <span class="post-toc-text">sh文件</span></a></li></ol></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -290,7 +290,7 @@
         
     
             <p class="article-headline-p">
-                Django rest_framework使用总结
+                阿里云搭建Vue+Django项目(详细篇)
             </p>
         </div>
 
@@ -309,7 +309,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>你的名字。</strong>
-        <span>5月 25, 2017</span>
+        <span>7月 13, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -330,7 +330,7 @@
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
             <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACyUlEQVR42u3aW24CMQwFUPa/6XYBiOHaDu2QnHxVPCY+QaplO4+fI9cDGxsbGxsbGxsb+5bsR7yeP/9yg6d3X33r+vVXn6nGjI2NjX0C+82//qctq6H3drw++jxmbGxs7HPYyTbXCayXeFbt8ubnwcbGxsaOedVAeztiY2NjY38ugVVLiOu9sLGxsbHXNpXyV3oDgCr7j3pp2NjY2LdnVwe9d/j7H+bb2NjY2Ldkr12fKEWSplUUGzY2Nvam7OsrOEliqA56qyXEvKTBxsbG3ps9ad9UP3kdevWgy2kSGxsbe2v2qpTWO6Y8NfZSKTY2NvYJ7LxIyBtDvbIkOY7r5zdLEWxsbOwt2NUE0+Ml35q3q7CxsbHPYSeFR3XQmw9981fyo1826MXGxsb+EvZkvFpt9+clTWF8G7e3sLGxsXdl98qPXurKR7b5E7CxsbGxqylkUopUd6zGg42NjX0ye3KBJk+E8xQ1ihkbGxt7U3YVWS0w8kZ/teCplkzY2NjYe7OvN8uDmyS/SfMIGxsbGzsvA/KjedPiGTStmvFgY2Njb81OHlFt7kwu+qwdG2BjY2Ofw64mifySZe/dpKWVJEhsbGzsvdl5a77aAOqVJfl4oFqWYGNjY5/Aro5yE1jvmb1LPG9KJmxsbOxN2ZOAeq2fyZOr6RYbGxv7NHaekKph5eltMrpoJjBsbGzsLdifCCIvIarNqeb1TWxsbOwj2fmaFw9VUrmIwsbGxt6UXV2T5n7vUJJhQLmphI2Njb0Re1WKytNJdSTca2w1B73Y2NjYX8tOklayZa9UyI9ykvCwsbGxT2D3kkevMJjgmykWGxsbG7tVBvQGydXrONFPgo2NjY296IJOfgS95hE2Njb2yex8+Nob+uYFSVLqVBtY2NjY2HuzJy2bZEhQHTn0GlJ/Ot/GxsbGvg37nIWNjY2NjY2NjY19m/ULqSbYu6WGhqUAAAAASUVORK5CYII=">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADlElEQVR42u3aS44iMRAE0L7/pWe2IyEgItOmGel5hfhU2a8WSX5+/lj/rB8EOHDgwIEDBw4cOHB8McdPvB5/9fj68ZrP7rLfw7Od1GfBgQMHDhwXON6EopeHTwhev5Pca/ZgXp8FBw4cOHDc5ngWkDZkp0JmdLDRWXDgwIEDxzdwbFKyWVhtwzYOHDhw4PhfOF4fMv+0LTLmJUgcOHDgwPE9HHlBrS0OblDynfxCrRQHDhw4cKwHGr7/9UfnO3DgwIEDxwPHZv2UKw/A+SEPnAIHDhw4cBzlaIPZszQsxzo1xLAZd8CBAwcOHLc5TgXCli8PlrP20iqjxYEDBw4cR4uD7XeSrbcNpCJYbgYjcODAgQPHUY4k9cobPLOUbzMS176DAwcOHDg+z5GnTAe2Uo7N5eXFIuTjwIEDB46jHMkP9kGxTbHyFlQ7zBdltDhw4MCBY83RjhokB85x24GGzSPBgQMHDhyf4di3hTap1Km0rd0VDhw4cOC4wbEfFxiOEcRHStK8PF0saqU4cODAgWPE0YbDzcrpk2NsRitw4MCBA8c9jnbgYFbs24wjzI5a/AoHDhw4cBzlaMNS3iLK07PZ92cPDwcOHDhwfIYjv8S+gNjeK08CWwgcOHDgwHGPow29szGCdpxuk/4VDS0cOHDgwHGUIwmHbQlvVrxrxxTycI4DBw4cOD7J0R5v/2nbUsqHJPJ0DgcOHDhw3OOYBd081M0KfMkAX3LgKM3DgQMHDhwXONqm0bAMFx8gL1nORiVw4MCBA8dtjral1Bb+2i3mwxOzBhUOHDhw4LjH0TZvZsFvM/RwNtBGtVIcOHDgwHGIIx9NSILupnTYDjSsCog4cODAgeMoR5sszZpGp8JwHuaP1Upx4MCBA0fJkTeQZglVcv18ECH//nCgAQcOHDhwrDnaEtuszZOH2+Q67X2L4iAOHDhw4FhzHLvoosmUJ3izhPDA/w4cOHDgwFHmLPnKE7PbgTMva77ZFQ4cOHDgOMrRBrbZQEPSvsrbSG3J8s0fCxw4cODAcYEjLwXmYwptypdgtY8KBw4cOHD8LsemtPcaqMVt6a/USnHgwIEDx0c4NilWcrx2YCJ/52kgx4EDBw4cv8rRJm95GJ6F6k16iQMHDhw4bnPsi4Ozwl/eUpoljW/KhThw4MCB4wJHW/LbpHObkmKS5h0oDuLAgQMHjgWHhQMHDhw4cODAgQMHji9bfwFSB73vcWxV3wAAAABJRU5ErkJggg==">
         </ul>
     
 
@@ -342,7 +342,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Django/">Django</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+        <a class="post_tag-link" href="/tags/Django/">Django</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Vue/">Vue</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/服务器/">服务器</a>
     </ul>
     
 
@@ -356,7 +356,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/05/25/Django-rest-framework使用总结/" class="leancloud-views_num" data-flag-title="Django rest_framework使用总结">
+                <span id="/2017/07/13/阿里云搭建Vue-Django项目-详细篇/" class="leancloud-views_num" data-flag-title="阿里云搭建Vue+Django项目(详细篇)">
      &nbsp;浏览量
 </span>
 
@@ -400,184 +400,173 @@
   
 
     
-        <h2 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h2><p>数据库表的字段</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 课程Model</span>
-<span class="token keyword">class</span> <span class="token class-name">Course</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    course_org <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>CourseOrg<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程机构'</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">52</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程名字'</span><span class="token punctuation">)</span>
-    desc <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程描述'</span><span class="token punctuation">)</span>
-    teacher <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Teacher<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'讲师'</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    detail <span class="token operator">=</span> models<span class="token punctuation">.</span>TextField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'课程详情'</span><span class="token punctuation">)</span>
-    degree <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>choices<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'cj'</span><span class="token punctuation">,</span> <span class="token string">'初级'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'zj'</span><span class="token punctuation">,</span> <span class="token string">'中级'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'gj'</span><span class="token punctuation">,</span> <span class="token string">'高级'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'难度'</span><span class="token punctuation">)</span>
-    learn_times <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'学习时长(分钟数)'</span><span class="token punctuation">)</span>
-    students <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'学习人数'</span><span class="token punctuation">)</span>
-    fav_nums <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'收藏人数'</span><span class="token punctuation">)</span>
-    image <span class="token operator">=</span> models<span class="token punctuation">.</span>ImageField<span class="token punctuation">(</span>upload_to<span class="token operator">=</span><span class="token string">'courses/%Y/%m'</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'封面图'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
-    click_nums <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'点击数'</span><span class="token punctuation">)</span>
-    is_banner <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span>u<span class="token string">'是否是轮播图'</span><span class="token punctuation">)</span>
-    category <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token string">'后端'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程类别'</span><span class="token punctuation">)</span>
-    tag <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程标签'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
-    youneed_konw <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课前须知'</span><span class="token punctuation">)</span>
-    teacher_tell <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'老师告诉你能学什么'</span><span class="token punctuation">)</span>
-    add_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>default<span class="token operator">=</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'添加时间'</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        verbose_name <span class="token operator">=</span> <span class="token string">'课程'</span>
-        verbose_name_plural <span class="token operator">=</span> verbose_name
+        <p>使用阿里云搭建Ubuntu环境，nginx + uwsgi socket 的方式来部署 Django+Vue项目，包括但不限于定时任务，Scrapy环境配置，解决跨域，Nginx域名重定向，Vue Router的History模式的配置</p>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h3 id="pip安装"><a href="#pip安装" class="headerlink" title="pip安装"></a>pip安装</h3><p>步骤一： 在终端上使用以下命令，来保证你系统上所有的包都是最新的。</p>
+<pre><code>sudo apt-get updatesudo apt-get upgrade
+</code></pre><p>步骤二： 安装Pip</p>
+<p>安装python-pip和你所需要的包：</p>
+<pre><code>apt-get install python-pip
+</code></pre><p>检查你所安装Pip的版本：</p>
+<pre><code>pip-V
+</code></pre><h3 id="Python3安装与默认"><a href="#Python3安装与默认" class="headerlink" title="Python3安装与默认"></a>Python3安装与默认</h3><p>shell里执行：</p>
+<pre class=" language-shell"><code class="language-shell">sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
 </code></pre>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 章节Model</span>
-<span class="token keyword">class</span> <span class="token class-name">Lesson</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    course <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Course<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'课程'</span><span class="token punctuation">,</span> related_name<span class="token operator">=</span><span class="token string">'lessons'</span><span class="token punctuation">)</span>
-    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'章节名'</span><span class="token punctuation">)</span>
-    add_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>default<span class="token operator">=</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'添加时间'</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        verbose_name <span class="token operator">=</span> <span class="token string">'章节'</span>
-        verbose_name_plural <span class="token operator">=</span> verbose_name
+<p>如果要切换到Python2，执行：</p>
+<pre class=" language-sh"><code class="language-sh">sudo update-alternatives --config python
 </code></pre>
-<h2 id="Serializers"><a href="#Serializers" class="headerlink" title="Serializers"></a>Serializers</h2><p>数据库字段的解析</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> Course<span class="token punctuation">,</span> Lesson
-<span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> serializers
-
-
-<span class="token keyword">class</span> <span class="token class-name">LessonSerializers</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        model <span class="token operator">=</span> Lesson
-        fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'add_time'</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">class</span> <span class="token class-name">CourseSerializers</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    lessons <span class="token operator">=</span> LessonSerializers<span class="token punctuation">(</span>many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        model <span class="token operator">=</span> Course
-        fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'desc'</span><span class="token punctuation">,</span> <span class="token string">'lessons'</span><span class="token punctuation">)</span>
+<h3 id="Python第三方库安装"><a href="#Python第三方库安装" class="headerlink" title="Python第三方库安装"></a>Python第三方库安装</h3><pre><code>1、导出当前项目pip安装的包表
+pip freeze &gt; 项目目录/requirements.txt
+2、根据导出的pip安装包表安装pip包
+pip install -r 项目目录/requirements.txt
+</code></pre><p>这里Scrapy库需要安装依赖</p>
+<pre class=" language-sh"><code class="language-sh">sudo apt-get install python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev
 </code></pre>
-<h2 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h2><p>Api界面的展示 逻辑的处理</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">CourseListApiView</span><span class="token punctuation">(</span>generics<span class="token punctuation">.</span>ListCreateAPIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    queryset <span class="token operator">=</span> Course<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    serializer_class <span class="token operator">=</span> CourseSerializers
-
-
-<span class="token keyword">class</span> <span class="token class-name">CourseDetailApiView</span><span class="token punctuation">(</span>generics<span class="token punctuation">.</span>RetrieveUpdateDestroyAPIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    queryset <span class="token operator">=</span> Course<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    serializer_class <span class="token operator">=</span> CourseSerializers
-</code></pre>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="嵌套查询"><a href="#嵌套查询" class="headerlink" title="嵌套查询"></a>嵌套查询</h3><p>Lesson的外键必须设置<code>related_name=&#39;lessons&#39;</code>用来标识</p>
-<p>CourseSerializers设置<code>lessons = LessonSerializers(many=True, read_only=True)</code></p>
-<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><a href="http://localhost:8000/course/list/" target="_blank" rel="external">http://localhost:8000/course/list/</a></p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>
+<h1 id="Vue与Django的搭建"><a href="#Vue与Django的搭建" class="headerlink" title="Vue与Django的搭建"></a>Vue与Django的搭建</h1><h3 id="Vue的build设置"><a href="#Vue的build设置" class="headerlink" title="Vue的build设置"></a>Vue的build设置</h3><p>Vue项目build到Django项目根目录下，在config/index.js里面</p>
+<h3 id="Django替换模板视图-TemplateView"><a href="#Django替换模板视图-TemplateView" class="headerlink" title="Django替换模板视图 TemplateView"></a>Django替换模板视图 TemplateView</h3><p>urls.py配置<code>url(r&#39;^$&#39;, TemplateView.as_view(template_name=&quot;index.html&quot;)),</code></p>
+<pre class=" language-python"><code class="language-python">TEMPLATES <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>
-        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python"</span><span class="token punctuation">,</span>
-        <span class="token property">"desc"</span><span class="token operator">:</span> <span class="token string">"算法"</span><span class="token punctuation">,</span>
-        <span class="token property">"lessons"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-            <span class="token punctuation">{</span>
-                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
-                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token punctuation">{</span>
-                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
-                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token punctuation">{</span>
-                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"3"</span><span class="token punctuation">,</span>
-                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
- <span class="token punctuation">]</span>
-</code></pre>
-<h3 id="深度查询"><a href="#深度查询" class="headerlink" title="深度查询"></a>深度查询</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">LessonSerializers</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        model <span class="token operator">=</span> Lesson
-        depth <span class="token operator">=</span> <span class="token number">2</span>
-        fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'add_time'</span><span class="token punctuation">,</span> <span class="token string">'course'</span><span class="token punctuation">)</span>
-</code></pre>
-<h4 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h4><p><a href="http://localhost:8000/course/lesson/list/" target="_blank" rel="external">http://localhost:8000/course/lesson/list/</a></p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
-        <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span><span class="token punctuation">,</span>
-        <span class="token property">"course"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-            <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python"</span><span class="token punctuation">,</span>
-            <span class="token property">"desc"</span><span class="token operator">:</span> <span class="token string">"算法"</span><span class="token punctuation">,</span>
-            <span class="token property">"detail"</span><span class="token operator">:</span> <span class="token string">"发多少飞"</span><span class="token punctuation">,</span>
-            <span class="token property">"degree"</span><span class="token operator">:</span> <span class="token string">"cj"</span><span class="token punctuation">,</span>
-            <span class="token property">"learn_times"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-            <span class="token property">"students"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-            <span class="token property">"fav_nums"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-            <span class="token property">"image"</span><span class="token operator">:</span> <span class="token string">"http://localhost:8000/media/courses/2017/05/%E6%88%91%E7%9A%84%E6%8E%A8%E5%B9%BF%E5%BC%95%E5%AF%BC_rtZYmxW.jpg"</span><span class="token punctuation">,</span>
-            <span class="token property">"click_nums"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-            <span class="token property">"is_banner"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-            <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"后端"</span><span class="token punctuation">,</span>
-            <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token string">"发多少"</span><span class="token punctuation">,</span>
-            <span class="token property">"youneed_konw"</span><span class="token operator">:</span> <span class="token string">"发送"</span><span class="token punctuation">,</span>
-            <span class="token property">"teacher_tell"</span><span class="token operator">:</span> <span class="token string">"发送"</span><span class="token punctuation">,</span>
-            <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:40:00"</span><span class="token punctuation">,</span>
-            <span class="token property">"course_org"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"慕课"</span><span class="token punctuation">,</span>
-                <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"pxjg"</span><span class="token punctuation">,</span>
-                <span class="token property">"desc"</span><span class="token operator">:</span> <span class="token string">"发斯蒂芬"</span><span class="token punctuation">,</span>
-                <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token string">"全国知名"</span><span class="token punctuation">,</span>
-                <span class="token property">"click_nums"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
-                <span class="token property">"fav_nums"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
-                <span class="token property">"image"</span><span class="token operator">:</span> <span class="token string">"http://localhost:8000/media/org/2017/05/%E6%88%91%E7%9A%84%E6%8E%A8%E5%B9%BF%E5%BC%95%E5%AF%BC.jpg"</span><span class="token punctuation">,</span>
-                <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"范德萨"</span><span class="token punctuation">,</span>
-                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:39:00"</span><span class="token punctuation">,</span>
-                <span class="token property">"students"</span><span class="token operator">:</span> <span class="token number">342</span><span class="token punctuation">,</span>
-                <span class="token property">"city"</span><span class="token operator">:</span> <span class="token number">1</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token property">"teacher"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"发疯"</span><span class="token punctuation">,</span>
-                <span class="token property">"work_years"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-                <span class="token property">"work_company"</span><span class="token operator">:</span> <span class="token string">"发多少"</span><span class="token punctuation">,</span>
-                <span class="token property">"work_position"</span><span class="token operator">:</span> <span class="token string">"发送"</span><span class="token punctuation">,</span>
-                <span class="token property">"points"</span><span class="token operator">:</span> <span class="token string">"大师傅"</span><span class="token punctuation">,</span>
-                <span class="token property">"click_nums"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-                <span class="token property">"fav_nums"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-                <span class="token property">"age"</span><span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
-                <span class="token property">"image"</span><span class="token operator">:</span> <span class="token string">"http://localhost:8000/media/teacher/2017/05/%E5%9B%BE%E5%B1%82-113x.png"</span><span class="token punctuation">,</span>
-                <span class="token property">"add_time"</span><span class="token operator">:</span> <span class="token string">"2017-05-22T13:39:00"</span><span class="token punctuation">,</span>
-                <span class="token property">"org"</span><span class="token operator">:</span> <span class="token number">1</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+        <span class="token string">'BACKEND'</span><span class="token punctuation">:</span> <span class="token string">'django.template.backends.django.DjangoTemplates'</span><span class="token punctuation">,</span>
+        <span class="token string">'DIRS'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'movie'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token punctuation">,</span>
+        <span class="token string">'APP_DIRS'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+        <span class="token string">'OPTIONS'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'context_processors'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token string">'django.template.context_processors.debug'</span><span class="token punctuation">,</span>
+                <span class="token string">'django.template.context_processors.request'</span><span class="token punctuation">,</span>
+                <span class="token string">'django.contrib.auth.context_processors.auth'</span><span class="token punctuation">,</span>
+                <span class="token string">'django.contrib.messages.context_processors.messages'</span><span class="token punctuation">,</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span>
 </code></pre>
-<p>也可以在LessonSerializers中<code>name = serializers.ReadOnlyField(source=&#39;course.name&#39;)</code>  增加外健的字段</p>
-<h3 id="视图重写"><a href="#视图重写" class="headerlink" title="视图重写"></a>视图重写</h3><p>ListCreateAPIView封装了get的方法可以选择重写</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">CourseListApiView</span><span class="token punctuation">(</span>generics<span class="token punctuation">.</span>ListCreateAPIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    queryset <span class="token operator">=</span> Course<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    serializer_class <span class="token operator">=</span> CourseSerializers
+<pre class=" language-python"><code class="language-python">STATIC_URL <span class="token operator">=</span> <span class="token string">'/static/'</span>
+MEDIA_URL <span class="token operator">=</span> <span class="token string">'/media/'</span>
+MEDIA_ROOT <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'media'</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">def</span> <span class="token function">list</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        queryset <span class="token operator">=</span> self<span class="token punctuation">.</span>filter_queryset<span class="token punctuation">(</span>self<span class="token punctuation">.</span>get_queryset<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># Add for Vue.js</span>
+STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctuation">[</span>
+    os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">"movie/static"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
 
-        page <span class="token operator">=</span> self<span class="token punctuation">.</span>paginate_queryset<span class="token punctuation">(</span>queryset<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> page <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
-            serializer <span class="token operator">=</span> self<span class="token punctuation">.</span>get_serializer<span class="token punctuation">(</span>page<span class="token punctuation">,</span> many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> self<span class="token punctuation">.</span>get_paginated_response<span class="token punctuation">(</span>serializer<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
-
-        serializer <span class="token operator">=</span> self<span class="token punctuation">.</span>get_serializer<span class="token punctuation">(</span>queryset<span class="token punctuation">,</span> many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> Response<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'data'</span><span class="token punctuation">:</span> serializer<span class="token punctuation">.</span>data<span class="token punctuation">,</span> <span class="token string">'message'</span><span class="token punctuation">:</span> <span class="token string">'获取成功'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># collectstatic使用</span>
+STATIC_ROOT <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">"static"</span><span class="token punctuation">)</span>
 </code></pre>
-<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>导入<code>from rest_framework.pagination import PageNumberPagination</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">LargeResultsSetPagination</span><span class="token punctuation">(</span>PageNumberPagination<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    page_size <span class="token operator">=</span> <span class="token number">1</span>
-    page_size_query_param <span class="token operator">=</span> <span class="token string">'page_size'</span>
-    max_page_size <span class="token operator">=</span> <span class="token number">2</span>
+<h3 id="Django跨域"><a href="#Django跨域" class="headerlink" title="Django跨域"></a>Django跨域</h3><p>1.安装django-cors-headers</p>
+<pre><code>pip install django-cors-headers
+</code></pre><p>2.配置settings.py文件</p>
+<pre class=" language-python"><code class="language-python">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token string">'corsheaders'</span>，
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+ <span class="token punctuation">]</span> 
+
+MIDDLEWARE_CLASSES <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token string">'corsheaders.middleware.CorsMiddleware'</span><span class="token punctuation">,</span>
+    <span class="token string">'django.middleware.common.CommonMiddleware'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># 注意顺序</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#跨域增加忽略</span>
+CORS_ALLOW_CREDENTIALS <span class="token operator">=</span> <span class="token boolean">True</span>
+CORS_ORIGIN_ALLOW_ALL <span class="token operator">=</span> <span class="token boolean">True</span>
+CORS_ORIGIN_WHITELIST <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token string">'*'</span>
+<span class="token punctuation">)</span>
+
+CORS_ALLOW_METHODS <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token string">'DELETE'</span><span class="token punctuation">,</span>
+    <span class="token string">'GET'</span><span class="token punctuation">,</span>
+    <span class="token string">'OPTIONS'</span><span class="token punctuation">,</span>
+    <span class="token string">'PATCH'</span><span class="token punctuation">,</span>
+    <span class="token string">'POST'</span><span class="token punctuation">,</span>
+    <span class="token string">'PUT'</span><span class="token punctuation">,</span>
+    <span class="token string">'VIEW'</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+
+CORS_ALLOW_HEADERS <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token string">'XMLHttpRequest'</span><span class="token punctuation">,</span>
+    <span class="token string">'X_FILENAME'</span><span class="token punctuation">,</span>
+    <span class="token string">'accept-encoding'</span><span class="token punctuation">,</span>
+    <span class="token string">'authorization'</span><span class="token punctuation">,</span>
+    <span class="token string">'content-type'</span><span class="token punctuation">,</span>
+    <span class="token string">'dnt'</span><span class="token punctuation">,</span>
+    <span class="token string">'origin'</span><span class="token punctuation">,</span>
+    <span class="token string">'user-agent'</span><span class="token punctuation">,</span>
+    <span class="token string">'x-csrftoken'</span><span class="token punctuation">,</span>
+    <span class="token string">'x-requested-with'</span><span class="token punctuation">,</span>
+    <span class="token string">'Pragma'</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
 </code></pre>
-<p>CourseListApiView设置<code>pagination_class = LargeResultsSetPagination</code></p>
+<h1 id="运行开发服务器测试"><a href="#运行开发服务器测试" class="headerlink" title="运行开发服务器测试"></a>运行开发服务器测试</h1><p>上传项目到/home目录下</p>
+<pre><code>进入项目目录
+python manage.py collectstatic
+python manage.py runserver
+</code></pre><p>打开网站看是否执行成功，如果执行成功说明项目没有问题</p>
+<h1 id="uwsgi部署"><a href="#uwsgi部署" class="headerlink" title="uwsgi部署"></a>uwsgi部署</h1><p>安装 <code>sudo pip install uwsgi --upgrade</code></p>
+<p>配置文件</p>
+<pre class=" language-ini"><code class="language-ini"><span class="token selector">[uwsgi]</span>
+<span class="token constant">socket</span> <span class="token attr-value"><span class="token punctuation">=</span> 0.0.0.0:3031</span>
+<span class="token constant">chdir</span> <span class="token attr-value"><span class="token punctuation">=</span> /home/MovieSite</span>
+<span class="token constant">touch-reload</span> <span class="token attr-value"><span class="token punctuation">=</span> /home/MovieSite</span>
+<span class="token constant">py-autoreload</span> <span class="token attr-value"><span class="token punctuation">=</span> 1</span>
+<span class="token constant">wsgi-file</span> <span class="token attr-value"><span class="token punctuation">=</span> MovieSite/wsgi.py</span>
+<span class="token constant">processes</span> <span class="token attr-value"><span class="token punctuation">=</span> 4</span>
+<span class="token constant">threads</span> <span class="token attr-value"><span class="token punctuation">=</span> 2</span>
+<span class="token constant">stats</span> <span class="token attr-value"><span class="token punctuation">=</span> 0.0.0.0:3032</span>
+</code></pre>
+<p>启动uwsgi</p>
+<pre><code>uwsgi --ini site.ini
+</code></pre><h1 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h1><p>安装 nginx 等软件</p>
+<p>ubuntu / Linux Mint 等，下面简写为 (ubuntu):</p>
+<p><code>sudo apt-getinstallpython-dev nginx</code></p>
+<p>nginx配置</p>
+<pre><code>server {
+    listen 80;
+    server_name 47.94.171.61 www.mvtime.cn mvtime.cn;
+    if ($host != &quot;mvtime.cn&quot;){
+            rewrite ^(.*) http://mvtime.cn$1 permanent;
+     }
+    root /home/MovieSite;
+    access_log /var/log/nginx/access_narwhals.log;
+    error_log /var/log/nginx/error_narwhals.log;
+
+    location / {
+            uwsgi_pass 0.0.0.0:3031;
+            include /etc/nginx/uwsgi_params;
+            set_real_ip_from 0.0.0.0/0;
+            real_ip_header  X-Forwarded-For;
+            real_ip_recursive   on;
+            try_files $uri $uri/ /;
+
+    }
+    location /static/ {
+            root /home/MovieSite;
+            access_log off;
+    }
+    location ^~ /movies/ {
+            uwsgi_pass 0.0.0.0:3031;
+            include /etc/nginx/uwsgi_params;
+    }
+}
+</code></pre><p>其中try_files用来解决Vue的history模式问题</p>
+<p>启动ngingx</p>
+<pre><code>service nginx start
+</code></pre><h1 id="爬虫与定时任务"><a href="#爬虫与定时任务" class="headerlink" title="爬虫与定时任务"></a>爬虫与定时任务</h1><h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><p>crontab -l 查看定时任务</p>
+<p>0 10 <em> </em> * /bin/bash /home/run.sh &gt;/home/result.log 2&gt;&amp;1</p>
+<p>输入log到/home/result.log</p>
+<p>crontab -e 重写定时任务</p>
+<h3 id="sh文件"><a href="#sh文件" class="headerlink" title="sh文件"></a>sh文件</h3><p>程序必须用绝对路径</p>
+<pre class=" language-sh"><code class="language-sh">#!/bin/bash
+
+# 进入爬虫目录
+cd /home/MovieSite/movies_scrapy/movies_scrapy &&
+# 运行爬虫脚本
+/usr/local/bin/scrapy crawl newmovie &&
+# 运行爬虫脚本
+/usr/local/bin/scrapy crawl hotmovie
+</code></pre>
 
     
 
@@ -626,21 +615,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/05/30/Mac-上利用-launchctl-开启Scrapy定时任务/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/05/24/如何优化-Django-REST-Framework-的性能？/" id="post_nav-older" class="next-content">
+        <a href="/2017/06/13/Django-RestFramework添加自定义字段/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

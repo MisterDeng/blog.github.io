@@ -2699,6 +2699,20 @@ It will not impact the appearance and can give developers a lot of support :)
                 $youziku.load("body", "90c63739a3ac4b18986b914c8d5f361a", "Source-Han-Light");
                 $youziku.draw();
             </script>
+            <script>
+                (function(){
+                    var bp = document.createElement('script');
+                    var curProtocol = window.location.protocol.split(':')[0];
+                    if (curProtocol === 'https') {
+                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                    }
+                    else {
+                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                    }
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(bp, s);
+                })();
+            </script>
         </body>
     
 </html>
