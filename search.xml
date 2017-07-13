@@ -28,6 +28,7 @@ pip install -r 项目目录/requirements.txt
 </code></pre><p>这里Scrapy库需要安装依赖</p>
 <pre class=" language-sh"><code class="language-sh">sudo apt-get install python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev
 </code></pre>
+<h3 id="阿里云配置"><a href="#阿里云配置" class="headerlink" title="阿里云配置"></a>阿里云配置</h3><p>阿里云配置入口端口，包括3306的配置，这样才能远程连接mysql，mysql远程连接的配置<a href="http://www.cnblogs.com/ruofengzhishang/p/5477502.html" target="_blank" rel="external">http://www.cnblogs.com/ruofengzhishang/p/5477502.html</a></p>
 <h1 id="Vue与Django的搭建"><a href="#Vue与Django的搭建" class="headerlink" title="Vue与Django的搭建"></a>Vue与Django的搭建</h1><h3 id="Vue的build设置"><a href="#Vue的build设置" class="headerlink" title="Vue的build设置"></a>Vue的build设置</h3><p>Vue项目build到Django项目根目录下，在config/index.js里面</p>
 <h3 id="Django替换模板视图-TemplateView"><a href="#Django替换模板视图-TemplateView" class="headerlink" title="Django替换模板视图 TemplateView"></a>Django替换模板视图 TemplateView</h3><p>urls.py配置<code>url(r&#39;^$&#39;, TemplateView.as_view(template_name=&quot;index.html&quot;)),</code></p>
 <pre class=" language-python"><code class="language-python">TEMPLATES <span class="token operator">=</span> <span class="token punctuation">[</span>
