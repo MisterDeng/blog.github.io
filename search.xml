@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[阿里云搭建Vue+Django项目(详细篇)]]></title>
       <url>http://sayyourname.cn/2017/07/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%90%AD%E5%BB%BAVue-Django%E9%A1%B9%E7%9B%AE-%E8%AF%A6%E7%BB%86%E7%AF%87/</url>
-      <content type="html"><![CDATA[<p>使用阿里云搭建Ubuntu环境，nginx + uwsgi socket 的方式来部署 Django+Vue项目，包括但不限于定时任务，Scrapy环境配置，解决跨域，Nginx域名重定向，Vue Router的History模式的配置</p>
+      <content type="html"><![CDATA[<p>使用阿里云搭建Ubuntu环境，nginx + uwsgi socket 的方式来部署 Django+Vue项目，包括但不限于定时任务，Scrapy环境配置，解决跨域，Nginx域名重定向，Vue Router的History模式的配置 参考文档：<a href="http://code.ziqiangxuetang.com/django/django-nginx-deploy.html" target="_blank" rel="external">http://code.ziqiangxuetang.com/django/django-nginx-deploy.html</a>   <a href="https://sanwen8.cn/p/68bJEgr.html" target="_blank" rel="external">https://sanwen8.cn/p/68bJEgr.html</a></p>
 <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h3 id="pip安装"><a href="#pip安装" class="headerlink" title="pip安装"></a>pip安装</h3><p>步骤一： 在终端上使用以下命令，来保证你系统上所有的包都是最新的。</p>
 <pre><code>sudo apt-get updatesudo apt-get upgrade
 </code></pre><p>步骤二： 安装Pip</p>
