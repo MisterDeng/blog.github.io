@@ -1,1 +1,1 @@
-http://www.sayyourname.cn/2017/07/14/Python3实现百度站长主动推送/
+http://www.sayyourname.cn/2017/07/14/Django部署问题排查/
