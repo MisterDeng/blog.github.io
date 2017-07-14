@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[阿里云搭建Vue+Django项目(详细篇)]]></title>
-      <url>http://sayyourname.cn/2017/07/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%90%AD%E5%BB%BAVue-Django%E9%A1%B9%E7%9B%AE-%E8%AF%A6%E7%BB%86%E7%AF%87/</url>
+      <url>http://www.sayyourname.cn/2017/07/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%90%AD%E5%BB%BAVue-Django%E9%A1%B9%E7%9B%AE-%E8%AF%A6%E7%BB%86%E7%AF%87/</url>
       <content type="html"><![CDATA[<p>使用阿里云搭建Ubuntu环境，nginx + uwsgi socket 的方式来部署 Django+Vue项目，包括但不限于定时任务，Scrapy环境配置，解决跨域，Nginx域名重定向，Vue Router的History模式的配置 参考文档：<a href="http://code.ziqiangxuetang.com/django/django-nginx-deploy.html" target="_blank" rel="external">http://code.ziqiangxuetang.com/django/django-nginx-deploy.html</a>   <a href="https://sanwen8.cn/p/68bJEgr.html" target="_blank" rel="external">https://sanwen8.cn/p/68bJEgr.html</a></p>
 <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h3 id="pip安装"><a href="#pip安装" class="headerlink" title="pip安装"></a>pip安装</h3><p>步骤一： 在终端上使用以下命令，来保证你系统上所有的包都是最新的。</p>
 <pre><code>sudo apt-get updatesudo apt-get upgrade
@@ -193,7 +193,7 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
     
     <entry>
       <title><![CDATA[Django-RestFramework添加自定义字段]]></title>
-      <url>http://sayyourname.cn/2017/06/13/Django-RestFramework%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/</url>
+      <url>http://www.sayyourname.cn/2017/06/13/Django-RestFramework%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/</url>
       <content type="html"><![CDATA[<p>添加自定义字段有两种方式</p>
 <h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Create your models here.</span>
 <span class="token keyword">class</span> <span class="token class-name">Category</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -237,7 +237,7 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
     
     <entry>
       <title><![CDATA[我在桥上看风景]]></title>
-      <url>http://sayyourname.cn/2017/06/12/%E6%88%91%E5%9C%A8%E6%A1%A5%E4%B8%8A%E7%9C%8B%E9%A3%8E%E6%99%AF/</url>
+      <url>http://www.sayyourname.cn/2017/06/12/%E6%88%91%E5%9C%A8%E6%A1%A5%E4%B8%8A%E7%9C%8B%E9%A3%8E%E6%99%AF/</url>
       <content type="html"><![CDATA[<pre><code>空气中还有一些尘埃 伴随风一起刮起来
 在霓虹灯亮起的夜晚里寻找臭味相投的气息
 有谁带着仅存的牵挂有谁下了班还不想回家
@@ -276,7 +276,7 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
     
     <entry>
       <title><![CDATA[客从何处来]]></title>
-      <url>http://sayyourname.cn/2017/06/07/%E5%AE%A2%E4%BB%8E%E4%BD%95%E5%A4%84%E6%9D%A5/</url>
+      <url>http://www.sayyourname.cn/2017/06/07/%E5%AE%A2%E4%BB%8E%E4%BD%95%E5%A4%84%E6%9D%A5/</url>
       <content type="html"><![CDATA[<pre><code>作曲 : 燕池
 作词 : 蘅初
 编曲：李大亮、燕池
@@ -329,7 +329,7 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
     
     <entry>
       <title><![CDATA[Mac 上利用 launchctl 开启Scrapy定时任务]]></title>
-      <url>http://sayyourname.cn/2017/05/30/Mac-%E4%B8%8A%E5%88%A9%E7%94%A8-launchctl-%E5%BC%80%E5%90%AFScrapy%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
+      <url>http://www.sayyourname.cn/2017/05/30/Mac-%E4%B8%8A%E5%88%A9%E7%94%A8-launchctl-%E5%BC%80%E5%90%AFScrapy%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
       <content type="html"><![CDATA[<h3 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h3><p><code>Linux</code> 和 <code>Mac</code> 通用的 <code>crontab</code> 定时任务: <a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/crontab.html" target="_blank" rel="external">crontab 定时任务</a>这个方法是通用的，Mac提供了更加方便和易读的<code>launchctl</code>方法，<code>launchctl</code>通过 <code>plist</code> 属性列表（Property List）配置。 <code>Linux</code> 和 <code>Mac</code> 通用的 <code>crontab</code> 时间间隔可以精确到分钟，而 <code>launchctl</code> 时间间隔可以精确到 <strong>每秒</strong> 。</p>
 <h3 id="创建定时运行的任务脚本"><a href="#创建定时运行的任务脚本" class="headerlink" title="创建定时运行的任务脚本"></a>创建定时运行的任务脚本</h3><p>run.sh</p>
 <pre class=" language-shell"><code class="language-shell">#!/bin/bash
@@ -471,7 +471,7 @@ $ launchctl remove xyz.hanks.spider
     
     <entry>
       <title><![CDATA[Django rest_framework使用总结]]></title>
-      <url>http://sayyourname.cn/2017/05/25/Django-rest-framework%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</url>
+      <url>http://www.sayyourname.cn/2017/05/25/Django-rest-framework%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<h2 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h2><p>数据库表的字段</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 课程Model</span>
 <span class="token keyword">class</span> <span class="token class-name">Course</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -665,7 +665,7 @@ $ launchctl remove xyz.hanks.spider
     
     <entry>
       <title><![CDATA[如何优化 Django REST Framework 的性能？]]></title>
-      <url>http://sayyourname.cn/2017/05/24/%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96-Django-REST-Framework-%E7%9A%84%E6%80%A7%E8%83%BD%EF%BC%9F/</url>
+      <url>http://www.sayyourname.cn/2017/05/24/%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96-Django-REST-Framework-%E7%9A%84%E6%80%A7%E8%83%BD%EF%BC%9F/</url>
       <content type="html"><![CDATA[<p><strong>现在，Django REST Framework 帮助 Django 开发者给自己的应用开发出简单而强大的标准 REST APIs，而且现在我们已经成功的应用在了一些 Django Web 项目上。</strong></p>
 <p>然而，看似简单直观的 Django REST Framework 及其<a href="http://www.django-rest-framework.org/api-guide/relations/#nested-relationships" target="_blank" rel="external">嵌套序列化</a>可能会大大降低你的 API 端的性能。你的服务器的其他部分的响应能力也会被某一个低效的 REST API 拖后腿。</p>
 <p>问题的根源就是 <strong>「N+1 selects problem」</strong>；首先查询数据库一次得到表中的数据（例如，<code>Customers</code>），然后每个用户的其他字段又需要循环不止一次地查询数据库（例如 <code>customer.country.Name</code>）。使用 Django 的 ORM，很容易造成这个问题，而使用 DRF，同样会造成这个问题。</p>
@@ -794,7 +794,7 @@ class Organization:
     
     <entry>
       <title><![CDATA[总有你要的编程书单（GitHub）]]></title>
-      <url>http://sayyourname.cn/2017/05/22/%E6%80%BB%E6%9C%89%E4%BD%A0%E8%A6%81%E7%9A%84%E7%BC%96%E7%A8%8B%E4%B9%A6%E5%8D%95%EF%BC%88GitHub%EF%BC%89/</url>
+      <url>http://www.sayyourname.cn/2017/05/22/%E6%80%BB%E6%9C%89%E4%BD%A0%E8%A6%81%E7%9A%84%E7%BC%96%E7%A8%8B%E4%B9%A6%E5%8D%95%EF%BC%88GitHub%EF%BC%89/</url>
       <content type="html"><![CDATA[<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><ul>
 <li><a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial" target="_blank" rel="external">IntelliJ IDEA 简体中文专题教程</a></li>
 </ul>
@@ -1315,7 +1315,7 @@ class Organization:
     
     <entry>
       <title><![CDATA[Landing Guy]]></title>
-      <url>http://sayyourname.cn/2017/03/03/Landing-Guy/</url>
+      <url>http://www.sayyourname.cn/2017/03/03/Landing-Guy/</url>
       <content type="html"><![CDATA[<p>Right I die. My life before my eyes.<br>生命于我眼前支离破碎<br>As I was hang there,I see wonderland.<br>尚存一息我眼见了仙境<br>I don’t really see much of anything.<br>那里几乎空无一物<br>But I see you.That is crazy.<br>却出现了你. 这疯狂至极</p>
 <p>Your landing guy is home.<br>你的旅人已经回家<br>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
 <p>Your landing guy is home.<br>你的旅人已经回家<br>Oh,it’s magic.oh,that’s magic.<br>这奇妙无比，光怪迷离</p>
@@ -1341,7 +1341,7 @@ class Organization:
     
     <entry>
       <title><![CDATA[前端资源汇总（转载）]]></title>
-      <url>http://sayyourname.cn/2017/02/22/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/</url>
+      <url>http://www.sayyourname.cn/2017/02/22/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/</url>
       <content type="html"><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><hr>
 <p>转载自<a href="http://www.jianshu.com/p/6cb49271cd2a#" target="_blank" rel="external">史上最全的前端资源大汇总</a>，收藏之用</p>
 <h2 id="2-目录"><a href="#2-目录" class="headerlink" title="2. 目录"></a>2. 目录</h2><hr>
@@ -2435,7 +2435,7 @@ class Organization:
     
     <entry>
       <title><![CDATA[一个人的时候]]></title>
-      <url>http://sayyourname.cn/2017/02/19/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%B6%E5%80%99/</url>
+      <url>http://www.sayyourname.cn/2017/02/19/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%B6%E5%80%99/</url>
       <content type="html"><![CDATA[<h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，当你一个人独处的时候，你会想什么，做什么。</p>
 <pre><code>放一首音乐吧，舒缓你紧张神经
 
@@ -2470,7 +2470,7 @@ class Organization:
     
     <entry>
       <title><![CDATA[Markdown语法]]></title>
-      <url>http://sayyourname.cn/2017/02/19/Markdown%E8%AF%AD%E6%B3%95/</url>
+      <url>http://www.sayyourname.cn/2017/02/19/Markdown%E8%AF%AD%E6%B3%95/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原来用的<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器，上面有很多快捷键，有图形化按钮，很方便。然后换了个逼格比较高的Typora，<strong>漂亮的不像实力派</strong>，因为少了按钮，那我必须记下来了，因为觉得<code>MWeb</code>的语法总结很好，所以以下是来自<a href="http://zh.mweb.im/index.html" target="_blank" rel="external">MWeb</a>编辑器的Markdown语法</p>
 <h2 id="Markdown-的设计哲学"><a href="#Markdown-的设计哲学" class="headerlink" title="Markdown 的设计哲学"></a>Markdown 的设计哲学</h2><blockquote>
 <p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
@@ -2711,7 +2711,7 @@ Markdown 语法：
     
     <entry>
       <title><![CDATA[Hexo文章添加音乐插件]]></title>
-      <url>http://sayyourname.cn/2017/02/19/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
+      <url>http://www.sayyourname.cn/2017/02/19/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo添加音乐插件方法网上已经有一大堆了，此文章是定制化的在文章中插入音乐，比如<a href="http://sayyourname.cn/about/index.html">这样的</a>文章。只需要在文章加入<code>music: xxx</code>就可以设置你想要的音乐了（xxx为网易某个歌曲id）</p>
 <h2 id="定制化"><a href="#定制化" class="headerlink" title="定制化"></a>定制化</h2><p>定制化基于我的主题<a href="https://material.viosey.com/" target="_blank" rel="external">Material</a>，网易云音乐的外链想必不用说了，我复制下来的是这样的:</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">marginwidth</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">marginheight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span>330</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span>86</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>//music.163.com/outchain/player?type<span class="token punctuation">=</span>2&amp;id<span class="token punctuation">=</span>29567192&amp;auto<span class="token punctuation">=</span>0&amp;height<span class="token punctuation">=</span>66<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
@@ -2768,7 +2768,7 @@ date: 2017-02-19 08:00:13
     
     <entry>
       <title><![CDATA[Hexo设置多说shortname]]></title>
-      <url>http://sayyourname.cn/2017/02/18/Hexo%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%AF%B4shortname/</url>
+      <url>http://www.sayyourname.cn/2017/02/18/Hexo%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%AF%B4shortname/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本来是很简单的问题，但是浪费我不少时间，所以有必要记录一下，防止下次出错。<br>刚开始配置多说<code>shortname</code>压根没有在意，因为上一个主题的这个是随便填的，而且成功了（黑人问号）。<br>所以这次也是随便写的，怎么都失败，还看了控制台、源代码，后来突然觉得这个<code>shortname</code>这个单词好奇怪,然后百度了一下。</p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>比如我的多说二级域名是xxx.duoshuo.com，<code>shortname</code>就是<code>xxx</code>。<br>最后吐槽一下，<code>short</code>不是短的意思吗，短名字？，<em>are you sure？</em></p>
 ]]></content>
@@ -2786,7 +2786,7 @@ date: 2017-02-19 08:00:13
     
     <entry>
       <title><![CDATA[Node.js上传图片到七牛]]></title>
-      <url>http://sayyourname.cn/2017/02/17/Node.js%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E4%B8%83%E7%89%9B/</url>
+      <url>http://www.sayyourname.cn/2017/02/17/Node.js%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E4%B8%83%E7%89%9B/</url>
       <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>主题基于 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a> ，作者使用的是<a href="https://www.instagram.com/" target="_blank" rel="external">Instagram</a>拉取的相册，捣鼓了半天，翻墙申请账号，最后发现图片爬不下来，后来发现<a href="https://yq.aliyun.com/articles/8607" target="_blank" rel="external">一篇</a>七牛上传的node脚本，因为需要上传的图片太多，然后改成了自己需要的。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> suffix <span class="token operator">=</span> <span class="token function">getFilenameSuffix</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -3010,7 +3010,7 @@ date: 2017-02-19 08:00:13
     
     <entry>
       <title><![CDATA[秒速五厘米]]></title>
-      <url>http://sayyourname.cn/2017/02/16/%E7%A7%92%E9%80%9F%E4%BA%94%E5%8E%98%E7%B1%B3/</url>
+      <url>http://www.sayyourname.cn/2017/02/16/%E7%A7%92%E9%80%9F%E4%BA%94%E5%8E%98%E7%B1%B3/</url>
       <content type="html"><![CDATA[<p><img src="http://pic1.win4000.com/wallpaper/b/566a5bd61ba86.jpg" alt=""></p>
 <hr>
 <blockquote>
@@ -3031,7 +3031,7 @@ date: 2017-02-19 08:00:13
     
     <entry>
       <title><![CDATA[清晨 醒来的时候]]></title>
-      <url>http://sayyourname.cn/2017/02/15/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/</url>
+      <url>http://www.sayyourname.cn/2017/02/15/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/</url>
       <content type="html"><![CDATA[<p><img src="http://pic1.win4000.com/wallpaper/2/5835570118d7f.jpg" alt=""></p>
 <hr>
 <blockquote>
