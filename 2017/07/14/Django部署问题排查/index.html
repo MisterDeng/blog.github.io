@@ -417,7 +417,7 @@
         <p>Django问题排查有很多种方案，说一下我现在用的</p>
 <ol>
 <li>阿里云安全组配置开启8000端口用于测试</li>
-<li>执行python /home/MovieSite/manage.py runserver.0:8000，开启Django自带服务器调试，setting设置DEBUG = True</li>
+<li>执行python /home/MovieSite/manage.py runserver 0.0.0.0:8000，开启Django自带服务器调试，setting设置DEBUG = True</li>
 <li>运行项目，查看控制台错误提示</li>
 </ol>
 <hr>
