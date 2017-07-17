@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[xadmin添加富文本编辑器ueditor]]></title>
       <url>http://www.sayyourname.cn/2017/07/17/xadmin%E6%B7%BB%E5%8A%A0%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8ueditor/</url>
-      <content type="html"><![CDATA[<p>xadmin的强大不必再说，下面说明如何添加富文本编辑器插件</p>
+      <content type="html"><![CDATA[<p>xadmin的强大不必再说，<a href="https://github.com/zaxlct/MxOnline_Django/tree/xadmin-python3" target="_blank" rel="external">支持 python 3.5 的 xadmin 安装下载方法</a>，下面说明如何添加富文本编辑器插件</p>
 <h2 id="Ueditor安装"><a href="#Ueditor安装" class="headerlink" title="Ueditor安装"></a>Ueditor安装</h2><p>去<a href="https://github.com/twz915/DjangoUeditor3" target="_blank" rel="external">https://github.com/twz915/DjangoUeditor3</a> 下载兼容Python3，复制到extra_apps下面</p>
 <pre><code>INSTALLED_APPS = [
     &#39;DjangoUeditor&#39;
