@@ -7,7 +7,7 @@
       <title><![CDATA[xadmin添加富文本编辑器ueditor]]></title>
       <url>http://www.sayyourname.cn/2017/07/17/xadmin%E6%B7%BB%E5%8A%A0%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8ueditor/</url>
       <content type="html"><![CDATA[<p>xadmin的强大不必再说，下面说明如何添加富文本编辑器插件</p>
-<h2 id="Ueditor安装"><a href="#Ueditor安装" class="headerlink" title="Ueditor安装"></a>Ueditor安装</h2><p>去<a href="https://github.com/twz915/DjangoUeditor3下载兼容Python3，复制到extra_apps下面" target="_blank" rel="external">https://github.com/twz915/DjangoUeditor3下载兼容Python3，复制到extra_apps下面</a></p>
+<h2 id="Ueditor安装"><a href="#Ueditor安装" class="headerlink" title="Ueditor安装"></a>Ueditor安装</h2><p>去<a href="https://github.com/twz915/DjangoUeditor3" target="_blank" rel="external">https://github.com/twz915/DjangoUeditor3</a> 下载兼容Python3，复制到extra_apps下面</p>
 <pre><code>INSTALLED_APPS = [
     &#39;DjangoUeditor&#39;
 ]
@@ -45,10 +45,10 @@
 xadmin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register_plugin<span class="token punctuation">(</span>UeditorPlugin<span class="token punctuation">,</span> UpdateAdminView<span class="token punctuation">)</span>
 xadmin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register_plugin<span class="token punctuation">(</span>UeditorPlugin<span class="token punctuation">,</span> CreateAdminView<span class="token punctuation">)</span>
 </code></pre>
-<p><strong>init</strong>.py安装PLUGINS = (‘ueditor’)</p>
+<p><strong>init</strong>.py安装<code>PLUGINS = (&#39;ueditor&#39;)</code></p>
 <h2 id="Ueditor使用"><a href="#Ueditor使用" class="headerlink" title="Ueditor使用"></a>Ueditor使用</h2><p>models.py添加from DjangoUeditor.models import UEditorField</p>
 <pre><code>content = UEditorField(width=800, height=600, default=&#39;&#39;, verbose_name=&quot;电影详情&quot;)
-</code></pre><p>adminx.py添加style_fields = {“content”: “ueditor”}</p>
+</code></pre><p>adminx.py添加<code>style_fields = {&quot;content&quot;: &quot;ueditor&quot;}</code></p>
 <p>DjangoUeditor配置说明<a href="https://github.com/twz915/DjangoUeditor3" target="_blank" rel="external">https://github.com/twz915/DjangoUeditor3</a></p>
 ]]></content>
       
