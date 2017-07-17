@@ -4,6 +4,68 @@
   
     
     <entry>
+      <title><![CDATA[xadmin添加富文本编辑器ueditor]]></title>
+      <url>http://www.sayyourname.cn/2017/07/17/xadmin%E6%B7%BB%E5%8A%A0%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8ueditor/</url>
+      <content type="html"><![CDATA[<p>xadmin的强大不必再说，下面说明如何添加富文本编辑器插件</p>
+<h2 id="Ueditor安装"><a href="#Ueditor安装" class="headerlink" title="Ueditor安装"></a>Ueditor安装</h2><p>去<a href="https://github.com/twz915/DjangoUeditor3下载兼容Python3，复制到extra_apps下面" target="_blank" rel="external">https://github.com/twz915/DjangoUeditor3下载兼容Python3，复制到extra_apps下面</a></p>
+<pre><code>INSTALLED_APPS = [
+    &#39;DjangoUeditor&#39;
+]
+</code></pre><p>在extra_apps/xadmin/plugins下创建ueditor.py</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> xadmin
+<span class="token keyword">from</span> xadmin<span class="token punctuation">.</span>views <span class="token keyword">import</span> BaseAdminPlugin<span class="token punctuation">,</span> CreateAdminView<span class="token punctuation">,</span> ModelFormAdminView<span class="token punctuation">,</span> UpdateAdminView
+<span class="token keyword">from</span> DjangoUeditor<span class="token punctuation">.</span>models <span class="token keyword">import</span> UEditorField
+<span class="token keyword">from</span> DjangoUeditor<span class="token punctuation">.</span>widgets <span class="token keyword">import</span> UEditorWidget
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>conf <span class="token keyword">import</span> settings
+
+
+<span class="token keyword">class</span> <span class="token class-name">XadminUEditorWidget</span><span class="token punctuation">(</span>UEditorWidget<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>ueditor_options<span class="token operator">=</span>kwargs
+        self<span class="token punctuation">.</span>Media<span class="token punctuation">.</span>js <span class="token operator">=</span> None
+        super<span class="token punctuation">(</span>XadminUEditorWidget<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>kwargs<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">UeditorPlugin</span><span class="token punctuation">(</span>BaseAdminPlugin<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_field_style</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> attrs<span class="token punctuation">,</span> db_field<span class="token punctuation">,</span> style<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> style <span class="token operator">==</span> <span class="token string">'ueditor'</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> isinstance<span class="token punctuation">(</span>db_field<span class="token punctuation">,</span> UEditorField<span class="token punctuation">)</span><span class="token punctuation">:</span>
+               widget <span class="token operator">=</span> db_field<span class="token punctuation">.</span>formfield<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>widget
+               param <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+               param<span class="token punctuation">.</span>update<span class="token punctuation">(</span>widget<span class="token punctuation">.</span>ueditor_settings<span class="token punctuation">)</span>
+               param<span class="token punctuation">.</span>update<span class="token punctuation">(</span>widget<span class="token punctuation">.</span>attrs<span class="token punctuation">)</span>
+               <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'widget'</span><span class="token punctuation">:</span> XadminUEditorWidget<span class="token punctuation">(</span><span class="token operator">**</span>param<span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token keyword">return</span> attrs
+
+    <span class="token keyword">def</span> <span class="token function">block_extrahead</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> context<span class="token punctuation">,</span> nodes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        js <span class="token operator">=</span> <span class="token string">'&lt;script type="text/javascript" src="%s">&lt;/script>'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>settings<span class="token punctuation">.</span>STATIC_URL <span class="token operator">+</span> <span class="token string">"ueditor/ueditor.config.js"</span><span class="token punctuation">)</span>
+        js <span class="token operator">+=</span> <span class="token string">'&lt;script type="text/javascript" src="%s">&lt;/script>'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>settings<span class="token punctuation">.</span>STATIC_URL <span class="token operator">+</span> <span class="token string">"ueditor/ueditor.all.min.js"</span><span class="token punctuation">)</span>
+        nodes<span class="token punctuation">.</span>append<span class="token punctuation">(</span>js<span class="token punctuation">)</span>
+
+xadmin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register_plugin<span class="token punctuation">(</span>UeditorPlugin<span class="token punctuation">,</span> UpdateAdminView<span class="token punctuation">)</span>
+xadmin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register_plugin<span class="token punctuation">(</span>UeditorPlugin<span class="token punctuation">,</span> CreateAdminView<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>init</strong>.py安装PLUGINS = (‘ueditor’)</p>
+<h2 id="Ueditor使用"><a href="#Ueditor使用" class="headerlink" title="Ueditor使用"></a>Ueditor使用</h2><p>models.py添加from DjangoUeditor.models import UEditorField</p>
+<pre><code>content = UEditorField(width=800, height=600, default=&#39;&#39;, verbose_name=&quot;电影详情&quot;)
+</code></pre><p>adminx.py添加style_fields = {“content”: “ueditor”}</p>
+<p>DjangoUeditor配置说明<a href="https://github.com/twz915/DjangoUeditor3" target="_blank" rel="external">https://github.com/twz915/DjangoUeditor3</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Django </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> xadmin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Django部署问题排查]]></title>
       <url>http://www.sayyourname.cn/2017/07/14/Django%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</url>
       <content type="html"><![CDATA[<p>Django问题排查有很多种方案，说一下我现在用的</p>
@@ -2604,7 +2666,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#64;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#x6d;">&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#64;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>

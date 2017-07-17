@@ -1,1 +1,1 @@
-http://www.sayyourname.cn/2017/07/14/Django部署问题排查/
+http://www.sayyourname.cn/2017/07/17/xadmin添加富文本编辑器ueditor/

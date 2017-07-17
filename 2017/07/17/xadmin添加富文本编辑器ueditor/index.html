@@ -10,7 +10,7 @@
     
     <title>
         
-            归档 | 
+            xadmin添加富文本编辑器ueditor | 
         
         梦醒花开知多少
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="你的名字。">
     <meta name="description" content="技术生活个人博客">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,Django,技术,xadmin">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/柠檬.png">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | 梦醒花开知多少">
+    <meta property="og:title" content="xadmin添加富文本编辑器ueditor | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
-    
+    <meta property="og:article:tag" content="Django"> <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="xadmin"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -241,396 +241,290 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ueditor安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ueditor安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ueditor使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">Ueditor使用</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 101);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/22/前端资源汇总（转载）/">前端资源汇总（转载）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1.前言
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/22/前端资源汇总（转载）/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/19/一个人的时候/">一个人的时候</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            一个人的思...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/19/一个人的时候/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 19, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/19/Markdown语法/">Markdown语法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言原来用的
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/19/Markdown语法/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 19, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/19/Hexo文章添加音乐插件/">Hexo文章添加音乐插件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言Hexo添加音...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/19/Hexo文章添加音乐插件/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 19, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/18/Hexo设置多说shortname/">Hexo设置多说shortname</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言本来是很简单的...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/18/Hexo设置多说shortname/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/17/Node.js上传图片到七牛/">Node.js上传图片到七牛</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言主题基于 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/17/Node.js上传图片到七牛/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/archives/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/4/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 6; i++) {
-        randomNum = Math.floor(Math.random() * 101 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-        locatePost = locatePost.next();
+        
+    
+            <p class="article-headline-p">
+                xadmin添加富文本编辑器ueditor
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>7月 17, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADiElEQVR42u3awW7rMAwEwPz/T7fXBwR1dkXJMR5Gp8CVbWl8YEnx9WP8M14IcODAgQMHDhw4cOB4MMcrHu93vT8hmfPXzPf577+Tu+q94MCBAweOAxwfQlGwuGRmu+3r+ddvz+fgwIEDB45zHH8FpHYRbajLg2j+AfK94MCBAweOJ3BcbzK5krz9ej4OHDhw4Pg/OPbOz0t7bTDGgQMHDhxP4FgruiVPWEu98jD/tVopDhw4cOAYNzQ8//et/R04cODAgeONYzLy4l3bhLe2scVd4MCBAweOrRxtMGvvTZiS6226mKwBBw4cOHDcz5Esty3PTYiTw6r2EAsHDhw4cJzgWDvmuX5xzpqD5gE4IcOBAwcOHCc4rl98giZP+RLc65VEO8KBAwcOHMc4JmlSu8l20fkb6xInDhw4cODYyjFfUBuwkyfvmo8DBw4cOL7LkSdIydFOQpa/qz0Yy9sgcODAgQPHXo78EWvNcG3bRMu6oYyIAwcOHDgOcKw1KIzaCJYKi/NiJQ4cOHDg+BZHHtIW2wjKRec0bbMdDhw4cODYy5E8bm9bW1G2G7cvRKkmDhw4cODYytE2K+SHTHk6tza/Ra9TOBw4cODAMeaYv2ySBLbbyJPPUUaLAwcOHDgG1bAk3OZtCnkobYuAxVaTfwhw4MCBA8dWjklJri0UJh9grZg4asLAgQMHDhxbOdZe2R4aTWjao6Y8ncOBAwcOHCc4EpR5sW+SKObJ2FoSiAMHDhw47uFolzVfbruSSXqJAwcOHDhOc+zdaotyAitP7XDgwIEDx16Otmz3IWjFzdlJQXDt3poSBw4cOHDcyNEuIj+gapeeHzglBDhw4MCB4xxHW3qr2wWWQmMbhifrxIEDBw4ceznyIJf/NQ/DbalxrRT44fk4cODAgWMrxyQFyhe61k69VppMPhUOHDhw4DjHkRcB60aBMiVbKwLmjRc4cODAgeMejnbkRbq15Gp+QNVex4EDBw4cezle8Uho2kW3yVvbhIEDBw4cOL7FkQTXNcScsj2m2vapcODAgQPHMY68ES1JwJKFrgXI12AU/R04cODAgeMWjnnSlWx1b5r34d8IHDhw4MDxVY4k0Wpn5iF8EshH/R04cODAgWOJY604OE/M2ka6tiXiw3UcOHDgwHGAIy+r5QE1P2qatClsCPA4cODAgWMrh4EDBw4cOHDgwIEDB46HjV+FCegZKNJcSAAAAABJRU5ErkJggg==">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Django/">Django</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/xadmin/">xadmin</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/07/17/xadmin添加富文本编辑器ueditor/" class="leancloud-views_num" data-flag-title="xadmin添加富文本编辑器ueditor">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <p>xadmin的强大不必再说，下面说明如何添加富文本编辑器插件</p>
+<h2 id="Ueditor安装"><a href="#Ueditor安装" class="headerlink" title="Ueditor安装"></a>Ueditor安装</h2><p>去<a href="https://github.com/twz915/DjangoUeditor3下载兼容Python3，复制到extra_apps下面" target="_blank" rel="external">https://github.com/twz915/DjangoUeditor3下载兼容Python3，复制到extra_apps下面</a></p>
+<pre><code>INSTALLED_APPS = [
+    &#39;DjangoUeditor&#39;
+]
+</code></pre><p>在extra_apps/xadmin/plugins下创建ueditor.py</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> xadmin
+<span class="token keyword">from</span> xadmin<span class="token punctuation">.</span>views <span class="token keyword">import</span> BaseAdminPlugin<span class="token punctuation">,</span> CreateAdminView<span class="token punctuation">,</span> ModelFormAdminView<span class="token punctuation">,</span> UpdateAdminView
+<span class="token keyword">from</span> DjangoUeditor<span class="token punctuation">.</span>models <span class="token keyword">import</span> UEditorField
+<span class="token keyword">from</span> DjangoUeditor<span class="token punctuation">.</span>widgets <span class="token keyword">import</span> UEditorWidget
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>conf <span class="token keyword">import</span> settings
+
+
+<span class="token keyword">class</span> <span class="token class-name">XadminUEditorWidget</span><span class="token punctuation">(</span>UEditorWidget<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>ueditor_options<span class="token operator">=</span>kwargs
+        self<span class="token punctuation">.</span>Media<span class="token punctuation">.</span>js <span class="token operator">=</span> None
+        super<span class="token punctuation">(</span>XadminUEditorWidget<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>kwargs<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">UeditorPlugin</span><span class="token punctuation">(</span>BaseAdminPlugin<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_field_style</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> attrs<span class="token punctuation">,</span> db_field<span class="token punctuation">,</span> style<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> style <span class="token operator">==</span> <span class="token string">'ueditor'</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> isinstance<span class="token punctuation">(</span>db_field<span class="token punctuation">,</span> UEditorField<span class="token punctuation">)</span><span class="token punctuation">:</span>
+               widget <span class="token operator">=</span> db_field<span class="token punctuation">.</span>formfield<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>widget
+               param <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+               param<span class="token punctuation">.</span>update<span class="token punctuation">(</span>widget<span class="token punctuation">.</span>ueditor_settings<span class="token punctuation">)</span>
+               param<span class="token punctuation">.</span>update<span class="token punctuation">(</span>widget<span class="token punctuation">.</span>attrs<span class="token punctuation">)</span>
+               <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'widget'</span><span class="token punctuation">:</span> XadminUEditorWidget<span class="token punctuation">(</span><span class="token operator">**</span>param<span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token keyword">return</span> attrs
+
+    <span class="token keyword">def</span> <span class="token function">block_extrahead</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> context<span class="token punctuation">,</span> nodes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        js <span class="token operator">=</span> <span class="token string">'&lt;script type="text/javascript" src="%s">&lt;/script>'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>settings<span class="token punctuation">.</span>STATIC_URL <span class="token operator">+</span> <span class="token string">"ueditor/ueditor.config.js"</span><span class="token punctuation">)</span>
+        js <span class="token operator">+=</span> <span class="token string">'&lt;script type="text/javascript" src="%s">&lt;/script>'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>settings<span class="token punctuation">.</span>STATIC_URL <span class="token operator">+</span> <span class="token string">"ueditor/ueditor.all.min.js"</span><span class="token punctuation">)</span>
+        nodes<span class="token punctuation">.</span>append<span class="token punctuation">(</span>js<span class="token punctuation">)</span>
+
+xadmin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register_plugin<span class="token punctuation">(</span>UeditorPlugin<span class="token punctuation">,</span> UpdateAdminView<span class="token punctuation">)</span>
+xadmin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register_plugin<span class="token punctuation">(</span>UeditorPlugin<span class="token punctuation">,</span> CreateAdminView<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>init</strong>.py安装PLUGINS = (‘ueditor’)</p>
+<h2 id="Ueditor使用"><a href="#Ueditor使用" class="headerlink" title="Ueditor使用"></a>Ueditor使用</h2><p>models.py添加from DjangoUeditor.models import UEditorField</p>
+<pre><code>content = UEditorField(width=800, height=600, default=&#39;&#39;, verbose_name=&quot;电影详情&quot;)
+</code></pre><p>adminx.py添加style_fields = {“content”: “ueditor”}</p>
+<p>DjangoUeditor配置说明<a href="https://github.com/twz915/DjangoUeditor3" target="_blank" rel="external">https://github.com/twz915/DjangoUeditor3</a></p>
+
+    
+
+    
+</div>
+
+<script>
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
     }
 </script>
 
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+    <!-- 使用 网易云跟帖 -->
+    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    <script>
+    var cloudTieConfig = {
+      url: document.location.href, 
+      sourceId: "",
+      productKey: "fb56b21a167746ef8f5ac8e116852380",
+      target: "cloud-tie-wrapper"
+    };
+    var yunManualLoad = true;
+    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+    </script>
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/07/14/Django部署问题排查/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
