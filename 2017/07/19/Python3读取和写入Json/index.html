@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: 技术 | 
+            Python3读取和写入Json | 
         
         梦醒花开知多少
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="你的名字。">
     <meta name="description" content="技术生活个人博客">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,技术,Python">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/柠檬.png">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 技术 | 梦醒花开知多少">
+    <meta property="og:title" content="Python3读取和写入Json | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
-    
+    <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="Python"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -241,219 +241,262 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 101);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/19/Hexo文章添加音乐插件/">Hexo文章添加音乐插件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言Hexo添加音...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/19/Hexo文章添加音乐插件/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 19, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/18/Hexo设置多说shortname/">Hexo设置多说shortname</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言本来是很简单的...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/18/Hexo设置多说shortname/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/17/Node.js上传图片到七牛/">Node.js上传图片到七牛</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言主题基于 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/17/Node.js上传图片到七牛/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/tags/技术/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/tags/技术/">1</a><a class="page-number" href="/tags/技术/page/2/">2</a><span class="page-number current">3</span>
-        </nav>
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 6; i++) {
-        randomNum = Math.floor(Math.random() * 101 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-        locatePost = locatePost.next();
+        
+    
+            <p class="article-headline-p">
+                Python3读取和写入Json
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>7月 19, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2UlEQVR42u3aUY7jIBAE0Nz/0rsHGMVT1Ti7Djy+IuRxeESaFl28/hw5XtjY2NjY2NjY2NiPZL/ikTz/7s3X8z+f+Tmfr+Ht92JjY2Nvzf7lX3+wxOvnE8C79+fbdO3CxsbGPoF9XbTyZSXz+d/mb/hlndjY2NjYcVG5PsAk35VQsbGxsbE/V8Dy55NDBTY2Njb2vU2lWeO+fWceG/yjXho2Njb249lt0PuEz/8h38bGxsZ+JHs2rktI3ipqy97SmrGxsbE3ZSdNn/w6Zr4pyZbNYoPh5UtsbGzsLdj5cmcNoLw51ZKilWBjY2MfyW4LWNv6yUltCLFUwLCxsbG/lj2Le2cXemZhbV4ysbGxsU9jJ4FuvtD8QuTskDOcwcbGxt6U3Tbf1xv6bbibHDminwQbGxt7a3Yb8c5a+bOQuP2uKB7AxsbG3o7dBrfr13dm13Ha6AIbGxv7BPbKgaG9ItkebGaBQR0PYGNjY2/Ezo8Bs6K1Htm2RQsbGxv7BHYb+ubtp3yh+abnkUAU9GJjY2NvxJ69qN2CG44TceMJGxsb+xx2HqMmLf429G0LZ8IrTmDY2NjYW7BnTfy2VTQ7kOTRRfQ8NjY29qbsfEF5oapLS9yKystnHfRiY2Njfy17JYJtjwcr8cBKzICNjY19GntWltqNSC4D5XHCUlMJGxsb+8vZ7RXGZIn5fL5xNzyPjY2NfQA7L2B3tZ/aIHmpEGJjY2Nvzc4LxvqRY70ctivHxsbGPof9CfC9F3HygY2NjX0Oux2zbUo+zxpGxZPY2NjYm7LbkjArJO18fvAomk3Y2NjYW7PzorXeQmrLZN5aqgsYNjY29nbslfg2mfl0OwkbGxsbu2W3sKQ9lF8YyttY2NjY2Nj5VZ52WTPkMDbAxsbGPoCdv7q9ENluZf62/MomNjY29t7slZZNUmbaxlO76cOjCDY2NvYW7HMGNjY2NjY2NjY29mPGX+QqNZc20FaPAAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Python/">Python</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/07/19/Python3读取和写入Json/" class="leancloud-views_num" data-flag-title="Python3读取和写入Json">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_city</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'city.json'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> json_file<span class="token punctuation">:</span>
+        data <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>json_file<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> model <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+            model<span class="token punctuation">[</span><span class="token string">'childrenRegion'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span> model<span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'全部'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> data
+
+<span class="token keyword">def</span> <span class="token function">write_city</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'city.json'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> json_file<span class="token punctuation">:</span>
+        str <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">,</span> ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 写入时中文不转Unicode并且格式化</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+        json_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    write_city<span class="token punctuation">(</span>get_city<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+    
+
+    
+</div>
+
+<script>
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
     }
 </script>
 
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+    <!-- 使用 网易云跟帖 -->
+    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    <script>
+    var cloudTieConfig = {
+      url: document.location.href, 
+      sourceId: "",
+      productKey: "fb56b21a167746ef8f5ac8e116852380",
+      target: "cloud-tie-wrapper"
+    };
+    var yunManualLoad = true;
+    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+    </script>
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/07/17/xadmin添加富文本编辑器ueditor/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1907,6 +1950,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
