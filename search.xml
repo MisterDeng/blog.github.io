@@ -2698,7 +2698,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#101;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#101;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#64;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#64;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
