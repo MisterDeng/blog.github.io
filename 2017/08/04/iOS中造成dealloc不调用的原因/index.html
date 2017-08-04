@@ -10,7 +10,7 @@
     
     <title>
         
-            归档 | 
+            iOS中造成dealloc不调用的原因 | 
         
         梦醒花开知多少
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="你的名字。">
     <meta name="description" content="技术生活个人博客">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,技术,iOS">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/柠檬.png">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | 梦醒花开知多少">
+    <meta property="og:title" content="iOS中造成dealloc不调用的原因 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
-    
+    <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="iOS"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -238,396 +238,268 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决办法"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决办法</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 123);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/05/25/Django-rest-framework使用总结/">Django rest_framework使用总结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Model...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/05/25/Django-rest-framework使用总结/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>5月 25, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/05/24/如何优化-Django-REST-Framework-的性能？/">如何优化 Django REST Framework 的性能？</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            现在，Django REST Framework 帮助 Django 开发者给自己的应用开发出简单而强大的标准 REST APIs，...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/05/24/如何优化-Django-REST-Framework-的性能？/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>5月 24, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/05/22/总有你要的编程书单（GitHub）/">总有你要的编程书单（GitHub）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            目录
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/05/22/总有你要的编程书单（GitHub）/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>5月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/03/Landing-Guy/">Landing Guy</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Right I die. My life before my eyes.生命于我眼前支离破碎As I was hang there,...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/03/Landing-Guy/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>3月 03, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/22/前端资源汇总（转载）/">前端资源汇总（转载）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1.前言
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/22/前端资源汇总（转载）/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/19/一个人的时候/">一个人的时候</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            一个人的思...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/19/一个人的时候/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>2月 19, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/archives/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/4/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 6; i++) {
-        randomNum = Math.floor(Math.random() * 123 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-        locatePost = locatePost.next();
+        
+    
+            <p class="article-headline-p">
+                iOS中造成dealloc不调用的原因
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>8月 04, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADjUlEQVR42u3ay27cQAwEwP3/n46vBgxvusmZjQKUToZhvUoHmmS//ji+HS8EOHDgwIEDBw4cOHA8mOMVH/VtyuPnWd9/8/7Km3fBgQMHDhw3OJIXm/3Ne9DfXjs5K4FLnhMHDhw4cNzjSG4zK8Z18Zu9WPkuOHDgwIHj+RwJUNKeJcU7L9U4cODAgeN/4Ujarc1QLy+rOHDgwIHjmRxJs5SXxv2wLx8y/rNZKQ4cOHDgWAcanv/zR/MdOHDgwIHjB0d75AGCfBE1u/6pAwcOHDhwnOWYhRXyCELbem2iD8OwBQ4cOHDgOMrxfpmUj/A2gbl27JiPFKMnx4EDBw4cRznygeB+DBctgYJQQrv0qls4HDhw4MBxlKMd7eWI+e/bEptj1YUWBw4cOHCUHJsBX/voyVl5Uc/L7V+eEAcOHDhwXOBoXzUpYPuAQrtqat8IBw4cOHDc4EheMinA+WPNSnJenmt0HDhw4MBxmWMfkpvR5EU9H1BGd8eBAwcOHEc5Zk3UKYh8ldWOFw/MSnHgwIEDx4gjaZzaKEMeRGibvbZU48CBAweOz3PkZa8tiqcWV21xzdtRHDhw4MBxg6Mdrs1ePv8A+eBys8TCgQMHDhz3ONroQD50mzVa+cBxU6Rx4MCBA8dtjnx1NGM6O3zMz43uiAMHDhw4jnJsQmbJiii/ct46bu5YDwdx4MCBA8eIY3P7tpWaLZPy1q5uLHHgwIEDxzWOTfggGfnNgm7tELP+SDhw4MCB4wLHptS1RXpfVnPuVb4DBw4cOHCMOGYRhHxE2Bb1/XAw/3g4cODAgeMeRx5W2AcIcoL8U+UxCBw4cODAcZujjRS0JW2GMhtTtsNEHDhw4MBxm2PTmCXlrV1f7f8JiAIQOHDgwIHjGkceFFgFCMqxYP6RhqNMHDhw4MBxjWO2iJqtf/IwXDtwzEs4Dhw4cOC4zZEEqWfNXlv88o+xXz7hwIEDB46zHGcfKB8X5m1h3mq2Cy0cOHDgwHGDoy1Us8VPO1ictWrDq+HAgQMHjgscs9VOXko3jdZsNXWgo8WBAwcOHIeGg+3DtZGCPDbRhvOGz48DBw4cOB7AkTdObVHcjwKPReVw4MCBA8cHOWbntmflY8pV/AIHDhw4cFzjaKNvdUmL4wv7cEPREOLAgQMHjgscm0FbW5jbcEMON/tUOHDgwIHjLIcDBw4cOHDgwIEDBw4cDzu+AEyx7QbmzudDAAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS/">iOS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/08/04/iOS中造成dealloc不调用的原因/" class="leancloud-views_num" data-flag-title="iOS中造成dealloc不调用的原因">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>最近在一个项目中用到了地图，发现在地图页面和上一个页面间反复切换回出现内存爆增的情况，就像吃了炫迈一样根本停不下来（直到app内存爆表，app闪退收场）。造成这一结果的根本原因是地图的mapView没有释放，导致每次打开地图界面的时候内存中都重新加载了一个地图mapView。于是在网上搜索了一番找到了解决办法，只需要在地图的ViewController中dealloc方法中释放掉mapView就行了。具体代码如下:</p>
+<pre><code>- (void)dealloc {
+    [_mapView release];
+    [super dealloc];
+}
+
+//并且在界面将要显示的时候设置代理，将要消失的时候取消代理
+- (void)viewWillAppear:(BOOL)animated {
+    _mapView.delegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    _mapView.delegate = nil;
+}
+</code></pre><p>以上给出的方法确实是对的，可以解决反复切换地图页面和地图上一级页面内存暴增造成的闪退问题。但是这里要说的不是这个问题，而是一个新的问题，我在dealloc中打了断点，但是dealloc根本就没有执行，所以mapView也就根本就没有释放，内存还是一样在暴增。为什么ViewController已经被pop了，而ViewController的dealloc方法却没有被调用？（按理说ViewController被pop的时候它的dealloc的方法应该被调用才对）。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>通过Google搜索终于在晚上找到了答案（大家就不要用百度，想要快速准确的找到自己想要的答案推荐大家用google）。造成ViewController不释放的原因可能有很多。遇到dealloc不调用的时候只需要检查您的ViewController中是否存在以下几个问题：</p>
+<ol>
+<li><p><strong>ViewController中存在NSTimer</strong></p>
+<p>如果你的ViewController中有NSTimer，那么你就要注意了，因为当你调用</p>
+<pre><code>[NSTimer scheduledTimerWithTimeInterval:1.0 
+                                 target:self 
+                               selector:@selector(updateTime:) 
+                               userInfo:nil 
+                                repeats:YES];
+</code></pre><p>时，这个<a href="">target:self</a>就增加了ViewController的return count，如果你不将这个timer invalidate，将别想调用dealloc。</p>
+</li>
+<li><p><strong>ViewController中有关的代理</strong></p>
+<p>一个比较隐秘的因素，你去找找与这个类有关的代理，有没有强引用属性？比如一个代理的delegate应该是 assign 的现在是retain，(╯‵□′)╯︵┻━┻，就是这个，它会影响你不让你调用dealloc，不信，就试试吧。（这个我还没有遇到过）。</p>
+</li>
+<li><p><strong>ViewController中有Block</strong></p>
+<p>这个就是我我上面不进入dealloc的真正原因，Block体内使用实例变量也会造成循环引用，使得拥有这个实例的对象不能释放。<br>例如你这个类叫OneViewController,有个属性是NSString *name; 如果你在block体中使用了self.name，那样子的话这个类就没法释放。<br>要解决这个问题，MRC下只需</p>
+<pre><code>__block Viewcontroller *weakSelf = self;
+</code></pre><p>ARC下将<strong>block 换为 </strong>weak</p>
+</li>
+</ol>
+<p>目前我所知道的就以上三种情况，如果有什么错误的地方或者还存在的一些情况，欢迎大家来补充。</p>
+
+    
+
+    
+</div>
+
+<script>
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
     }
 </script>
 
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/08/03/iOS设置导航条返回item样式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

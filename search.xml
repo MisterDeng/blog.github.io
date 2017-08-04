@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title><![CDATA[iOS中造成dealloc不调用的原因]]></title>
+      <url>http://www.sayyourname.cn/2017/08/04/iOS%E4%B8%AD%E9%80%A0%E6%88%90dealloc%E4%B8%8D%E8%B0%83%E7%94%A8%E7%9A%84%E5%8E%9F%E5%9B%A0/</url>
+      <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>最近在一个项目中用到了地图，发现在地图页面和上一个页面间反复切换回出现内存爆增的情况，就像吃了炫迈一样根本停不下来（直到app内存爆表，app闪退收场）。造成这一结果的根本原因是地图的mapView没有释放，导致每次打开地图界面的时候内存中都重新加载了一个地图mapView。于是在网上搜索了一番找到了解决办法，只需要在地图的ViewController中dealloc方法中释放掉mapView就行了。具体代码如下:</p>
+<pre><code>- (void)dealloc {
+    [_mapView release];
+    [super dealloc];
+}
+
+//并且在界面将要显示的时候设置代理，将要消失的时候取消代理
+- (void)viewWillAppear:(BOOL)animated {
+    _mapView.delegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    _mapView.delegate = nil;
+}
+</code></pre><p>以上给出的方法确实是对的，可以解决反复切换地图页面和地图上一级页面内存暴增造成的闪退问题。但是这里要说的不是这个问题，而是一个新的问题，我在dealloc中打了断点，但是dealloc根本就没有执行，所以mapView也就根本就没有释放，内存还是一样在暴增。为什么ViewController已经被pop了，而ViewController的dealloc方法却没有被调用？（按理说ViewController被pop的时候它的dealloc的方法应该被调用才对）。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>通过Google搜索终于在晚上找到了答案（大家就不要用百度，想要快速准确的找到自己想要的答案推荐大家用google）。造成ViewController不释放的原因可能有很多。遇到dealloc不调用的时候只需要检查您的ViewController中是否存在以下几个问题：</p>
+<ol>
+<li><p><strong>ViewController中存在NSTimer</strong></p>
+<p>如果你的ViewController中有NSTimer，那么你就要注意了，因为当你调用</p>
+<pre><code>[NSTimer scheduledTimerWithTimeInterval:1.0 
+                                 target:self 
+                               selector:@selector(updateTime:) 
+                               userInfo:nil 
+                                repeats:YES];
+</code></pre><p>时，这个<a href="">target:self</a>就增加了ViewController的return count，如果你不将这个timer invalidate，将别想调用dealloc。</p>
+</li>
+<li><p><strong>ViewController中有关的代理</strong></p>
+<p>一个比较隐秘的因素，你去找找与这个类有关的代理，有没有强引用属性？比如一个代理的delegate应该是 assign 的现在是retain，(╯‵□′)╯︵┻━┻，就是这个，它会影响你不让你调用dealloc，不信，就试试吧。（这个我还没有遇到过）。</p>
+</li>
+<li><p><strong>ViewController中有Block</strong></p>
+<p>这个就是我我上面不进入dealloc的真正原因，Block体内使用实例变量也会造成循环引用，使得拥有这个实例的对象不能释放。<br>例如你这个类叫OneViewController,有个属性是NSString *name; 如果你在block体中使用了self.name，那样子的话这个类就没法释放。<br>要解决这个问题，MRC下只需</p>
+<pre><code>__block Viewcontroller *weakSelf = self;
+</code></pre><p>ARC下将<strong>block 换为 </strong>weak</p>
+</li>
+</ol>
+<p>目前我所知道的就以上三种情况，如果有什么错误的地方或者还存在的一些情况，欢迎大家来补充。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> iOS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[iOS设置导航条返回item样式]]></title>
       <url>http://www.sayyourname.cn/2017/08/03/iOS%E8%AE%BE%E7%BD%AE%E5%AF%BC%E8%88%AA%E6%9D%A1%E8%BF%94%E5%9B%9Eitem%E6%A0%B7%E5%BC%8F/</url>
       <content type="html"><![CDATA[<p>导航条的backitem在导航控制器里面设置会有很多问题，下面介绍一种重写控制器的viewload方法一劳永逸解决方法</p>
@@ -448,9 +500,9 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
             
             <tag> 技术 </tag>
             
-            <tag> Vue </tag>
-            
             <tag> 服务器 </tag>
+            
+            <tag> Vue </tag>
             
         </tags>
         
@@ -2802,7 +2854,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#109;">&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#101;&#120;&#97;&#x6d;&#112;&#108;&#x65;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#101;&#120;&#97;&#x6d;&#112;&#108;&#x65;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
