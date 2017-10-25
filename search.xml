@@ -4,6 +4,74 @@
   
     
     <entry>
+      <title><![CDATA[Mac安装mycli命令行工具]]></title>
+      <url>http://www.sayyourname.cn/2017/10/25/Mac%E5%AE%89%E8%A3%85mycli%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</url>
+      <content type="html"><![CDATA[<p>mac安装方法</p>
+<pre><code>$ brew update &amp;&amp; brew install mycli
+</code></pre><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre><code>$ mycli --help
+Usage: mycli [OPTIONS] [DATABASE]
+
+Options:
+  -h, --host TEXT               Host address of the database.
+  -P, --port INTEGER            Port number to use for connection. Honors
+                                $MYSQL_TCP_PORT
+  -u, --user TEXT               User name to connect to the database.
+  -S, --socket TEXT             The socket file to use for connection.
+  -p, --password TEXT           Password to connect to the database
+  --pass TEXT                   Password to connect to the database
+  --ssl-ca PATH                 CA file in PEM format
+  --ssl-capath TEXT             CA directory
+  --ssl-cert PATH               X509 cert in PEM format
+  --ssl-key PATH                X509 key in PEM format
+  --ssl-cipher TEXT             SSL cipher to use
+  --ssl-verify-server-cert      Verify server&#39;s &quot;Common Name&quot; in its cert
+                                against hostname used when connecting. This
+                                option is disabled by default
+  -v, --version                 Version of mycli.
+  -D, --database TEXT           Database to use.
+  -R, --prompt TEXT             Prompt format (Default: &quot;\t \u@\h:\d&gt; &quot;)
+  -l, --logfile FILENAME        Log every query and its results to a file.
+  --defaults-group-suffix TEXT  Read config group with the specified suffix.
+  --defaults-file PATH          Only read default options from the given file
+  --myclirc PATH                Location of myclirc file.
+  --auto-vertical-output        Automatically switch to vertical output mode
+                                if the result is wider than the terminal
+                                width.
+  -t, --table                   Display batch output in table format.
+  --csv                         Display batch output in CSV format.
+  --warn / --no-warn            Warn before running a destructive query.
+  --local-infile BOOLEAN        Enable/disable LOAD DATA LOCAL INFILE.
+  --login-path TEXT             Read this path from the login file.
+  -e, --execute TEXT            Execute query to the database.
+  --help                        Show this message and exit.123456789101112131415161718192021222324252627282930313233343536
+</code></pre><h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><pre><code>$ mycli local_database
+
+$ mycli -h localhost -u root app_db
+
+$ mycli mysql://amjith@localhost:3306/django_poll
+</code></pre><p>##提醒</p>
+<pre><code>sudo chown -R $(whoami) /usr/local
+</code></pre><p>把<code>/use/local</code>的owner換成自己，就有write權限了</p>
+<p><code>whoami</code>就是一個命令，會echo當前登錄用戶的名字。當然你知道自己的用戶名，比如jack,就直接</p>
+<pre><code>sudo chown -R jack /usr/local
+</code></pre><p>也可以</p>
+<p>修改過權限之後，就直接跑</p>
+<pre><code>brew install node
+</code></pre><p>不需要再用sudo，因為當前用戶已經有權限寫入/usr/local了</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> Mac </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[iOS统一更换字体和大小]]></title>
       <url>http://www.sayyourname.cn/2017/09/21/iOS%E7%BB%9F%E4%B8%80%E6%9B%B4%E6%8D%A2%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/</url>
       <content type="html"><![CDATA[<pre class=" language-objective-c"><code class="language-objective-c">//
@@ -235,9 +303,9 @@ location ~* \.(html|txt)$ {
             
             <tag> Django </tag>
             
-            <tag> Vue </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> Vue </tag>
             
         </tags>
         
@@ -582,9 +650,9 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
             
             <tag> Django </tag>
             
-            <tag> Vue </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> Vue </tag>
             
             <tag> 服务器 </tag>
             
@@ -2938,7 +3006,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;">&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#64;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#111;&#x6d;">&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#64;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
