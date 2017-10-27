@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            iOS设置导航条返回item样式 | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="iOS设置导航条返回item样式 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,223 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS设置导航条返回item样式
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>8月 03, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC5ElEQVR42u3a0U7rQAwE0P7/T3NfkbikM95UtLsnTwhCuidIWPb48XXk9cDGxsbGxsbGxsZ+S/Yjvr7f/5+H/rjn+gnX3//thLMzY2NjY5/AfvKv//Ke6+PmgPwMszNjY2Njn8DOi9ZKSUteRH6e4szY2NjY2GWbcf3MWanDxsbGxr6LnRwuYa9/CjY2Njb2bKDTNic5aaX5eeEsDRsbG/vt2bOg92+//rN8GxsbG/vN2O2VD5iSYDj5rfzJTz4XGxsbe1P2bJkyOVD+07aNicrVrAPDxsbG3oK9EuImqzltnNAWuV9fNDY2Nvam7KTkzFqFZBGnbVra0AIbGxv7HPbKSGhWitqFy/bPgI2NjX0aOyfNIoE8JMhfX13wsLGxsTdlzxqGdniUPCF/0cOyh42Njb01Oy9aszI2LDllILG0c4qNjY394eyVAVNekPLwOHm5SWCAjY2NfSZ7FgbcVZBmQfINm0rY2NjYH85Ohjsr8e1Kg1GUKGxsbOzj2e3RZz/NA4aVRggbGxv7HHZSVJKmJW9s2vB4fdiEjY2NfQ67LUL5KCovNitLOU9OhY2NjX0Au12azJcv85h2Fh5gY2NjY18XraT85I3KbMWzjSierOxgY2NjH8POS9RseNRebTCMjY2NfQI7X3xcaSfylqZ9lcMCho2Njb0dO/+A2UAqQbaLm207hI2Njb0re9aWJIOh/P6VVueGDgwbGxt7I/bKiL9oCUYrOyuFEBsbG3tv9l1HbJ/ziuHRMB7AxsbG/nB2e+UlpL0nb36uXz02Njb2aezZusyMl/zWbCwVRQvY2NjYW7PzqGBWQvIS1Ya4t63sYGNjY2/BXhm+t6OlPEhoh0pFPICNjY19JDtZtWmD4bYpyl8TNjY2NnaOXBnf50Ux/zO8sIBhY2NjvzE7Hyq1yz35uk+7MFSMn7CxsbG3Zs+C3jyCbRuSlWJZxAPY2NjYW7DPubCxsbGxsbGxsbHf5voHa2ma3bbugJQAAAAASUVORK5CYII=">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/iOS设置导航条返回item样式.html" class="leancloud-views_num" data-flag-title="iOS设置导航条返回item样式">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <p>导航条的backitem在导航控制器里面设置会有很多问题，下面介绍一种重写控制器的viewload方法一劳永逸解决方法</p>
+<pre class=" language-objective-c"><code class="language-objective-c">#import "UIViewController+EmptyBackButton.h"
+#import <objc/runtime.h>
+
+@implementation UIViewController (EmptyBackButton)
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class class = [self class];
+
+        SEL originalSelector = @selector(viewDidLoad);
+        SEL swizzledSelector = @selector(mob_viewDidLoad);
+
+        Method originalMethod = class_getInstanceMethod(class, originalSelector);
+        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+
+        BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+
+        if (didAddMethod) {
+            class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+        } else {
+            method_exchangeImplementations(originalMethod, swizzledMethod);
+        }
+    });
+}
+
+#pragma mark - Method Swizzling
+
+- (void)mob_viewDidLoad {
+    [self mob_viewDidLoad];
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIImage* image = [UIImage imageNamed:@"v2_goback_white"];
+    [backButtonItem setBackButtonBackgroundImage:[image resizableImageWithCapInsets:UIEdgeInsetsMake(0, image.size.width, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.navigationItem setBackBarButtonItem:backButtonItem];
+}
+
+@end
+</code></pre>
+<p>Runtime方式设置只有返回图片的backitem</p>
+
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 

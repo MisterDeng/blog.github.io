@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            Django-RestFramework添加自定义字段 | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="Django-RestFramework添加自定义字段 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,211 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Django-RestFramework添加自定义字段
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>6月 13, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzklEQVR42u3a0WpjMQwE0Pz/T3dfF5a2M9LtktrHT4UkNz4OdLCk18eV64WNjY2NjY2NjY39luxXvP791GfPmb0zeXW1Z2xsbOyj2d/8619vInn+3+9MjqbdMzY2NvYN7M+2m2wo2Xoeb1/z2j1jY2NjYydbb48jD0JsbGxs7P/J3j8nCTNsbGxs7E2BZnYEszZA+8wfrKVhY2Njvz07L/G/z9//tb+NjY2N/cbsdrXN1/zakF8qhjvHxsbGPpSdB8NsdGZTTmobCd+MFmFjY2Nfw960Y1/lSqizHWJjY2Pfw24xX8feU4G0KSQVRSVsbGzsI9hPAZ4dr5n9GMP+NjY2NvZB7LZYX3xlXFTaBNUwwLCxsbF/OXuz3TzYZgNAbbgWAYaNjY19EHt/JWiHe74+rOTyM7uiYGNjY9/AbotHbci1sFlDd1hUwsbGxv7l7MdK8HGJJz/o9oCKAMPGxsY+iL0Jhv2lYhhIbeBhY2NjH81+arttM6AYnfyJ4UtsbGzsg9izi0eyoSSQNp96rNGLjY2N/cvZ+wJ9Owr5c+H36UFgY2NjX8D+CFY0HFNeEp5qRayKStjY2NgHsWchVAxBLg5u9b3Y2NjYh7Lbpm8xIhNfTlpS+zRsbGzss9l5zLQFpryRMGsetIUwbGxs7BvY7UWijavN5WTT9MXGxsa+gZ2XivKt5HGYHFBx5chradjY2NjHsWfl+A0yD602SosAw8bGxj6InR9H/mpeono9urCxsbHvYbcrb9O2pavkOFYtB2xsbOxD2bNI2ITK5uDa2MPGxsa+hz1rqebFoHq85qEGMzY2NvZt7NnFoAXk14lnS0vY2NjY2LMhm2SYZlY8yhsP2NjY2NhJgLWN4WLUJvhscnzY2NjYN7DbwcekedAGVTs2lB8iNjY29tns2QVjU2za8x4oKmFjY2Mfwb5nYWNjY2NjY2NjY7/N+gP0WBVHemDSGwAAAABJRU5ErkJggg==">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/Django-RestFramework添加自定义字段.html" class="leancloud-views_num" data-flag-title="Django-RestFramework添加自定义字段">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <p>添加自定义字段有两种方式</p>
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Create your models here.</span>
+<span class="token keyword">class</span> <span class="token class-name">Category</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    type <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        verbose_name <span class="token operator">=</span> <span class="token string">"分类"</span>
+        verbose_name_plural <span class="token operator">=</span> verbose_name
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">get_movie_image</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> Movie<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>type<span class="token operator">=</span>self<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>image
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>name
+</code></pre>
+<h2 id="Serializers"><a href="#Serializers" class="headerlink" title="Serializers"></a>Serializers</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">CategoryListSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    image <span class="token operator">=</span> serializers<span class="token punctuation">.</span>ReadOnlyField<span class="token punctuation">(</span>source<span class="token operator">=</span><span class="token string">'get_movie_image'</span><span class="token punctuation">)</span>
+    image2 <span class="token operator">=</span> serializers<span class="token punctuation">.</span>SerializerMethodField<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        model <span class="token operator">=</span> Category
+        fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'type'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'image'</span><span class="token punctuation">,</span> <span class="token string">'image2'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_image2</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> Movie<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>type<span class="token operator">=</span>obj<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>image
+</code></pre>
+<p>两种方式添加分别是image和image2</p>
+
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 

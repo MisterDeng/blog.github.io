@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            一个人的时候 | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="一个人的时候 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,202 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                一个人的时候
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>2月 19, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbElEQVR42u3aQW7DQAgF0Nz/0u22UpT0Ax7qRs+rKHLG82ZhCPD4+ujrgYeHh4eHh4eHdzPeI75+3v/qt8/3PD/r/TeTveHh4eFt8n551V609ZcbiteMnouHh4e3yKsGg+oW8/UnQQgPDw/vbrzeN8lT8PDw8D6V935zr4JHnpTj4eHh/S9e4Q9//HLPy7X5QRysteDh4eHFvEkD7PTnP+7v4eHh4T3xJleSXm+ug4eHh7fDS9LlasDI22a9NH00dIWHh4d3jJeXDHopcrUkkQcPPDw8vE1eXgjoNcySkJCHjZfHhIeHh3eYlz8gDyfv0/TeuEAh+cbDw8M7zItaSsWQkFPzEa5RGRcPDw/vAG8SHvKj6R1QtUmGh4eHt8OrvtwnpdteYEj2g4eHh7fJy0sDvZbYfLVCWQQPDw9vhdcbBagmu9VQVF0ZDw8Pb59XLSvkv8pHDaohqtkAw8PDwxvweo3/SROrN0ZQKBzj4eHhHeblxdNmaeB9yTVujxWOEg8PD2+FN0mjryoB9xJ0PDw8vL/l9Rr2vbZW9TgKwQkPDw9vhZe3pqpHUy3j5uGnXIzAw8PDO8bLG//51qtDVNUCBB4eHt4+L09280Q5T9Z7AwrNYgQeHh7emFf+qx+3uCaDBb3hAzw8PLwdXvUVnIwCVA+oWtgtFyPw8PDwDvDyDY0KrIPjKxwxHh4e3iIvb1CV09xW0ysfwMLDw8O7P683IJW89OcFDjw8PLy78a7aaH5/OWDg4eHhLfKuanrlQwnVYYVoNTw8PLwVXq8BloyQ9gZPqyOqeHh4eJu8z7vw8PDw8PDw8PBucH0DXpjEcC+TaFcAAAAASUVORK5CYII=">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/一个人的时候.html" class="leancloud-views_num" data-flag-title="一个人的时候">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <h2 id="一个人的思考"><a href="#一个人的思考" class="headerlink" title="一个人的思考"></a>一个人的思考</h2><p>每个人都有一个人的时候，当你一个人独处的时候，你会想什么，做什么。</p>
+<pre><code>放一首音乐吧，舒缓你紧张神经
+
+读一本书吧，带你去书中的世界
+
+看一场电影吧，体验惊险刺激
+
+写一篇文章吧，记录下你的生活
+</code></pre><p><strong>思考人生吧</strong></p>
+<p><code>人是一枝有思想的芦苇</code>，对于生命，我们和其它万物又有什么区别，也不知道怎么滴变异，人类才诞生了智慧，如果不思考，机械的上班，学习，玩，猴子🐒也可以做到啊。</p>
+<h2 id="一个人的行为"><a href="#一个人的行为" class="headerlink" title="一个人的行为"></a>一个人的行为</h2><p><code>君子独处,守正不挠</code>，出自：《汉书·刘向传》有德行的人单居独处，也坚守正道，不肯屈从。</p>
+<p>一个人独处的时候，才是你真正释放自己的时候，你可能再也不用伪装，不用约束自己。这些都没有关系，但是当你一个人独处时变成了另外一个人似的，这真的需要你好好反思了。</p>
+<h2 id="一个人的总结"><a href="#一个人的总结" class="headerlink" title="一个人的总结"></a>一个人的总结</h2><p>以上都是扯淡，就是希望自己一个人过周末的时候<code>多读书多看报少吃零食多睡觉</code></p>
+<ul>
+<li>思考一些问题</li>
+<li>约束自己的行为</li>
+<li>变得勤劳</li>
+<li>做些有意思、有意义的事情</li>
+</ul>
+
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 

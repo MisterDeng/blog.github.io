@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            Django部署问题排查 | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="Django部署问题排查 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,194 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Django部署问题排查
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>7月 14, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWklEQVR42u3aUW7DIBAFQN//0ukBKjtvWQN2NHxVDcFMKxHydo/PT48DDw8PDw8PDw/vYbwjHqfLXc48iqO/Nzw8PLw1vC9H7cmD/28imd95brQ3PDw8vIW8swP3euvJnORPcL1Osjc8PDy8d/HOGMmrORUPDw/vvbxqVBHFr8Xn4uHh4T2Bl2yxGr9WL82bsxY8PDy8mJcXmdb/vLS+h4eHhxfwqiOPa6sNAZ+bBh4eHt5sXn4Q9+ODZJ3OfvDw8PBW8vqNU/kK14ykVIaHh4e3l1e9HPcDhbEmg8J78fDw8CbzkuO+WtbqX6k712s8PDy82bxqqal/xCfNAZ3n4uHh4e3l5S1Q9x76rQIbHh4e3mReEpVWqZ0Wq7HIGA8PD28vLylK5W1V1cBiSn0PDw8Pbxqv2j5VDWrvakr48l48PDy8ybzrA7o6p1MSG2s4wMPDw9vFGwsmogtuPKcTVeDh4eGt5I0FAWPlrtZxnxfJ8PDw8BbyqvHrWBErj2jzsAMPDw9vFy8vjOUlsWRD1ZnllBoPDw9vAi9vI8gP7iSWzdcp/APw8PDwlvMKX/uHNpHEENXf4+Hh4T2BV40DqnHGWPgbfRnAw8PDm8wb+/JfLWVVL99j7QV4eHh4a3hjh3J+ja42ZvUbsPDw8PDW8PIiU+e6nM+/+YMBDw8PbxqvWsoaO/o77QhRcIyHh4f3SF716nzvyl/iXTw8PLyX8PqtWp0PAzw8PLxdvDwg6FyC86t2tX0BDw8PbyVvbIt5O1SHXW3kwsPDw5vN+72Bh4eHh4eHh4f3gPEHQu+QbBzZAVoAAAAASUVORK5CYII=">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/Django部署问题排查.html" class="leancloud-views_num" data-flag-title="Django部署问题排查">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <p>Django问题排查有很多种方案，说一下我现在用的</p>
+<ol>
+<li>阿里云安全组配置开启8000端口用于测试</li>
+<li>执行python /home/MovieSite/manage.py runserver 0.0.0.0:8000，开启Django自带服务器调试，setting设置DEBUG = True</li>
+<li>运行项目，查看控制台错误提示</li>
+</ol>
+<hr>
+<p>目前发现的错误</p>
+<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><p>mysql配置问题导致Got a packet bigger than ‘max_allowed_packet’ bytes”</p>
+<p>进入<strong>/etc/mysql/mysql.conf.d</strong>配置max_allowed_packet =  64M</p>
+<p>重启mysql<strong>service mysql restart</strong></p>
+
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 

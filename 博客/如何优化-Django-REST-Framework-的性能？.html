@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            如何优化 Django REST Framework 的性能？ | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="如何优化 Django REST Framework 的性能？ | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,296 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                如何优化 Django REST Framework 的性能？
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>5月 24, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADkklEQVR42u3ay27bQBAEQP3/TyfXAI7l7pldSQaKJ8OQSW7p0J7H44/rn+uBAAcOHDhw4MCBAweOD+Z4xNfXz393h9mdv7v/fw5w9ok4cODAgeMCxw9R9OWROc3zzydPbJnqO+PAgQMHjmscz4+RPz4nSw7cRnt7Fhw4cODA8V6OH24dF2nP79AGPA4cOHDg+L0cbcm0OVjemsSBAwcOHJ/JsWnV5W27FjoJ77f1SnHgwIEDx6GFhk/++Q37HThw4MCBY3HNmJKYTKI3v09xIhw4cODAcZSjXX2bFXLJoKgtHaPGX9KIxIEDBw4c1zjyF9o05tp1hJxm+KXiwIEDB46jHEkonhr8tGsN7Z3bmMeBAwcOHDc42lWDHC7n2Bw4D9RhcxAHDhw4cIzGTnlQzQjy2M5LtXZY9e39ceDAgQPHUY62VMtbePuR0o0WZP1/Bw4cOHDgKDmSAmmz4jCL6lMo0bvhwIEDB46jHO2iQNvsKwKvbPM9nl75m+DAgQMHjtdwnC3z2jWFfASVY9UVLQ4cOHDgOMSxGRe1pVcSlu1ydl3a4cCBAweOCxyz8mz2yVnDsW75xQ1HHDhw4MBxg6ONqCRKH/GVfzH5E4v4x4EDBw4c1zgei2tG1q5W7P85KIIWBw4cOHAsVuVm0Zu0+dplhU2LcFgi4sCBAweOoxxtfCbNwTZ628WFdvhUl3A4cODAgWPBkQRV3mibrRS0T8nfc1jC4cCBAweONUcevXnsJcTtuOhsxOLAgQMHjhsc+RrB5sBFQbUYcc34cODAgQPHWY5N4M3iuQ3dWcGZfKk4cODAgeMexzCirh17E8NJ6xAHDhw4cLyGI3/pfDS1L9WS8dWsiYkDBw4cOG5zJH+cHDsfSuWFVtvQLKIXBw4cOHAc5WhbgW3RNWzYHRqGRbg4cODAgeMox+xF28HV/gtICrPkWThw4MCB4zUceQFWPyzgm73PsRUKHDhw4MBxgSO/cqz22LMycnZnHDhw4MBxj6ONqLwkS4ZVbTGZj6+GCw04cODAgeMQRxuus7WGWbE3bPnFbU0cOHDgwHGPYxaumxdtg3PWLvyBCQcOHDhwvJWjbee1ywrtuCtZrSjGTjhw4MCB400cwzZc3DpMfrMPchw4cODAcZtjNgTKB0izQN2Xdhd7pThw4MCB49BCQ7sk17bzTkX7cOyEAwcOHDgWHC4cOHDgwIEDBw4cOHB82PUXUPvJKqDxzAoAAAAASUVORK5CYII=">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/如何优化-Django-REST-Framework-的性能？.html" class="leancloud-views_num" data-flag-title="如何优化 Django REST Framework 的性能？">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <p><strong>现在，Django REST Framework 帮助 Django 开发者给自己的应用开发出简单而强大的标准 REST APIs，而且现在我们已经成功的应用在了一些 Django Web 项目上。</strong></p>
+<p>然而，看似简单直观的 Django REST Framework 及其<a href="http://www.django-rest-framework.org/api-guide/relations/#nested-relationships" target="_blank" rel="external">嵌套序列化</a>可能会大大降低你的 API 端的性能。你的服务器的其他部分的响应能力也会被某一个低效的 REST API 拖后腿。</p>
+<p>问题的根源就是 <strong>「N+1 selects problem」</strong>；首先查询数据库一次得到表中的数据（例如，<code>Customers</code>），然后每个用户的其他字段又需要循环不止一次地查询数据库（例如 <code>customer.country.Name</code>）。使用 Django 的 ORM，很容易造成这个问题，而使用 DRF，同样会造成这个问题。</p>
+<p>幸运的是，目前有修复 Django REST Framework 性能问题的解决方法，而且不需要对代码进行重大重组。它只是需要使用未充分利用的 <code>select_related</code> 和 <code>prefetch_related</code> 方法来执行所谓的「预加载」。</p>
+<p>这种方法产生了很好的效果，在我们最近的项目中，有个重要的 API 调用花费了5-10秒钟才返回结果。运用合适的预加载后，同样的调用时间花费都变的低于1秒，<strong>典型的加速20倍以上</strong>。</p>
+<h3 id="为什么-Django-REST-Framework-那么容易造成这个问题"><a href="#为什么-Django-REST-Framework-那么容易造成这个问题" class="headerlink" title="为什么 Django REST Framework 那么容易造成这个问题"></a>为什么 Django REST Framework 那么容易造成这个问题</h3><p>当你建立一个 DRF 视图时，你经常需要从多个相关表中返回相应的数据。写这样的功能是很简单的，DRF文档中有详细的介绍。不过不幸的是，<strong>只要你在序列化中使用嵌套关系，你就在拿你的性能开玩笑</strong>，像很多的性能问题一样，它往往只出现有大型数据集的<strong>真实生产环境</strong>中。</p>
+<p>这种情况发生就是因为 Django 的 ORM 是惰性的，它只取出当前查询所需响应最小的数据。它不知道你是否有成百上千的相同或相似的数据也需要取出来。</p>
+<p>况且如今，当我们谈到数据库型网站时，一般情况下，最重要的响应指标就是<strong>数据库的访问次数</strong>。</p>
+<p>在 DRF 视图中，我们每次序列化有嵌套关系的数据时都会出现问题，如下面的例子：</p>
+<pre><code>class CustomerSerializer(serializers.ModelSerializer):  
+    # This can kill performance!
+    order_descriptions = serializers.StringRelatedField(many=True) 
+    # So can this, same exact problem...
+    orders = OrderSerializer(many=True, read_only=True) # This can kill performance!
+</code></pre><p>CustomerSerializer 函数里面是这么运行的：</p>
+<ul>
+<li>获取所有的 <code>customers</code> (需要往返到数据库)</li>
+<li>对于第一个返回的客户，获取他们的 <code>orders</code> (又需要去往返一趟数据库)</li>
+<li>对于第二个返回的客户，获取他们的 <code>orders</code> (又需要去往返一趟数据库)</li>
+<li>对于第三个返回的客户，获取他们的 <code>orders</code> (又需要去往返一趟数据库)</li>
+<li>对于第四个返回的客户，获取他们的 <code>orders</code> (又需要去往返一趟数据库)</li>
+<li>对于第五个返回的客户，获取他们的 <code>orders</code> (又需要去往返一趟数据库)</li>
+<li>对于第六个返回的客户，获取他们的 <code>orders</code> (又需要去往返一趟数据库)</li>
+<li>。。。。终于意识到，<strong>千万不要有更多的用户</strong></li>
+</ul>
+<p>而且这个很快就变的更糟，如果你 <code>OrderSerializer</code> 本身又有一个嵌套关系，那你就有了嵌套循环，那么即使数据量很小，你也很快就陷入麻烦之中。这有一个经验，一个拥有适度流量的网站，在进入真正的麻烦前也就可以负担起50次到数据库的访问。</p>
+<h3 id="解决-Django-「懒惰」的基本方法"><a href="#解决-Django-「懒惰」的基本方法" class="headerlink" title="解决 Django 「懒惰」的基本方法"></a>解决 Django 「懒惰」的基本方法</h3><p>现在我们解决这个问题的方法就是「预加载」。从本质上讲，就是你提前警告 Django ORM 你要一遍又一遍的告诉它同样无聊的指令。在上面的例子中，在 DRF 开始获取前很简单地加上这句话就搞定了：</p>
+<pre><code>queryset = queryset.prefetch_related(&#39;orders&#39;)
+</code></pre><p>当 DRF 调用上述相同序列化 customers 时，出现的是这种情况：</p>
+<ul>
+<li>获取所有 <code>customers</code>（执行两个往返数据库操作，第一个是获取 customers，第二个获取相关 customers 的所有相关的 orders。）</li>
+<li>对于第一个返回的 customers，获取其 <code>order</code>（不需要访问数据库，我们已经在上一步中获取了所需要的数据）</li>
+<li>对于第二个返回的 customers，获取其 <code>order</code> （不需要访问数据库）</li>
+<li>对于第三个返回的 customers，获取其 <code>order</code> （不需要访问数据库）</li>
+<li>对于第四个返回的 customers，获取其 <code>order</code> （不需要访问数据库）</li>
+<li>对于第五个返回的 customers，获取其 <code>order</code> （不需要访问数据库）</li>
+<li>对于第六个返回的 customers，获取其 <code>order</code> （不需要访问数据库）</li>
+<li>你又意识到，你可以有了<strong>很多 customers</strong>，已经不需要再继续等待去数据库。</li>
+</ul>
+<p>其实 Django ORM 的「预备」是在第1步进行请求，它在本地高速缓存的数据能够提供步骤2+所要求的数据。与之前往返数据库相比从本地缓存数据中读取数据基本上是瞬时的，所以我们在有很多 customers 时就获得了巨大的性能加速。</p>
+<h3 id="解决-Django-REST-Framework-性能问题的标准化模式"><a href="#解决-Django-REST-Framework-性能问题的标准化模式" class="headerlink" title="解决 Django REST Framework 性能问题的标准化模式"></a>解决 Django REST Framework 性能问题的标准化模式</h3><p>我们已经确定了一个优化 Django REST Framework 性能问题的通用模式，那就是每当序列化查询嵌套字段时，我们就添加一个新的 <code>@staticmethod</code> 名叫 <code>setup_eager_loading</code>，像这样：</p>
+<pre><code>class CustomerSerializer(serializers.ModelSerializer):  
+    orders = OrderSerializer(many=True, read_only=True)
+
+    def setup_eager_loading(cls, queryset):
+        &quot;&quot;&quot; Perform necessary eager loading of data. &quot;&quot;&quot;
+        queryset = queryset.prefetch_related(&#39;orders&#39;)
+        return queryset
+</code></pre><p>这样，不管哪里要用到这个序列化，都只需在调用序列化前简单调用 <code>setup_eager_loading</code> ，就像这样：</p>
+<pre><code>customer_qs = Customers.objects.all()  
+customer_qs = CustomerSerializer.setup_eager_loading(customer_qs)  # Set up eager loading to avoid N+1 selects  
+post_data = CustomerSerializer(customer_qs, many=True).data
+</code></pre><p>或者，如果你有一个 <code>APIView</code> 或 <code>ViewSet</code>，你可以在 <code>get_queryset</code> 方法里调用 <code>setup_eager_loading</code>：</p>
+<pre><code>def get_queryset(self):  
+    queryset = Customers.objects.all()
+    # Set up eager loading to avoid N+1 selects
+    queryset = self.get_serializer_class().setup_eager_loading(queryset)  
+    return queryset
+</code></pre><h3 id="那么怎样编写-setup-eager-loading"><a href="#那么怎样编写-setup-eager-loading" class="headerlink" title="那么怎样编写 setup_eager_loading"></a>那么怎样编写 <code>setup_eager_loading</code></h3><p>想要解决 Django 的性能问题，最困难的部分就是要熟悉 <code>select_related</code> 和它的小伙伴儿们是如何工作的。在这儿，我们将详细介绍它们在 Django ORM 和 Django REST Framework 中怎样使用。</p>
+<ul>
+<li><code>select_related</code>：Django ORM 最简单的预加载工具，对于所有<strong>一对一</strong>或<strong>多对一</strong>的数据关系，你都需要从同一个父对象获取数据，如客户的公司名称。这个会被翻译成 SQL 的 join 操作，这样父对象的数据就和子对象的数据一起取回来了。（参见<a href="https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related" target="_blank" rel="external">官方文档</a>）</li>
+<li><code>prefetch_related</code>：对于更复杂的关系，即每个结果有多行（例如 many=True ），像<strong>多对一</strong>或<strong>多对多</strong>的数据关系，比如上述客户的订单，这转化一个二级 SQL 查询，通常有很长的 <code>WHERE ... IN</code> ，从中只选择相关的行。（参见<a href="https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related" target="_blank" rel="external">官方文档</a>）</li>
+<li><code>Prefetch</code>：用于复杂 <code>prefetch_related</code> 查询，例如过滤子集。它也可以嵌套<code>setup_eager_loading</code> 进行调用。 （参见<a href="https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related" target="_blank" rel="external">官方文档</a>）</li>
+</ul>
+<h3 id="一个合适的预加载模型"><a href="#一个合适的预加载模型" class="headerlink" title="一个合适的预加载模型"></a>一个合适的预加载模型</h3><p>在本例中，我们优化一个假想的活动规划网站（巧了，我们正在进行的项目 getfetcher.com 就是这样）的 Django REST Framework 相关的性能问题，我们有一个简单的数据库结构：</p>
+<pre><code>from django.contrib.auth.models import User
+
+class Event:  
+    &quot;&quot;&quot; A single occasion that has many `attendees` from a number of organizations.&quot;&quot;&quot;
+    creator = models.ForeignKey(User)
+    name = models.TextField()
+    event_date = models.DateTimeField()
+
+class Attendee:  
+    &quot;&quot;&quot; A party-goer who (usually) represents an `organization`, who may attend many `events`.&quot;&quot;&quot;
+    events = models.ManyToManyField(Event, related_name=&#39;attendees&#39;)
+    organization = models.ForeignKey(Organization, null=True)
+
+class Organization:  
+    name = models.TextField()
+</code></pre><p>在这个例子中，为了获取所有的事件，我们的预加载代码长这样：</p>
+<pre><code>class EventSerializer(serializers.ModelSerializer):  
+    creator = serializers.StringRelatedField()
+    attendees = AttendeeSerializer(many=True)
+    unaffiliated_attendees = AttendeeSerializer(many=True)
+
+    @staticmethod
+    def setup_eager_loading(queryset):
+        &quot;&quot;&quot; Perform necessary eager loading of data. &quot;&quot;&quot;
+        # select_related for &quot;to-one&quot; relationships
+        queryset = queryset.select_related(&#39;creator&#39;)
+
+        # prefetch_related for &quot;to-many&quot; relationships
+        queryset = queryset.prefetch_related(
+            &#39;attendees&#39;,
+            &#39;attendees__organization&#39;)
+
+        # Prefetch for subsets of relationships
+        queryset = queryset.prefetch_related(
+            Prefetch(&#39;unaffiliated_attendees&#39;, 
+                queryset=Attendee.objects.filter(organization__isnull=True))
+            )
+        return queryset
+</code></pre><p>当我们使用 EventSerializer 之前确定调用 <code>setup_eager_loading</code>，这样我们只会有两个大的查询，而不是 N+1 个小的查询，而且我们的表现通常会好很多！</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>预加载是 Django REST Framework 通用的<a href="http://www.oneapm.com/brand/apm.html" target="_blank" rel="external">性能优化</a>方式，<a href="http://www.oneapm.com/ai/python.html?utm_source=Community&amp;utm_medium=Article&amp;utm_term=%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%20Django%20REST%20Framework%20%20%E7%9A%84%E6%80%A7%E8%83%BD%EF%BC%9F&amp;utm_campaign=AiPythonArti&amp;from=jsclifxvcj" target="_blank" rel="external">OneAPM Python Agent</a> 也是国内通用的性能监控工具，而且支持 Django REST Framework ，下面是一个简单 demo 的截图。</p>
+<p><img src="http://blog.oneapm.com/content/images/2015/12/-----2015-12-11---2-29-18.png" alt="如何优化 Django REST Framework 的性能？ 技术分享"></p>
+<p>任何时候你通过 ORM 查询嵌套关系时，你都应该考虑建立适合的预加载。根据现有经验，这是现在小型和中型 Web 开发中最常见的性能相关问题。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="http://www.django-rest-framework.org/" target="_blank" rel="external">Django REST Framework</a> 文档</li>
+<li>Github上的问题来自动执行 prefetch_related：<a href="https://github.com/tomchristie/django-rest-framework/issues/1964" target="_blank" rel="external">Automatically determine <code>select_related</code> and <code>prefetch_related</code> on ModelSerializer</a>。</li>
+<li>DRF 的作者 Tom Christie，在 DRF 性能这篇博客文章中谈到了我们上面处理的问题，<a href="http://www.dabapps.com/blog/api-performance-profiling-django-rest-framework/" target="_blank" rel="external">Get your ORM lookups right</a></li>
+</ul>
+<p>原文链接：<a href="https://ses4j.github.io/2015/11/23/optimizing-slow-django-rest-framework-performance/" target="_blank" rel="external">Optimizing slow Django REST Framework performance</a></p>
+
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 

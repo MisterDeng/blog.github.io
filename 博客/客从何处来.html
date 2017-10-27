@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            客从何处来 | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="客从何处来 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,222 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                客从何处来
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>6月 07, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZ0lEQVR42u3aQY6DMAwFUO5/6ZntSKPSb5sEWj1WlUppXhaxsX38fPV14OHh4eHh4eHhPYx3xNff+///9uWfFa/J2vDw8PB28t4ctS9I51uQb0Sylcna8PDw8Pbz8r/JF5of99VtxcPDw/sUXvI5Sa/P14CHh4f3Tbxkuef35BuEh4eH93xe/sI/L1IkpYobai14eHh4MW/SAFv9+eb+Hh4eHt546Kp33PcaYDfMlOHh4eEFvLzln9yZFGfzpDkvT+Dh4eHt5OVH84TUS9zPxw6iYgQeHh7eAt6KYkF1OybF33JKjYeHhzfm5SlsNV3uBYzyoEBexsXDw8NbwMtf+K/C56FiVIzAw8PDW8BLXvvztlZOyptehaCFh4eHt5iXLLSa4CbPqX5bSN/x8PDwFvOqrfp8yCBv/PfCDx4eHt5dvPlSqvfMhwnepOx4eHh4G3n52NP5BkUN/piUhCI8PDy8nbxqO6ra7qoWL+YlCTw8PLydvEkDbMVI68W1Fjw8PLxlvDw8TIaueqWHKFDh4eHhLeZVj+xei2teOC4UR/Dw8PAW86rpdXW8oPrM+UgBHh4e3h5e/qo/ak0ljf84sS4UI/Dw8PAu5fUeVx0XqH7bS6bx8PDw9vB66fVk4GAyoJAEMDw8PLzVvCO+8vt7QwC9YFOuUuPh4eFdxKuWHqq/7Q1d9daAh4eHt5PXK5tWw0x1NCEvE+Ph4eE9k1c91nsjVqPiCB4eHt7jeXmQ6AWSMhgPDw9vI2/e9Jp/W33CxbUWPDw8vJg3b4AlJYZqqp1vNx4eHt5O3vddeHh4eHh4eHh4D7h+Aff+XcnF73t2AAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/客从何处来.html" class="leancloud-views_num" data-flag-title="客从何处来">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+  <iframe class="music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86></iframe>
+  
+
+    
+        <pre><code>作曲 : 燕池
+作词 : 蘅初
+编曲：李大亮、燕池
+风里藏着秘密，遇山散了
+花里喃着耳语，迎雾没了
+怀里拥着温度，沾露凉了
+手里攥着船票，入水化了
+散落的繁星，谱给无眠旅人的安眠曲
+松软的土地，呼吸青草芳香悦然前行
+故乡的过客，远方的归人
+无意间我说起的故事，你又是否相信
+远方，让我大闹一场悄然离去的故乡
+故乡，让我收藏荣耀戏谑人生的远方
+不辞而别的朋友，一见如故的路人
+轻声问起，客往何处去
+风里藏着秘密，遇山散了
+花里喃着耳语，迎雾没了
+怀里拥着温度，沾露凉了
+手里攥着船票，入水化了
+我若问自己，客从何处来
+被湮灭的理想，被阐释的爱情
+我若问自己，客从何处来
+被所相信的相信，被所否定的否定
+月应有圆缺，日不惧升落
+被所崇拜的崇拜，被所怀疑的怀疑
+客从何处来，客往何处去
+转身即是远方，前路亦是故乡
+故乡
+远方，让我大闹一场悄然离去的故乡
+故乡，让我收藏荣耀戏谑人生的远方
+不辞而别的朋友，一见如故的路人
+轻声问起，客往何处去
+远方，让我大闹一场悄然离去的故乡
+故乡，让我收藏荣耀戏谑人生的远方
+不辞而别的朋友，一见如故的路人
+轻声问起，客往何处去
+轻声问起，客往何处去
+</code></pre>
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' + 32217106 + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 

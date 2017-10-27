@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            我在桥上看风景 | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="我在桥上看风景 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,208 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                我在桥上看风景
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>6月 12, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACUklEQVR42u3aUa7jIBAEwNz/0rsneKQbMFhR+StKYpviA0bNfP799PXBw8PDw8PDw8N7Ge8TX3/d9eVlwTOTtxRjw8PDwzvCS4Y4/r59zsp7x//Bw8PDO8kbL9xzn/NvkmeOx4aHh4f3fl4REAQlNR4eHt5v8/KoYlfZjYeHh/dOXv7K8V35r+MnX8ha8PDw8GJefsh0/vPR8z08PDy8gLcSK7RBw9z/6xHi4eHhPczLF+K5Ujt/Tj5xX0p2PDw8vIO8Nkp4rjjO22TrrAUPDw9vK699cTKs8UDHE9oehuHh4eGd4bWDaEPe/BCrLbvx8PDwbvHmFvq2KE+mr8Xg4eHh3eXNLdPrm8pKjIuHh4d3l7cePeTbSRsxJFOMh4eHd5431/CUlNpzrQA5Eg8PD+88L1/K537NJyIv2YvWATw8PLyHeUnwmpe/eWneltd4eHh4d3njUnXuICpvINjbpIWHh4d3hrcS6a5MxEphXe97eHh4eFt5yRKfNBO00cZ6qDGZUuPh4eFt5e094qpL4eX2Lzw8PLz38PItIS+y2y2hiJjx8PDwLvFW2p7aQLY9fvtyLx4eHt5BXr5kt0VzW7i3mwoeHh7eSV57zTWe5kNMJggPDw/vLq9diJN78+nYdWyGh4eHd563vhmsRw8Pbgx4eHh4j/FWSt6ksN4VRmyIcfHw8PBexttbKCdNtHh4eHjv57UTMXfElW8GeHh4eLd4eYncApIgI9laotHi4eHhHeHNLc0rRXDegpCEv3h4eHgneb934eHh4eHh4eHhveD6D3yKhpKA2VxJAAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/我在桥上看风景.html" class="leancloud-views_num" data-flag-title="我在桥上看风景">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+  <iframe class="music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86></iframe>
+  
+
+    
+        <pre><code>空气中还有一些尘埃 伴随风一起刮起来
+在霓虹灯亮起的夜晚里寻找臭味相投的气息
+有谁带着仅存的牵挂有谁下了班还不想回家
+如果这世界是一幅画我们陷在里面不能自拔
+
+我在桥上看风景 却看见拥抱后的孤寂
+口中说着继续 转身就已放弃
+我在桥上看风景 看穿了相聚和悲喜
+看穿了这是一场戏 想散场又不知到哪里去
+
+人来人往的人群相拥 看不出有谁哪里不同
+心里做着一个梦 所以 脚步才沉重
+有谁受了伤却要内疚 有谁放了手还不肯走
+如果我眼里容不下他 会不会就看出他的变化
+
+我在桥上看风景 却看见拥抱后的孤寂
+口中说着继续 转身就已放弃
+我在桥上看风景 看穿了相聚和悲喜
+看穿了这是一场戏 想散场又不知到哪里去
+我在桥上看风景 却看见拥抱后的孤寂
+口中说着继续 转身就已放弃
+我在桥上看风景 看穿了相聚和悲喜
+看穿了这是一场戏 想散场又不知到哪里去
+</code></pre>
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' + 28695603 + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 

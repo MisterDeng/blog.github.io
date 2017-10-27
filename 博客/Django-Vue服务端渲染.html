@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            Django+Vue服务端渲染 | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="Django+Vue服务端渲染 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,213 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Django+Vue服务端渲染
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>8月 01, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC3ElEQVR42u3aQXLjMAwEwPz/09kHuJLMAN6UQrZOLpdFsZUDQgw+Pq+8PrCxsbGxsbGxsbEfyf6Ir9e7Xlf44cEvd81WG+4ZGxsb+2h2vt18K1/dm3+Tr5nsGRsbG/sGdvKY73+fl7r890khjF43NjY2Nna89XZDeenCxsbGxn5vActX2KzTFlFsbGzsm9l5Wz9vyrfxwEN7adjY2NiPZ+eY53z+1XwbGxsb+8Hs9soPDEnbKP/+c31hY2Njn8rOC0POyAODr+6dRRQ/7BMbGxv7UHZeYPLy1m6obQ/lBRUbGxv7BnZbVJKGflvk9kUrwWNjY2Ofyk4OD3kE2wa6eTspaUUVIzvY2NjYx7FnDaO81OVtqbzZ9IYCho2NjX0Eux3QSbayWb99oUU5xMbGxj6UnbeEZvHA7KiTr5nHD9jY2NinsvPHzKLZ2YDOpkWFjY2NfTO7/bwf/dkcRfLAGBsbG/ts9iZYzYOEfIuzaCE6UGFjY2Mfyt6HtZsINilLedgwTEWwsbGxj2PPmk2bIHZ/V7IONjY29qnstmDkAUA7ppOslv+myLexsbGx/zg7D1/3wzT5kaYd7hmO7GBjY2MfxE7C2uQo0rarZi2kvEBiY2Nj38NO/qHPjw2zqDiJctvyiY2NjX0buw1WZ+M1s4ZRO7KDjY2NfRs7D3S/b+jkm2iLVtuiqk9g2NjY2Aex29Z/1JovA92k/dTGDNjY2Ng3sPeAvLxt2kz5HwkbGxv7TvaskZQM97QtoV/Kt7GxsbH/OHtfKtpwt31xbYARNZWwsbGxD2JvmjubeHgW4s6KLjY2NvYN7LyRVMerC/ysIYWNjY19Mzs/GOSb24xOvqvNhI2NjY09G9nJX1BbqIb7wcbGxsZeHAnywaC2QCZjQ9jY2Nj3sPOttJFAHi20h5xibAgbGxv7aHbeoMkf1ral9nv4j/k2NjY29oPZ91zY2NjY2NjY2NjYj7n+AdCiFUex9cifAAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/Django-Vue服务端渲染.html" class="leancloud-views_num" data-flag-title="Django+Vue服务端渲染">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <p>SPA项目的前后端开发的便利自然不用说，路由也是由前端决定。但是对于SEO不太友好，因为百度引擎不会等待ajax的完成，网上Vue大部分都是node.js的服务端渲染，下面我用了一种取巧的方式。当是搜索引擎访问走Django模板解析，普通用户重定向到Vue的路由</p>
+<hr>
+<h2 id="views配置"><a href="#views配置" class="headerlink" title="views配置"></a>views配置</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 电影渲染详情</span>
+<span class="token keyword">class</span> <span class="token class-name">MovieDetailView</span><span class="token punctuation">(</span>View<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> movie_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        movie <span class="token operator">=</span> Movie<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span>int<span class="token punctuation">(</span>movie_id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> render_to_response<span class="token punctuation">(</span><span class="token string">'detail.html'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            <span class="token string">'movie'</span><span class="token punctuation">:</span> movie
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="urls配置"><a href="#urls配置" class="headerlink" title="urls配置"></a>urls配置</h2><pre class=" language-python"><code class="language-python">url<span class="token punctuation">(</span>r<span class="token string">'^detail/(?P&lt;movie_id>\d+)/index.html$'</span><span class="token punctuation">,</span> MovieDetailView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</code></pre>
+<p>Django的模板路径多加了一个index.html</p>
+<h2 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h2><p>主要是nginx的跳转配置</p>
+<pre class=" language-ini"><code class="language-ini">    if ($http_user_agent !~* (baiduspider|googlebot|soso|bing|sogou|yahoo|sohu-search|yodao|YoudaoBot|robozilla|msnbot|MJ12bot|NHN|Twiceler|MSIE)) { 
+    rewrite ^(.*)/detail/([0-9]+)/index.html http://www.mvtime.cn/detail/$2/ permanent;
+}
+
+location / {
+        uwsgi_pass 0.0.0.0:3031;
+        include /etc/nginx/uwsgi_params;
+        try_files $uri $uri/ /;
+}
+location ~* \.(html|txt)$ {
+        uwsgi_pass 0.0.0.0:3031;
+        include /etc/nginx/uwsgi_params;  
+    }
+</code></pre>
+<p>第一个location是Vue的history配置，提交给百度带有index.html当访问者不是爬虫去掉index.html走Vue的路由</p>
+
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 

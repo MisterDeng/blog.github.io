@@ -10,7 +10,7 @@
     
     <title>
         
-            tags | 
+            iOS统一更换字体和大小 | 
         
         梦醒花开知多少
     </title>
@@ -62,7 +62,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | 梦醒花开知多少">
+    <meta property="og:title" content="iOS统一更换字体和大小 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
     
 
@@ -243,57 +243,251 @@
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
-
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
-
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS统一更换字体和大小
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>9月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aW27DMAwEQN//0ukBgjhLykYdavRV5GFpFKALkTpeW44DGxsbGxsbGxsb+5HsIx7vn//0SvX198+8v/5pxmTN2NjY2Duwv/zrD5DnW1ndst42nbuwsbGxd2CfLzefMgmwPOTyJ5yvExsbGxs7CZXepkQHifhYgo2NjY2dB1iy3CTS8m3CxsbGxl4vKq2U+JNn9r57ey0NGxsb+/HsaqP3CX//Q38bGxsb+5Hs3jg/VOTXd9YbuoU1Y2NjYw9lJ03W+8pG1SNNr+mLjY2NPZtdbQzk70ZLid9NGgZfPo+NjY09ml0Og+JIQisPv/xSETY2NvZu7Gp49I4Q1Sue+Y/0JUqxsbGxR7N7oZIcVJJiULUg1bvug42NjT2VXb2Us1IGumreZpRiY2Njj2YnIbQeJHmrOF9PoQmNjY2NPZq9fimnWio6n7d6Nafc6MXGxsYex165CnN+kMg3K2kMLMUtNjY29sbsVzyqjHyWpJHcPIFhY2Nj/zi7Fz/VY0P+nLxhUN1obGxs7KnslcipFo+SMla12FT48bCxsbGHsnsN1/V2b3ULLih7YWNjYw9lr1yjPJZHHnV5iH4UYWNjYw9l9w4PeWOgOkuv5RA9BxsbG3sDdh4PVWoUMK1GQvPKDjY2NvY4dq9kf9V1zJzRaxVgY2Njz2ZXQ6X6rZUyUO+wVG4PYGNjYw9iJ2FWjZ9kI6qx1zzqYGNjY49mV48TeWM4344VZPMogo2NjT2OnS+6WgDqRWMSlnnbGBsbG3squzoK07RCKy/3V2MPGxsbeyp7JRjyMn2vMZxvXNRawMbGxh7NzsOj18StPi1vA99SS8PGxsb+WfZ6aOXf7ZWr8mug2NjY2Njrl2+S0k++EdXmLjY2Njb2CvWOrbmgXYGNjY29AfuOBeVt4/tiDxsbG3sHdrXRe9Vye5uVz4iNjY29A3ufgY2NjY2NjY2Njf2Y8QfNUz9xnG8IygAAAABJRU5ErkJggg==">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/">undefined</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/">undefined</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/博客/iOS统一更换字体和大小.html" class="leancloud-views_num" data-flag-title="iOS统一更换字体和大小">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <pre class=" language-objective-c"><code class="language-objective-c">//
+//  UILabel+FontChange.m
+//  LiquoriceDoctorProject
+//
+//  Created by HenryCheng on 15/12/7.
+//  Copyright © 2015年 iMac. All rights reserved.
+//
+
+#import "UILabel+FontChange.h"
+#import <objc/runtime.h>
+
+//#define CustomFontName @"FZLBJW--GB1-0"
+
+@implementation UILabel (FontChange)
+
++ (void)load {
+    //方法交换应该被保证，在程序中只会执行一次
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        //获得viewController的生命周期方法的selector
+        SEL systemSel = @selector(willMoveToSuperview:);
+        //自己实现的将要被交换的方法的selector
+        SEL swizzSel = @selector(myWillMoveToSuperview:);
+        //两个方法的Method
+        Method systemMethod = class_getInstanceMethod([self class], systemSel);
+        Method swizzMethod = class_getInstanceMethod([self class], swizzSel);
+
+        //首先动态添加方法，实现是被交换的方法，返回值表示添加成功还是失败
+        BOOL isAdd = class_addMethod(self, systemSel, method_getImplementation(swizzMethod), method_getTypeEncoding(swizzMethod));
+        if (isAdd) {
+            //如果成功，说明类中不存在这个方法的实现
+            //将被交换方法的实现替换到这个并不存在的实现
+            class_replaceMethod(self, swizzSel, method_getImplementation(systemMethod), method_getTypeEncoding(systemMethod));
+        } else {
+            //否则，交换两个方法的实现
+            method_exchangeImplementations(systemMethod, swizzMethod);
+        }
+
+    });
+}
+
+- (void)myWillMoveToSuperview:(UIView *)newSuperview {
+    [self myWillMoveToSuperview:newSuperview];
+    if ([self isKindOfClass:NSClassFromString(@"UIButtonLabel")] || [self isKindOfClass:NSClassFromString(@"UITextFieldLabel")]) {
+        return;
+    }
+    if (self) {
+
+        if (self.tag == 10086) {
+            self.font = [UIFont fontWithName:@"SourceHanSansCN-Light" size:self.font.pointSize];
+        } else if (self.tag == 998) {
+            self.font  = [UIFont fontWithName:@"SourceHanSansCN-Regular" size:self.font.pointSize];
+        }else {
+            NSString *fontName;
+            fontName = @"SourceHanSansCN-Light";
+            if (SCREEN_WIDTH==414) {
+                self.font  = [UIFont fontWithName:fontName size:self.font.pointSize+2];
+            } else {
+                self.font  = [UIFont fontWithName:fontName size:self.font.pointSize];
+            }
+        }
+    }
+
+}
+
+
+@end
+</code></pre>
+
+    
+
+    
+</div>
 
 <script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
+    }
 </script>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
