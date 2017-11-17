@@ -4,6 +4,83 @@
   
     
     <entry>
+      <title><![CDATA[SpringMVC注解@RequestParam全面解析]]></title>
+      <url>http://www.sayyourname.cn/2017/11/17/SpringMVC%E6%B3%A8%E8%A7%A3-RequestParam%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<p>在SpringMVC后台控制层获取参数的方式主要有两种，一种是request.getParameter(“name”)，另外一种是用注解@RequestParam直接获取。这里主要讲这个注解</p>
+<p><strong>一、基本使用，获取提交的参数</strong></p>
+<p>后端代码：</p>
+<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
+<ol>
+<li>@RequestMapping(“testRequestParam”)    </li>
+<li>public String filesUpload(@RequestParam String inputStr, HttpServletRequest request) {    </li>
+<li>​    System.out.println(inputStr);  </li>
+<li>​      </li>
+<li>​    int inputInt = Integer.valueOf(request.getParameter(“inputInt”));  </li>
+<li>​    System.out.println(inputInt);  </li>
+<li>​      </li>
+<li>​    // ……省略  </li>
+<li>​    return “index”;  </li>
+<li>}     </li>
+</ol>
+<p>前端代码：</p>
+<p>Html代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
+<ol>
+<li><form action="/gadget/testRequestParam" method="post">    </form></li>
+<li>​     参数inputStr:<input type="text" name="inputStr">    </li>
+<li>​     参数intputInt:<input type="text" name="inputInt">    </li>
+<li>  </li>
+</ol>
+<p>前端界面：</p>
+<p>执行结果：</p>
+<p>test1 </p>
+<p>123 </p>
+<p><strong>可以看到spring会自动根据参数名字封装进入，我们可以直接拿这个参数名来用</strong></p>
+<p><strong>二、各种异常情况处理</strong></p>
+<p>1、可以对传入参数指定参数名</p>
+<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
+<ol>
+<li>@RequestParam String inputStr  </li>
+<li>// 下面的对传入参数指定为aa，如果前端不传aa参数名，会报错  </li>
+<li>@RequestParam(value=”aa”) String inputStr  </li>
+</ol>
+<p>错误信息：</p>
+<p>HTTP Status 400 - Required String parameter ‘aa’ is not present</p>
+<p><strong>2、可以通过required=false或者true来要求@RequestParam配置的前端参数是否一定要传</strong></p>
+<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
+<ol>
+<li>// required=false表示不传的话，会给参数赋值为null，required=true就是必须要有  </li>
+<li>@RequestMapping(“testRequestParam”)    </li>
+<li>​    public String filesUpload(@RequestParam(value=”aa”, required=true) String inputStr, HttpServletRequest request)  </li>
+</ol>
+<p><strong>3、如果用@RequestMapping注解的参数是int基本类型，但是required=false，这时如果不传参数值会报错，因为不传值，会赋值为null给int，这个不可以</strong></p>
+<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
+<ol>
+<li>@RequestMapping(“testRequestParam”)    </li>
+<li>public String filesUpload(@RequestParam(value=”aa”, required=true) String inputStr,   </li>
+<li>​        @RequestParam(value=”inputInt”, required=false) int inputInt  </li>
+<li>​        ,HttpServletRequest request) {    </li>
+<li>​      </li>
+<li>​    // ……省略  </li>
+<li>​    return “index”;  </li>
+<li>}  </li>
+</ol>
+<p><strong>解决方法：</strong></p>
+<p>​    </p>
+<p>“Consider declaring it as object wrapper for the corresponding primitive type.”建议使用包装类型代替基本类型，如使用“Integer”代替“int”</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> SpringMVC </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java学习记录]]></title>
       <url>http://www.sayyourname.cn/2017/11/17/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>Java琐碎的学习记录</p>
@@ -1641,9 +1718,9 @@ location ~* \.(html|txt)$ {
             
             <tag> Django </tag>
             
-            <tag> 技术 </tag>
-            
             <tag> Vue </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -1988,11 +2065,11 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
             
             <tag> Django </tag>
             
+            <tag> Vue </tag>
+            
             <tag> 技术 </tag>
             
             <tag> 服务器 </tag>
-            
-            <tag> Vue </tag>
             
         </tags>
         
@@ -4344,7 +4421,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;">&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
