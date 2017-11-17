@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: 技术 | 
+            Java学习记录 | 
         
         梦醒花开知多少
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="你的名字。">
     <meta name="description" content="技术生活个人博客">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,技术,Java">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/柠檬.png">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 技术 | 梦醒花开知多少">
+    <meta property="og:title" content="Java学习记录 | 梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
-    
+    <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="Java"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -238,401 +238,261 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#泛型、Mybatis分页查询、SOA架构、dubbo"><span class="post-toc-number">1.</span> <span class="post-toc-text">泛型、Mybatis分页查询、SOA架构、dubbo</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 130);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/17/Java学习记录/">Java学习记录</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Java琐碎的学习记录
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/17/Java学习记录/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>11月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/25/Mac安装mycli命令行工具/">Mac安装mycli命令行工具</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            mac安装方法
-$ brew update &amp;&amp; brew install mycli
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/25/Mac安装mycli命令行工具/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>10月 25, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/21/iOS统一更换字体和大小/">iOS统一更换字体和大小</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            //
-//  ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/21/iOS统一更换字体和大小/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>9月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/04/iOS中造成dealloc不调用的原因/">iOS中造成dealloc不调用的原因</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            问题描述
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/04/iOS中造成dealloc不调用的原因/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>8月 04, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/03/iOS设置导航条返回item样式/">iOS设置导航条返回item样式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            导航条的backitem在导航控制器里面设置会有很多问题，下面介绍一种重写控制器的viewload方法一劳永逸解决方法
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/03/iOS设置导航条返回item样式/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>8月 03, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/01/Django-Vue服务端渲染/">Django+Vue服务端渲染</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            SPA项目的前后端开发的便利自然不用说，路由也是由前端决定。但是对于SEO不太友好，因为百度引擎不会等待ajax的完成，网上Vue大部分都是node...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/01/Django-Vue服务端渲染/" target="_self">Read More.</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="你的名字。's avatar">
-            </div>
-            <div>
-                <strong>你的名字。</strong>
-                <span>8月 01, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/tags/技术/page/2/">2</a><a class="page-number" href="/tags/技术/page/3/">3</a><a class="page-number" href="/tags/技术/page/4/">4</a><a class="extend next" rel="next" href="/tags/技术/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 6; i++) {
-        randomNum = Math.floor(Math.random() * 130 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-        locatePost = locatePost.next();
+        
+    
+            <p class="article-headline-p">
+                Java学习记录
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://photo-static-cdn.ufoto.com.cn/upload/tiny/2495052/17ab1ad9-568a-42a2-a61b-3960a348da2d.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>你的名字。</strong>
+        <span>11月 17, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC4klEQVR42u3aS27jMBAFQN//0skBAsvvNW1EJkurgaERWZ1Foz+PnyOfBzY2NjY2NjY2NvYt2Y/4+ft++8uzE19c9/L7yZ2xsbGxT2AnBye/PD0yDsGz+zz7QnFnbGxs7APY10nrc+FIgrJ+Z2xsbGzs5J02zeTBmt0HGxsbGzspA655SRJK0iQ2NjY29ruaSm1RMUtsbeg/3kvDxsbGvj27HfTe4d//MN/GxsbGviW7fVZCk6SZvJipb46NjY29KTtfkcnXa/LW/6wgidLVrALDxsbG/lp228RPmkctIy8z8qIFGxsb+xx2fq2cWl+rDGhyT2xsbOxz2HnC+PT7SdEya2NhY2Nj781uU057cFvqJGOJ5I+HjY2NfQ67LS1mA+CVc/NktlSKYGNjY38t+/qAWfnRJqq2nVQXNtjY2NibsvNkMBsDrAwSZqGMShFsbGzs7dh50mob9227v20zDZtK2NjY2Buxk5WddnA7S0iz8XMRdGxsbOxN2e9KFUn6aQfD9QDgOpTY2NjYm7KTIiRvQrUlSpLwEl7yBWxsbOy92bNBb45PCpX10NQJDBsbG3sL9sq6zLuaTXm4Wyo2Njb2OexZ06dtBuXByltdxXewsbGxD2An+PaX5LrrDanoXGxsbOxN2StXzL+w/nsyHhhuKmFjY2NvxM55beqarfXkZU/dVMLGxsbeiN0WIe3AoB0tzMK0VIFhY2Njb8eeHbY+AG6bR/U4ARsbG3tT9my9pm1LXYd4Ngao74mNjY29Kbt9VlZwkveT9lbekMLGxsY+gd2WB3kya9NeO5yoEyE2Njb21uzZikzenGrbT7OSpk5g2NjY2NuxZyVEsrLTto3aUEbjDWxsbGzsoKGzvtAzS4HDqQg2Njb2wey8bFhJSPmo4OOlCDY2NvaXsNu1myJ5jFJgu8Tz4ixsbGzsrdnrrfx84Sb/X/VSTttUwsbGxt6Cfc6DjY2NjY2NjY2NfZvnF6SH9kn4eL22AAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Java/">Java</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/11/17/Java学习记录/" class="leancloud-views_num" data-flag-title="Java学习记录">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+
+  
+
+    
+        <p>Java琐碎的学习记录</p>
+<h2 id="泛型、Mybatis分页查询、SOA架构、dubbo"><a href="#泛型、Mybatis分页查询、SOA架构、dubbo" class="headerlink" title="泛型、Mybatis分页查询、SOA架构、dubbo"></a>泛型、Mybatis分页查询、SOA架构、dubbo</h2><p><code>2017.11.16</code>学习记录</p>
+<ol>
+<li><p>泛型的使用</p>
+<ul>
+<li>class的定义方式<code>public class PageEntity&lt;T&gt;</code>，初始化时需要指定泛型类型new PageEntity(TbItem)，这样private T e; 属性e就代表TbItem类型</li>
+</ul>
+</li>
+<li><p>Mybatis使用generator自动生成，generator配置注意引入classpath<code>driver</code>驱动。</p>
+<ul>
+<li>一种是自己定义一个Page实体，里面包含了页码、当前页数、数组、entity（泛型）等。Controller接受Page和entity封装到Page中，在service查询list添加到Page的list中</li>
+<li>使用PageHelper插件，添加Maven依赖5.0.0，mybatis配置拦截器</li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span> <span class="token attr-name">interceptor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.github.pagehelper.PageInterceptor<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token comment" spellcheck="true">&lt;!--自动识别使用的数据库--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+<li><p>SOA架构</p>
+<ul>
+<li>当其他jar包添加方法或者类时需要install，maven父依赖版本号更改时需要clean install -e -U强制更新</li>
+<li>zookeeper的安装需要jdk1.7的环境（可能是我的版本低）,阿里云需要开启对应的端口访问（安全组配置）</li>
+<li>当tomcat不打印日志的时候，需要在resource里面添加log4j.properties配置，会打印日志</li>
+<li>maven继承一般只针对版本号，依赖把另一个项目打成jar包，soa会把service和web分别打成war包，springmvc在web层配置，spring-dao还有事务在service配置</li>
+</ul>
+</li>
+</ol>
+
+    
+
+    
+</div>
+
+<script>
+    window.onload=function() {
+        $('.music').attr('src', '//music.163.com/outchain/player?type=2&id=' +  + '&auto=1&height=66');
     }
 </script>
 
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/10/27/IntelliJ-IDEA-For-Mac-快捷键/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -2086,6 +1946,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 

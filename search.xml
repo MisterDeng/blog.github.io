@@ -4,6 +4,51 @@
   
     
     <entry>
+      <title><![CDATA[Java学习记录]]></title>
+      <url>http://www.sayyourname.cn/2017/11/17/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>Java琐碎的学习记录</p>
+<h2 id="泛型、Mybatis分页查询、SOA架构、dubbo"><a href="#泛型、Mybatis分页查询、SOA架构、dubbo" class="headerlink" title="泛型、Mybatis分页查询、SOA架构、dubbo"></a>泛型、Mybatis分页查询、SOA架构、dubbo</h2><p><code>2017.11.16</code>学习记录</p>
+<ol>
+<li><p>泛型的使用</p>
+<ul>
+<li>class的定义方式<code>public class PageEntity&lt;T&gt;</code>，初始化时需要指定泛型类型new PageEntity(TbItem)，这样private T e; 属性e就代表TbItem类型</li>
+</ul>
+</li>
+<li><p>Mybatis使用generator自动生成，generator配置注意引入classpath<code>driver</code>驱动。</p>
+<ul>
+<li>一种是自己定义一个Page实体，里面包含了页码、当前页数、数组、entity（泛型）等。Controller接受Page和entity封装到Page中，在service查询list添加到Page的list中</li>
+<li>使用PageHelper插件，添加Maven依赖5.0.0，mybatis配置拦截器</li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span> <span class="token attr-name">interceptor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.github.pagehelper.PageInterceptor<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token comment" spellcheck="true">&lt;!--自动识别使用的数据库--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+<li><p>SOA架构</p>
+<ul>
+<li>当其他jar包添加方法或者类时需要install，maven父依赖版本号更改时需要clean install -e -U强制更新</li>
+<li>zookeeper的安装需要jdk1.7的环境（可能是我的版本低）,阿里云需要开启对应的端口访问（安全组配置）</li>
+<li>当tomcat不打印日志的时候，需要在resource里面添加log4j.properties配置，会打印日志</li>
+<li>maven继承一般只针对版本号，依赖把另一个项目打成jar包，soa会把service和web分别打成war包，springmvc在web层配置，spring-dao还有事务在service配置</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[IntelliJ IDEA For Mac 快捷键]]></title>
       <url>http://www.sayyourname.cn/2017/10/27/IntelliJ-IDEA-For-Mac-%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
       <content type="html"><![CDATA[<p><a href="http://www.cnblogs.com/wxd0108/p/5295017.html" target="_blank" rel="external">http://www.cnblogs.com/wxd0108/p/5295017.html</a></p>
@@ -1288,9 +1333,9 @@ public class HexaObserver extends Observer {
         
         <tags>
             
-            <tag> 设计模式 </tag>
-            
             <tag> Java </tag>
+            
+            <tag> 设计模式 </tag>
             
         </tags>
         
@@ -1945,9 +1990,9 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
             
             <tag> 技术 </tag>
             
-            <tag> Vue </tag>
-            
             <tag> 服务器 </tag>
+            
+            <tag> Vue </tag>
             
         </tags>
         
@@ -4299,7 +4344,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;">&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
