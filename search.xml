@@ -7,7 +7,7 @@
       <title><![CDATA[Java学习记录]]></title>
       <url>http://www.sayyourname.cn/2017/11/17/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>Java琐碎的学习记录</p>
-<h2 id="泛型、Mybatis分页查询、SOA架构、dubbo"><a href="#泛型、Mybatis分页查询、SOA架构、dubbo" class="headerlink" title="泛型、Mybatis分页查询、SOA架构、dubbo"></a>泛型、Mybatis分页查询、SOA架构、dubbo</h2><p><code>2017.11.16</code>学习记录</p>
+<h2 id="泛型、Mybatis分页查询、SOA架构"><a href="#泛型、Mybatis分页查询、SOA架构" class="headerlink" title="泛型、Mybatis分页查询、SOA架构"></a>泛型、Mybatis分页查询、SOA架构</h2><p><code>2017.11.16</code>学习记录</p>
 <ol>
 <li><p>泛型的使用</p>
 <ul>
