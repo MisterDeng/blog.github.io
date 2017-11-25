@@ -10,8 +10,6 @@
     
     <title>
         
-            SpringMVC注解@RequestParam全面解析 | 
-        
         梦醒花开知多少
     </title>
 
@@ -36,7 +34,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="你的名字。">
     <meta name="description" content="技术生活个人博客">
-    <meta name="keywords" content="null,技术,SpringMVC">
+    <meta name="keywords" content="null">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/柠檬.png">
@@ -62,9 +60,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.sayyourname.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="SpringMVC注解@RequestParam全面解析 | 梦醒花开知多少">
+    <meta property="og:title" content="梦醒花开知多少">
     <meta property="og:description" content="技术生活个人博客">
-    <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="SpringMVC"> 
+    
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -301,7 +299,7 @@
         
     
             <p class="article-headline-p">
-                SpringMVC注解@RequestParam全面解析
+                
             </p>
         </div>
 
@@ -353,7 +351,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/SpringMVC/">SpringMVC</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+        
     </ul>
     
 
@@ -367,7 +365,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/11/17/SpringMVC注解-RequestParam全面解析/" class="leancloud-views_num" data-flag-title="SpringMVC注解@RequestParam全面解析">
+                <span id="/2017/11/17/SpringMVC注解-RequestParam全面解析/" class="leancloud-views_num" data-flag-title="">
      &nbsp;浏览量
 </span>
 
@@ -411,68 +409,7 @@
   
 
     
-        <p>在SpringMVC后台控制层获取参数的方式主要有两种，一种是request.getParameter(“name”)，另外一种是用注解@RequestParam直接获取。这里主要讲这个注解</p>
-<p><strong>一、基本使用，获取提交的参数</strong></p>
-<p>后端代码：</p>
-<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li>@RequestMapping(“testRequestParam”)    </li>
-<li>public String filesUpload(@RequestParam String inputStr, HttpServletRequest request) {    </li>
-<li>​    System.out.println(inputStr);  </li>
-<li>​      </li>
-<li>​    int inputInt = Integer.valueOf(request.getParameter(“inputInt”));  </li>
-<li>​    System.out.println(inputInt);  </li>
-<li>​      </li>
-<li>​    // ……省略  </li>
-<li>​    return “index”;  </li>
-<li>}     </li>
-</ol>
-<p>前端代码：</p>
-<p>Html代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li><form action="/gadget/testRequestParam" method="post">    </form></li>
-<li>​     参数inputStr:<input type="text" name="inputStr">    </li>
-<li>​     参数intputInt:<input type="text" name="inputInt">    </li>
-<li>  </li>
-</ol>
-<p>前端界面：</p>
-<p>执行结果：</p>
-<p>test1 </p>
-<p>123 </p>
-<p><strong>可以看到spring会自动根据参数名字封装进入，我们可以直接拿这个参数名来用</strong></p>
-<p><strong>二、各种异常情况处理</strong></p>
-<p>1、可以对传入参数指定参数名</p>
-<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li>@RequestParam String inputStr  </li>
-<li>// 下面的对传入参数指定为aa，如果前端不传aa参数名，会报错  </li>
-<li>@RequestParam(value=”aa”) String inputStr  </li>
-</ol>
-<p>错误信息：</p>
-<p>HTTP Status 400 - Required String parameter ‘aa’ is not present</p>
-<p><strong>2、可以通过required=false或者true来要求@RequestParam配置的前端参数是否一定要传</strong></p>
-<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li>// required=false表示不传的话，会给参数赋值为null，required=true就是必须要有  </li>
-<li>@RequestMapping(“testRequestParam”)    </li>
-<li>​    public String filesUpload(@RequestParam(value=”aa”, required=true) String inputStr, HttpServletRequest request)  </li>
-</ol>
-<p><strong>3、如果用@RequestMapping注解的参数是int基本类型，但是required=false，这时如果不传参数值会报错，因为不传值，会赋值为null给int，这个不可以</strong></p>
-<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li>@RequestMapping(“testRequestParam”)    </li>
-<li>public String filesUpload(@RequestParam(value=”aa”, required=true) String inputStr,   </li>
-<li>​        @RequestParam(value=”inputInt”, required=false) int inputInt  </li>
-<li>​        ,HttpServletRequest request) {    </li>
-<li>​      </li>
-<li>​    // ……省略  </li>
-<li>​    return “index”;  </li>
-<li>}  </li>
-</ol>
-<p><strong>解决方法：</strong></p>
-<p>​    </p>
-<p>“Consider declaring it as object wrapper for the corresponding primitive type.”建议使用包装类型代替基本类型，如使用“Integer”代替“int”</p>
-
+        
     
 
     
@@ -505,6 +442,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2017/11/25/Java中9个处理Exception的最佳实践/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->

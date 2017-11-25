@@ -4,69 +4,161 @@
   
     
     <entry>
-      <title><![CDATA[SpringMVC注解@RequestParam全面解析]]></title>
-      <url>http://www.sayyourname.cn/2017/11/17/SpringMVC%E6%B3%A8%E8%A7%A3-RequestParam%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<p>在SpringMVC后台控制层获取参数的方式主要有两种，一种是request.getParameter(“name”)，另外一种是用注解@RequestParam直接获取。这里主要讲这个注解</p>
-<p><strong>一、基本使用，获取提交的参数</strong></p>
-<p>后端代码：</p>
-<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li>@RequestMapping(“testRequestParam”)    </li>
-<li>public String filesUpload(@RequestParam String inputStr, HttpServletRequest request) {    </li>
-<li>​    System.out.println(inputStr);  </li>
-<li>​      </li>
-<li>​    int inputInt = Integer.valueOf(request.getParameter(“inputInt”));  </li>
-<li>​    System.out.println(inputInt);  </li>
-<li>​      </li>
-<li>​    // ……省略  </li>
-<li>​    return “index”;  </li>
-<li>}     </li>
-</ol>
-<p>前端代码：</p>
-<p>Html代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li><form action="/gadget/testRequestParam" method="post">    </form></li>
-<li>​     参数inputStr:<input type="text" name="inputStr">    </li>
-<li>​     参数intputInt:<input type="text" name="inputInt">    </li>
-<li>  </li>
-</ol>
-<p>前端界面：</p>
-<p>执行结果：</p>
-<p>test1 </p>
-<p>123 </p>
-<p><strong>可以看到spring会自动根据参数名字封装进入，我们可以直接拿这个参数名来用</strong></p>
-<p><strong>二、各种异常情况处理</strong></p>
-<p>1、可以对传入参数指定参数名</p>
-<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li>@RequestParam String inputStr  </li>
-<li>// 下面的对传入参数指定为aa，如果前端不传aa参数名，会报错  </li>
-<li>@RequestParam(value=”aa”) String inputStr  </li>
-</ol>
-<p>错误信息：</p>
-<p>HTTP Status 400 - Required String parameter ‘aa’ is not present</p>
-<p><strong>2、可以通过required=false或者true来要求@RequestParam配置的前端参数是否一定要传</strong></p>
-<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li>// required=false表示不传的话，会给参数赋值为null，required=true就是必须要有  </li>
-<li>@RequestMapping(“testRequestParam”)    </li>
-<li>​    public String filesUpload(@RequestParam(value=”aa”, required=true) String inputStr, HttpServletRequest request)  </li>
-</ol>
-<p><strong>3、如果用@RequestMapping注解的参数是int基本类型，但是required=false，这时如果不传参数值会报错，因为不传值，会赋值为null给int，这个不可以</strong></p>
-<p>Java代码  <a href="javascript:void(" target="_blank" rel="external"><img src="http://825635381.iteye.com/images/icon_star.png" alt="收藏代码"></a>)</p>
-<ol>
-<li>@RequestMapping(“testRequestParam”)    </li>
-<li>public String filesUpload(@RequestParam(value=”aa”, required=true) String inputStr,   </li>
-<li>​        @RequestParam(value=”inputInt”, required=false) int inputInt  </li>
-<li>​        ,HttpServletRequest request) {    </li>
-<li>​      </li>
-<li>​    // ……省略  </li>
-<li>​    return “index”;  </li>
-<li>}  </li>
-</ol>
-<p><strong>解决方法：</strong></p>
-<p>​    </p>
-<p>“Consider declaring it as object wrapper for the corresponding primitive type.”建议使用包装类型代替基本类型，如使用“Integer”代替“int”</p>
+      <title><![CDATA[Java中9个处理Exception的最佳实践]]></title>
+      <url>http://www.sayyourname.cn/2017/11/25/Java%E4%B8%AD9%E4%B8%AA%E5%A4%84%E7%90%86Exception%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</url>
+      <content type="html"><![CDATA[<p>在Java中处理异常并不是一个简单的事情。不仅仅初学者很难理解，即使一些有经验的开发者也需要花费很多时间来思考如何处理异常，包括需要处理哪些异常，怎样处理等等。这也是绝大多数开发团队都会制定一些规则来规范对异常的处理的原因。而团队之间的这些规范往往是截然不同的。</p>
+<p>本文给出几个被很多团队使用的异常处理最佳实践。</p>
+<h2 id="1-在Finally块中清理资源或者使用try-with-resource语句"><a href="#1-在Finally块中清理资源或者使用try-with-resource语句" class="headerlink" title="1. 在Finally块中清理资源或者使用try-with-resource语句"></a>1. 在Finally块中清理资源或者使用try-with-resource语句</h2><p>当使用类似InputStream这种需要使用后关闭的资源时，一个常见的错误就是在try块的最后关闭资源。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doNotCloseResourceInTry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    FileInputStream inputStream <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"./tmp.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// use the inputStream to read a file</span>
+        <span class="token comment" spellcheck="true">// do NOT do this</span>
+        inputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>上述代码在没有任何exception的时候运行是没有问题的。但是当try块中的语句抛出异常或者自己实现的代码抛出异常，那么就不会执行最后的关闭语句，从而资源也无法释放。</p>
+<p>合理的做法则是将所有清理的代码都放到finally块中或者使用try-with-resource语句。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">closeResourceInFinally</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    FileInputStream inputStream <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"./tmp.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// use the inputStream to read a file</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>inputStream <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                inputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">automaticallyCloseResource</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"./tmp.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">(</span>FileInputStream inputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// use the inputStream to read a file</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="2-指定具体的异常"><a href="#2-指定具体的异常" class="headerlink" title="2. 指定具体的异常"></a>2. 指定具体的异常</h2><p>尽可能的使用最具体的异常来声明方法，这样才能使得代码更容易理解。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doNotDoThis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doThis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> NumberFormatException <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>如上，NumberFormatException字面上即可以看出是数字格式化错误。</p>
+<h2 id="3-对异常进行文档说明"><a href="#3-对异常进行文档说明" class="headerlink" title="3. 对异常进行文档说明"></a>3. 对异常进行文档说明</h2><p>当在方法上声明抛出异常时，也需要进行文档说明。和前面的一点一样，都是为了给调用者提供尽可能多的信息，从而可以更好地避免/处理异常。</p>
+<p>在Javadoc中加入throws声明，并且描述抛出异常的场景。</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * This method does something extremely useful ...
+ *
+ * @param input
+ * @throws MyBusinessException if ... happens
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSomething</span><span class="token punctuation">(</span>String input<span class="token punctuation">)</span> <span class="token keyword">throws</span> MyBusinessException <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="4-抛出异常的时候包含描述信息"><a href="#4-抛出异常的时候包含描述信息" class="headerlink" title="4. 抛出异常的时候包含描述信息"></a>4. 抛出异常的时候包含描述信息</h2><p>在抛出异常时，需要尽可能精确地描述问题和相关信息，这样无论是打印到日志中还是监控工具中，都能够更容易被人阅读，从而可以更好地定位具体错误信息、错误的严重程度等。</p>
+<p>但这里并不是说要对错误信息长篇大论，因为本来Exception的类名就能够反映错误的原因，因此只需要用一到两句话描述即可。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">new</span> <span class="token class-name">Long</span><span class="token punctuation">(</span><span class="token string">"xyz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>NumberFormatException即告诉了这个异常是格式化错误，异常的额外信息只需要提供这个错误字符串即可。当异常的名称不够明显的时候，则需要提供尽可能具体的错误信息。</p>
+<h2 id="5-首先捕获最具体的异常"><a href="#5-首先捕获最具体的异常" class="headerlink" title="5. 首先捕获最具体的异常"></a>5. 首先捕获最具体的异常</h2><p>现在很多IDE都能智能提示这个最佳实践，当你试图首先捕获最笼统的异常时，会提示<em>不能达到的代码</em>。</p>
+<p>当有多个catch块中，按照捕获顺序只有第一个匹配到的catch块才能执行。因此，如果先捕获IllegalArgumentException，那么则无法运行到对NumberFormatException的捕获。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">catchMostSpecificExceptionFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token string">"A message"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IllegalArgumentException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="6-不要捕获Throwable"><a href="#6-不要捕获Throwable" class="headerlink" title="6. 不要捕获Throwable"></a>6. 不要捕获Throwable</h2><p>Throwable是所有异常和错误的父类。你可以在catch语句中捕获，但是永远不要这么做。</p>
+<p>如果catch了throwable，那么不仅仅会捕获所有exception，还会捕获error。而error是表明无法恢复的jvm错误。因此除非绝对肯定能够处理或者被要求处理error，不要捕获throwable。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doNotCatchThrowable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// do something</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Throwable</span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// don't do this!</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="7-不要忽略异常"><a href="#7-不要忽略异常" class="headerlink" title="7. 不要忽略异常"></a>7. 不要忽略异常</h2><p>很多时候，开发者很有自信不会抛出异常，因此写了一个catch块，但是没有做任何处理或者记录日志。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doNotIgnoreExceptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// do something</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// this will never happen</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>但现实是经常会出现无法预料的异常或者无法确定这里的代码未来是不是会改动(删除了阻止异常抛出的代码)，而此时由于异常被捕获，使得无法拿到足够的错误信息来定位问题。</p>
+<p>合理的做法是至少要记录异常的信息。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">logAnException</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// do something</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"This should never happen: "</span> <span class="token operator">+</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="8-不要记录并抛出异常"><a href="#8-不要记录并抛出异常" class="headerlink" title="8. 不要记录并抛出异常"></a>8. 不要记录并抛出异常</h2><p>可以发现很多代码甚至类库中都会有捕获异常、记录日志并再次抛出的逻辑。如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">new</span> <span class="token class-name">Long</span><span class="token punctuation">(</span><span class="token string">"xyz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">throw</span> e<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>这个处理逻辑看着是合理的。但这经常会给同一个异常输出多条日志。如下：</p>
+<p><code>17:44:28,945 ERROR TestExceptionHandling:65 - java.lang.NumberFormatException: For input string: &quot;xyz&quot;Exception in thread &quot;main&quot; java.lang.NumberFormatException: For input string: &quot;xyz&quot;at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)at java.lang.Long.parseLong(Long.java:589)at java.lang.Long.(Long.java:965)at com.stackify.example.TestExceptionHandling.logAndThrowException(TestExceptionHandling.java:63)at com.stackify.example.TestExceptionHandling.main(TestExceptionHandling.java:58)</code></p>
+<p>如上所示，后面的日志也没有附加更有用的信息。如果想要提供更加有用的信息，那么可以将异常包装为自定义异常。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">wrapException</span><span class="token punctuation">(</span>String input<span class="token punctuation">)</span> <span class="token keyword">throws</span> MyBusinessException <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// do something</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MyBusinessException</span><span class="token punctuation">(</span><span class="token string">"A message that describes the error."</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>因此，仅仅当想要处理异常时才去捕获，否则只需要在方法签名中声明让调用者去处理。</p>
+<h2 id="9-包装异常时不要抛弃原始的异常"><a href="#9-包装异常时不要抛弃原始的异常" class="headerlink" title="9. 包装异常时不要抛弃原始的异常"></a>9. 包装异常时不要抛弃原始的异常</h2><p>捕获标准异常并包装为自定义异常是一个很常见的做法。这样可以添加更为具体的异常信息并能够做针对的异常处理。</p>
+<p>需要注意的是，包装异常时，一定要把原始的异常设置为cause(Exception有构造方法可以传入cause)。否则，丢失了原始的异常信息会让错误的分析变得困难。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">wrapException</span><span class="token punctuation">(</span>String input<span class="token punctuation">)</span> <span class="token keyword">throws</span> MyBusinessException <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// do something</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MyBusinessException</span><span class="token punctuation">(</span><span class="token string">"A message that describes the error."</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>综上可知，当抛出或者捕获异常时，有很多不一样的东西需要考虑。其中的许多点都是为了提升代码的可阅读性或者api的可用性。</p>
+<p>异常不仅仅是一个错误控制机制，也是一个沟通媒介，因此与你的协作者讨论这些最佳实践并制定一些规范能够让每个人都理解相关的通用概念并且能够按照同样的方式使用它们。</p>
 ]]></content>
       
         
@@ -74,9 +166,17 @@
             
             <tag> 技术 </tag>
             
-            <tag> SpringMVC </tag>
+            <tag> Java </tag>
             
         </tags>
+        
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>http://www.sayyourname.cn/2017/11/17/SpringMVC%E6%B3%A8%E8%A7%A3-RequestParam%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"></content>
+      
         
     </entry>
     
@@ -1718,9 +1818,9 @@ location ~* \.(html|txt)$ {
             
             <tag> Django </tag>
             
-            <tag> Vue </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> Vue </tag>
             
         </tags>
         
@@ -2065,9 +2165,9 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
             
             <tag> Django </tag>
             
-            <tag> Vue </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> Vue </tag>
             
             <tag> 服务器 </tag>
             
@@ -4421,7 +4521,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#64;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#64;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
