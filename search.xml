@@ -4,6 +4,34 @@
   
     
     <entry>
+      <title><![CDATA[iTerm2免密码登录服务器]]></title>
+      <url>http://www.sayyourname.cn/2017/12/07/iTerm2%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<h1 id="使用公钥私钥完成ssh免密码登录"><a href="#使用公钥私钥完成ssh免密码登录" class="headerlink" title="使用公钥私钥完成ssh免密码登录"></a>使用公钥私钥完成ssh免密码登录</h1><p>1、 在本地机器创建公钥,一路回车即可</p>
+<pre><code>ssh-keygen -t rsa1
+</code></pre><p>2、将公钥复制到ssh服务器<br>将上一步生成的id_rsa.pub公钥文件复制到目标服务器对应用户下的~/.ssh/authorized_keys 文件 ，如果服务器上没有authorized_keys 这个文件，直接创建即可，如果有，则把id_rsa.pub 这个文件里的内容copy 追加到后面即可。</p>
+<p>也可以利用ssh-copy-id工具复制<code>ssh-copy-id user@123.45.56.78</code>如果失败可能是因为ssh密码错误<code>ssh-keygen -R 123.45.56.78</code>删除原先服务器密码。</p>
+<p>3、 配置快捷登录<br>在自己的mac上的 ~/.ssh/config配置文件添加你的ssh服务器信息，若没有就新建，有就在后面追回，格式：</p>
+<pre><code>Host            alias #自定义别名
+HostName        hostname  #替换为你的ssh服务器ip或domain
+Port            port #ssh服务器端口，默认为22
+User            user #ssh服务器用户名
+IdentityFile    ~/.ssh/id_rsa #第一个步骤生成的公钥文件对应的私钥文件12345
+</code></pre><p>中文注释可能需要删除</p>
+<p>保存关闭，ssh alias 就可以登录你要登的服务器了</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> iTerm2 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java中9个处理Exception的最佳实践]]></title>
       <url>http://www.sayyourname.cn/2017/11/25/Java%E4%B8%AD9%E4%B8%AA%E5%A4%84%E7%90%86Exception%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</url>
       <content type="html"><![CDATA[<p>在Java中处理异常并不是一个简单的事情。不仅仅初学者很难理解，即使一些有经验的开发者也需要花费很多时间来思考如何处理异常，包括需要处理哪些异常，怎样处理等等。这也是绝大多数开发团队都会制定一些规则来规范对异常的处理的原因。而团队之间的这些规范往往是截然不同的。</p>
@@ -1941,9 +1969,9 @@ xadmin<span class="token punctuation">.</span>site<span class="token punctuation
             
             <tag> Django </tag>
             
-            <tag> 技术 </tag>
-            
             <tag> 服务器 </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -2165,11 +2193,11 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
             
             <tag> Django </tag>
             
+            <tag> 服务器 </tag>
+            
             <tag> 技术 </tag>
             
             <tag> Vue </tag>
-            
-            <tag> 服务器 </tag>
             
         </tags>
         
@@ -4521,7 +4549,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#64;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#64;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x40;&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x40;&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
