@@ -412,7 +412,7 @@
 
     
         <h1 id="使用公钥私钥完成ssh免密码登录"><a href="#使用公钥私钥完成ssh免密码登录" class="headerlink" title="使用公钥私钥完成ssh免密码登录"></a>使用公钥私钥完成ssh免密码登录</h1><p>1、 在本地机器创建公钥,一路回车即可</p>
-<pre><code>ssh-keygen -t rsa1
+<pre><code>ssh-keygen -t rsa
 </code></pre><p>2、将公钥复制到ssh服务器<br>将上一步生成的id_rsa.pub公钥文件复制到目标服务器对应用户下的~/.ssh/authorized_keys 文件 ，如果服务器上没有authorized_keys 这个文件，直接创建即可，如果有，则把id_rsa.pub 这个文件里的内容copy 追加到后面即可。</p>
 <p>也可以利用ssh-copy-id工具复制<code>ssh-copy-id user@123.45.56.78</code>如果失败可能是因为ssh密码错误<code>ssh-keygen -R 123.45.56.78</code>删除原先服务器密码。</p>
 <p>3、 配置快捷登录<br>在自己的mac上的 ~/.ssh/config配置文件添加你的ssh服务器信息，若没有就新建，有就在后面追回，格式：</p>
@@ -423,6 +423,10 @@ User            user #ssh服务器用户名
 IdentityFile    ~/.ssh/id_rsa #第一个步骤生成的公钥文件对应的私钥文件12345
 </code></pre><p>中文注释可能需要删除</p>
 <p>保存关闭，ssh alias 就可以登录你要登的服务器了</p>
+<p>##可能会出现的问题</p>
+<p>还是需要输入密码，查看tail -f  /var/log/secure日志</p>
+<p>错误信息<code>Authentication refused: bad ownership or modes for directory /root</code>看起来是root目录权限的问题，设置为700，但是我的还是不行</p>
+<p>只有使用<code>vim /etc/ssh/sshd_config</code>设置<code>StrictModes no</code>它的作用是关闭权限的验证，然后重启ssh<code>service sshd restart</code>。</p>
 
     
 
