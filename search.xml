@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[Spring注解]]></title>
       <url>http://www.sayyourname.cn/2018/01/03/Spring%E6%B3%A8%E8%A7%A3/</url>
-      <content type="html"><![CDATA[<h2 id="lombok-能够减少大量的模板代码，减少了在使用-Data-注解时，-需要导入lombok-Data，下面列举下-lombok提供的注解："><a href="#lombok-能够减少大量的模板代码，减少了在使用-Data-注解时，-需要导入lombok-Data，下面列举下-lombok提供的注解：" class="headerlink" title="lombok 能够减少大量的模板代码，减少了在使用@Data 注解时， 需要导入lombok.Data，下面列举下 lombok提供的注解："></a>lombok 能够减少大量的模板代码，减少了在使用@Data 注解时， 需要导入lombok.Data，下面列举下 lombok提供的注解：</h2><blockquote>
+      <content type="html"><![CDATA[<h2 id="lombok-注解"><a href="#lombok-注解" class="headerlink" title="lombok 注解"></a>lombok 注解</h2><blockquote>
 <p>val : 和 scala 中 val 同名, 可以在运行时确定类型;</p>
 <p>@NonNull : 注解在参数上, 如果该类参数为 null , 就会报出异常,  throw new NullPointException(参数名)</p>
 <p>@Cleanup : 注释在引用变量前, 自动回收资源 默认调用 close() 方法</p>
