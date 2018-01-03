@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title><![CDATA[Spring注解]]></title>
+      <url>http://www.sayyourname.cn/2018/01/03/Spring%E6%B3%A8%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<hr>
+<p>##lombok 能够减少大量的模板代码，减少了在使用@Data 注解时， 需要导入lombok.Data，下面列举下 lombok提供的注解：</p>
+<blockquote>
+<p>val : 和 scala 中 val 同名, 可以在运行时确定类型;</p>
+<p>@NonNull : 注解在参数上, 如果该类参数为 null , 就会报出异常,  throw new NullPointException(参数名)</p>
+<p>@Cleanup : 注释在引用变量前, 自动回收资源 默认调用 close() 方法</p>
+<p>@Getter/@Setter : 注解在类上, 为类提供读写属性</p>
+<p>@Getter(lazy=true) :</p>
+<p>@ToString : 注解在类上, 为类提供 toString() 方法</p>
+<p>@EqualsAndHashCode : 注解在类上, 为类提供 equals() 和 hashCode() 方法</p>
+<p>@NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor : 注解在类上, 为类提供无参,有指定必须参数, 全参构造函数</p>
+<p>@Data : 注解在类上, 为类提供读写属性, 此外还提供了 equals()、hashCode()、toString() 方法</p>
+<p>@Value :</p>
+<p>@Builder : 注解在类上, 为类提供一个内部的 Builder</p>
+<p>@SneakThrows :</p>
+<p>@Synchronized : 注解在方法上, 为方法提供同步锁</p>
+<p>@Log :</p>
+<p>@Log4j : 注解在类上, 为类提供一个属性名为 log 的 log4j 的日志对象</p>
+<p>@Slf4j : 注解在类上, 为类提供一个属性名为 log 的 log4j 的日志对象</p>
+</blockquote>
+<p>##NotEmpty,@NotNull和@NotBlank的区别</p>
+<p>1 @NotEmpty :不能为null，且Size&gt;0</p>
+<p>2  @NotNull:不能为null，但可以为empty(“”),没有Size的约束</p>
+<p>3  @NotBlank:只用于String,不能为null且trim()之后size&gt;0</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[iTerm2免密码登录服务器]]></title>
       <url>http://www.sayyourname.cn/2017/12/07/iTerm2%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
       <content type="html"><![CDATA[<h1 id="使用公钥私钥完成ssh免密码登录"><a href="#使用公钥私钥完成ssh免密码登录" class="headerlink" title="使用公钥私钥完成ssh免密码登录"></a>使用公钥私钥完成ssh免密码登录</h1><p>1、 在本地机器创建公钥,一路回车即可</p>
@@ -201,14 +241,6 @@ IdentityFile    ~/.ssh/id_rsa #第一个步骤生成的公钥文件对应的私�
             <tag> Java </tag>
             
         </tags>
-        
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://www.sayyourname.cn/2017/11/17/SpringMVC%E6%B3%A8%E8%A7%A3-RequestParam%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"></content>
-      
         
     </entry>
     
@@ -1850,9 +1882,9 @@ location ~* \.(html|txt)$ {
             
             <tag> Django </tag>
             
-            <tag> 技术 </tag>
-            
             <tag> Vue </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -2197,11 +2229,11 @@ cd /home/MovieSite/movies_scrapy/movies_scrapy &&
             
             <tag> Django </tag>
             
+            <tag> Vue </tag>
+            
             <tag> 技术 </tag>
             
             <tag> 服务器 </tag>
-            
-            <tag> Vue </tag>
             
         </tags>
         
@@ -4553,7 +4585,7 @@ __这些文字会生成`&lt;strong&gt;`__
 [GitHub](http://github.com)
 自动生成连接  &lt;http://www.github.com/&gt;
 </code></pre><p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#x40;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#109;">&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#x40;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#101;&#120;&#97;&#x6d;&#x70;&#108;&#x65;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;">&#101;&#120;&#97;&#x6d;&#x70;&#108;&#x65;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
 <p>某某说:</p>
 <blockquote>
