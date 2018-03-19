@@ -60,7 +60,7 @@
     <meta name="apple-mobile-web-app-title" content="安静的小站">
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.sayyourname.cn">
+    <meta property="og:url" content="http://www.mvtime.cn">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Java中9个处理Exception的最佳实践 | 安静的小站">
     <meta property="og:description" content="技术生活个人博客">
@@ -341,7 +341,7 @@
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
             <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADn0lEQVR42u3aS3LbMBAFQN3/0sk2VY6p92YAW4vmSiXRBNBcjOfz+uP653ohwIEDBw4cOHDgwIHjgzle8fX1/q/Pef78vO632/1mD8kzn8+CAwcOHDjucbwJRd9wPJM98z2vMvt+tgoOHDhw4LjHMTtevonkObPXMzsLDhw4cOD4BI5NKN2nfG0aiQMHDhw4Pp8j2UpSBEy4T6WOOHDgwIHjtziKglrSzokP2Qbms/fgwIEDB44bHO1Awyd//oX5Dhw4cODAcfRKBt3a+/PiY1uU/M8TcODAgQPHUY48PduMxLUj1EnKlyeQqyFsHDhw4MAx4tiU7fKi4fPWN0PYmwELHDhw4MBxgyP/Jk/A8pGFhC85ZDt+hwMHDhw47nHsh9XagYacYFM0jEYccODAgQPHNY5NoXAWGtsy35W0EwcOHDhwHOVoN5eHwzaI5sMQebkwSvxw4MCBA8dRjjxktlucPXk2QpGXBYuBBhw4cODAseBoBwU2zaHnYl9emkyaT4e7cDhw4MCBY5SztAXB5Hiz4t0sjWxXxIEDBw4cZzna9n8bOPNyYZF0la2vNyVIHDhw4MBxlCNJ4Wb3bIYPWqZZuwsHDhw4cNzgSAqCs7C6H5h4/qt8wO4NKw4cOHDguMCRHH7WrNq0uNqQPCsj4sCBAweOGxyb5VuIdiQiD7otEw4cOHDguMFxalygHZKLkqvReFxdiMSBAwcOHEc58nDbBsJNG6kNz8kqq4wWBw4cOHCMONrBgjyJagNnS5nvtgi0OHDgwIFjxJGHpTaJ2iRas/GF5F+BYnIQBw4cOHCsOdoAmX+f/5qni8PD48CBAweOH+Fo06pZYTFJulqyJJAXo3I4cODAgeMQx6nWTj4Y0R6maCNt2k44cODAgeMox6a093x/wpST5SlisiscOHDgwHGDo12gTcmibZUrtmsVAw04cODAgeMoRx4sk4XbYNy2r2YDEDhw4MCB47c4NuFz/+TN4fOd4MCBAweOsxyzwYVNyyehaZPGNoTjwIEDB457HKeCVpEyBaB7sqIRhQMHDhw4LnC0idms+XQ2SLfJIQ4cOHDg+HmOWYOnbRfNGkWvxfXmZePAgQMHjg/jyENgfsj213wVHDhw4MDxaRyz8YX2CXnArkuByXwHDhw4cOA4xJEUB5Ni3yxA5mFy83pw4MCBA8fPcMwGGpKmUc43HHQrW18X5ztw4MCBA4cLBw4cOHDgwIEDBw4cn3j9BcydWKly8hcRAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0UlEQVR42u3aQXYbIRAEUN3/0skBEuGqJnLG8Gel9zwCPguX6Ob168rnhY2NjY2NjY2Njf1I9it+/jJQ8Ndkrj/ff/fdnTVjY2Njn83+4l9/wH472RKz3r58Q6NNx8bGxr6AnUdLssT1m0nw5J/X38XGxsbGTg4JO8eMnUMONjY2NvY+e3ZIeDdLTsXGxsbGnhVokkUnY86OK/+tloaNjY39ePYnCj2f/vyt/W1sbGzsB7PbZ6dZ277TxuEXK8fGxsY+lJ0Hw2w7Zu2BtiyVrBMbGxv7TvYs2PJS0ToCkwZzEbHY2NjYh7J3SjZrar7o2TXNejRsbGzsC9j5j/t2m9b4dpYkFLGxsbGxd5qv+QGjLTzNohQbGxv7TnZe9C8K9OUVnNn2Ff1tbGxs7OPYO5G20xjOi1NbM2JjY2Mfym6nXL85i6J25HZt2NjY2GezW0aylFlZqr0MlM+OjY2NfTY7L818ork7u5STtxmwsbGxb2DnYRb93B+VotrtaEfGxsbGPpudx8YM2R5y2kZCsVpsbGzsC9j5JZ6kxJ8vqA3R/ACDjY2NfQM7H6gNpzyuvmkrsbGxsY9mt0Wltvy087mNrg+2B7CxsbEfz541XIsCfVmiatvDwwDDxsbGPoKdTDYr7q/HzwtG7TjY2NjY97C3WqfxNuV/3T8gYWNjY9/Mzo8leaugZbRbkzehsbGxsW9g5wudXcqcIfMSVX35EhsbG/s4dl7iadu0O/HWNgaGuY2NjY39Y9ntMyvuzC4AzY5MdX8bGxsb+4ezZyHRbtAOpo1JbGxs7DvZs/hpr9e0F3dmGzQsKmFjY2Mfwd4vG20tKygS7QQtNjY2NnZ+SMhDbtbcncUkNjY2NnbeGM6v8szayckxBhsbG/tOdjJoG1r5caItbLXbhI2NjX02O1/Wvyri5/GWtJCHAYaNjY19BPueBxsbGxsbGxsbG/sxz2/cohVHUM+ENAAAAABJRU5ErkJggg==">
         </ul>
     
 

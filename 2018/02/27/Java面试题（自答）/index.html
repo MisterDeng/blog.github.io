@@ -10,7 +10,7 @@
     
     <title>
         
-            iTerm2免密码登录服务器 | 
+            Java面试题（自答） | 
         
         安静的小站
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="你的名字。ß">
     <meta name="description" content="技术生活个人博客">
-    <meta name="keywords" content="null,技术,iTerm2">
+    <meta name="keywords" content="null,技术,Java">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/柠檬.png">
@@ -62,9 +62,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.mvtime.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iTerm2免密码登录服务器 | 安静的小站">
+    <meta property="og:title" content="Java面试题（自答） | 安静的小站">
     <meta property="og:description" content="技术生活个人博客">
-    <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="iTerm2"> 
+    <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="Java"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -264,7 +264,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用公钥私钥完成ssh免密码登录"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用公钥私钥完成ssh免密码登录</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础篇"><span class="post-toc-number">1.</span> <span class="post-toc-text">基础篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本功"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本功</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集合"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">集合</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">线程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#锁机制"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">锁机制</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#核心篇"><span class="post-toc-number">2.</span> <span class="post-toc-text">核心篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据存储"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">数据存储</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缓存使用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">缓存使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#消息队列"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">消息队列</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#框架篇"><span class="post-toc-number">3.</span> <span class="post-toc-text">框架篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Spring"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Spring</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Netty"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Netty</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微服务篇"><span class="post-toc-number">4.</span> <span class="post-toc-text">微服务篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微服务"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">微服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分布式"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">分布式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安全问题"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">安全问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#性能优化"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">性能优化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工程篇"><span class="post-toc-number">5.</span> <span class="post-toc-text">工程篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#需求分析"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">需求分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计能力"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">设计能力</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计模式"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">设计模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#业务工程"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">业务工程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#软实力"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">软实力</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -301,7 +301,7 @@
         
     
             <p class="article-headline-p">
-                iTerm2免密码登录服务器
+                Java面试题（自答）
             </p>
         </div>
 
@@ -320,7 +320,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>你的名字。ß</strong>
-        <span>12月 07, 2017</span>
+        <span>2月 27, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -341,7 +341,7 @@
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
             <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC00lEQVR42u3ay3LjMAwEQP//T2evuVieIZSNQrZOLj9kNlMVGBi+vo68XtjY2NjY2NjY2NiPZL/i6/v7r+9w/c7r73332cmasbGxsU9gf/jX/2a5755pF/dhucEz12vGxsbGPofdlpN5EWqL02TN2NjY2Nhtk9AWvOv7zP9U2NjY2Ng5Mt+sdniEjY2NjT0fKv2fzVprY35wloaNjY39ePZa0Pu7j38t38bGxsZ+GLu9JgWvPdDzdeuFjY2NvSs7H+WvHabMA921oVLezGBjY2Ofxp4sJblPXhpz8If7YGNjY2/KXgsAbisq5UYn47CiA8PGxsbegp20GXnT0o6W2halLYrY2NjYJ7CTIX57ECdvD5K2ZC3iLYJebGxs7C3YCbgNZfNNXBtgJa9iY2Njn8OebEG7lLVB0jyWwMbGxt6V3Yay7RGfumEYfHZxloaNjY29BXsSFUzA7ShqEhtgY2Nj78rOv2Ay4pnfee1oETY2NvZp7PkYKC9meSFcuyc2Njb2aeykFE0O6LRFKH+cNyTY2NjYu7LvLSd1e7BUitotw8bGxj6BPRnQr4W4beGcFEVsbGzsvdn5j/ukULUtTRsnt2vGxsbGPoedBKttQ9K2DXmxvC3oxcbGxt6CPQkA1lqOPCRuN2sxHsDGxsb+4+z8J34eGNwV4uYbOmpFsLGxsbdgtxFvO1TKS84kPKgLGDY2NvYW7HZIlGzHaIgfD4luGyphY2Nj/3F2uwVrAUB71CZfCTY2NjZ2e+WLaIvQ5NWoucLGxsbelP2Kr3nr0pLymCEqrtjY2Nhbs+/6yrVjOncNlT4osLGxsQ9g56P/9uBjEuu2R4XqjcbGxsbGDorWZMCURwtrATM2NjY2dl5m8lZhLb69eaiEjY2NvRG7xbSDoevPTorij8/SsLGxsR/PngS9+dLn7GTro8OX2NjY2Buxz7mwsbGxsbGxsbGxH3P9A6wiXP+x7y0JAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2klEQVR42u3aS27cMBAFwLn/pZNtADua95qCrSFLK0PQUCwKcKM/rz9HXi9sbGxsbGxsbGzsR7Jf8fX1+W+Wvvzt/575937+ZL5nbGxs7BPYb/71x8ivz+dHdv3G6wOKVsDGxsY+gJ2HlusjyMFJsLwmFeEQGxsbG3uEyQPh+h6wsbGxsdtXJmlAUoS6DoF5aMTGxsbGbhnX5fgEkzQGHlFLw8bGxn48u230PuHvX+hvY2NjYz+S3V75AE3esm2He4Y7x8bGxt6UvVKyb9eZ3Z8lQsMMDBsbG/tj2W15aGWkcqV9266PjY2NfQ47QbYhJ7/frjNLV7CxsbHPYeejlrMN5YFwNkI0DGDY2NjYH8vOQ8ssFZkFs+Qg2mCGjY2NvTe7LdnkRfn1JnHeDH5z0NjY2NjHsNv0YKXw1DZ0k8+AjY2NfRo7/3E7NHlvMtOmN9jY2NinsfOm78roTA7L35K3LrCxsbH3Zs/argmvDT9tiSoJXdjY2NgnsNtEYr2h2yYns1YxNjY29jnsvIE6K/esH2i+tzpuY2NjY2/Eng3T5Kvlz8w+wJvUBRsbG3tTdlvEmRX924NYGQbCxsbGPo3dtgRWDmV9vHLlmLCxsbF3Zc9K9u39tpDUDgbdkIpgY2Njb8HOU5QkULWt3zyxwcbGxsZug1ZbMEqCTdIAWA+W2NjY2CewZyM1ebk/GanJj/uHGr3Y2NjYH8tOqHlLoC3rrxxQFHSxsbGxN2XPgtMskORt4CRZaotW2NjY2Luy72oVtIWe2SBOUt66rSuCjY2N/SHsdpBxtpVkNGcWOJOhT2xsbOwT2G3Qyp/Pk4c27ck/AzY2NvY57LZkPysq5clMHmiTdbCxsbGx17cyK0IVsOtPgo2NjY09SgPaAaA81OWBExsbG/sc9qy52xaAZiM7bWKDjY2NfRp7pdHbphl5y/begIqNjY29K/ucCxsbGxsbGxsbG/sx11/HlprdGmyOZAAAAABJRU5ErkJggg==">
         </ul>
     
 
@@ -353,7 +353,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/iTerm2/">iTerm2</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+        <a class="post_tag-link" href="/tags/Java/">Java</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
     </ul>
     
 
@@ -367,7 +367,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/12/07/iTerm2免密码登录服务器/" class="leancloud-views_num" data-flag-title="iTerm2免密码登录服务器">
+                <span id="/2018/02/27/Java面试题（自答）/" class="leancloud-views_num" data-flag-title="Java面试题（自答）">
      &nbsp;浏览量
 </span>
 
@@ -411,22 +411,241 @@
   
 
     
-        <h1 id="使用公钥私钥完成ssh免密码登录"><a href="#使用公钥私钥完成ssh免密码登录" class="headerlink" title="使用公钥私钥完成ssh免密码登录"></a>使用公钥私钥完成ssh免密码登录</h1><p>1、 在本地机器创建公钥,一路回车即可</p>
-<pre><code>ssh-keygen -t rsa
-</code></pre><p>2、将公钥复制到ssh服务器<br>将上一步生成的id_rsa.pub公钥文件复制到目标服务器对应用户下的~/.ssh/authorized_keys 文件 ，如果服务器上没有authorized_keys 这个文件，直接创建即可，如果有，则把id_rsa.pub 这个文件里的内容copy 追加到后面即可。</p>
-<p>也可以利用ssh-copy-id工具复制<code>ssh-copy-id root@47.94.171.61</code>如果失败可能是因为ssh密码错误<code>ssh-keygen -R 47.94.171.61</code>删除原先服务器密码。</p>
-<p>3、 配置快捷登录<br>在自己的mac上的 ~/.ssh/config配置文件添加你的ssh服务器信息，若没有就新建，有就在后面追回，格式：</p>
-<pre><code>Host            alias #自定义别名
-HostName        hostname  #替换为你的ssh服务器ip或domain
-Port            port #ssh服务器端口，默认为22
-User            user #ssh服务器用户名
-IdentityFile    ~/.ssh/id_rsa #第一个步骤生成的公钥文件对应的私钥文件12345
-</code></pre><p>中文注释可能需要删除</p>
-<p>保存关闭，ssh alias 就可以登录你要登的服务器了</p>
-<p>##可能会出现的问题</p>
-<p>还是需要输入密码，查看tail -f  /var/log/secure日志</p>
-<p>错误信息<code>Authentication refused: bad ownership or modes for directory /root</code>看起来是root目录权限的问题，设置为700，但是我的还是不行</p>
-<p>只有使用<code>vim /etc/ssh/sshd_config</code>设置<code>StrictModes no</code>它的作用是关闭权限的验证，然后重启ssh<code>service sshd restart</code>。</p>
+        <h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><h3 id="基本功"><a href="#基本功" class="headerlink" title="基本功"></a>基本功</h3><ul>
+<li><p>面向对象的特征</p>
+<p>封装、继承、多态</p>
+</li>
+<li><p>final, finally, finalize 的区别</p>
+<p>final是用来修饰属性、方法、类，属性不可变，方法不可重写，类不可继承</p>
+<p>finalize当垃圾收集器将对象从内存清理之前做必要的清理工作</p>
+<p>finally是try和catch捕获异常，finally一定会执行，无论try块是否发生异常</p>
+</li>
+<li><p>int 和 Integer 有什么区别</p>
+<p>int是基本数据类型初始值为0，Integer是对象类型初始值为null占用更多的内存Integer会自动拆箱为int</p>
+</li>
+<li><p>重载和重写的区别</p>
+<p>你可以在一个类中重载方法，但是只能在子类中重写方法，一个是编译时活动，一个是运行时活动</p>
+</li>
+<li><p>抽象类和接口有什么区别</p>
+<p>接口是对动作的抽象比如吃饭，抽象类是对类别的抽象比如人。</p>
+<p>抽象类要被子类继承，接口要被子类实现</p>
+<p>抽象类的方法可以被实现，接口不可以</p>
+</li>
+<li><p>说说反射的用途及实现</p>
+<p>反射机制是在运行状态中，是搭建框架的基础所在，可以对项目进行解耦。可以根据类的名字获取到</p>
+</li>
+<li><p>说说自定义注解的场景及实现</p>
+</li>
+<li><p>HTTP 请求的 GET 与 POST 方式的区别</p>
+</li>
+<li><p>session 与 cookie 区别</p>
+</li>
+<li><p>session 分布式处理</p>
+</li>
+<li><p>JDBC 流程</p>
+</li>
+<li><p>MVC 设计思想</p>
+</li>
+<li><p>equals 与 == 的区别</p>
+</li>
+</ul>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><ul>
+<li>List 和 Set 区别</li>
+<li>List 和 Map 区别</li>
+<li>Arraylist 与 LinkedList 区别</li>
+<li>ArrayList 与 Vector 区别</li>
+<li>HashMap 和 Hashtable 的区别</li>
+<li>HashSet 和 HashMap 区别</li>
+<li>HashMap 和 ConcurrentHashMap 的区别</li>
+<li>HashMap 的工作原理及代码实现</li>
+<li>ConcurrentHashMap 的工作原理及代码实现</li>
+</ul>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul>
+<li>创建线程的方式及实现</li>
+<li>sleep() 、join（）、yield（）有什么区别</li>
+<li>说说 CountDownLatch 原理</li>
+<li>说说 CyclicBarrier 原理</li>
+<li>说说 Semaphore 原理</li>
+<li>说说 Exchanger 原理</li>
+<li>说说 CountDownLatch 与 CyclicBarrier 区别</li>
+<li>ThreadLocal 原理分析</li>
+<li>讲讲线程池的实现原理</li>
+<li>线程池的几种方式</li>
+<li>线程的生命周期</li>
+</ul>
+<h3 id="锁机制"><a href="#锁机制" class="headerlink" title="锁机制"></a>锁机制</h3><ul>
+<li>说说线程安全问题</li>
+<li>volatile 实现原理</li>
+<li>synchronize 实现原理</li>
+<li>synchronized 与 lock 的区别</li>
+<li>CAS 乐观锁</li>
+<li>ABA 问题</li>
+<li>乐观锁的业务场景及实现方式</li>
+</ul>
+<h2 id="核心篇"><a href="#核心篇" class="headerlink" title="核心篇"></a>核心篇</h2><h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><ul>
+<li>MySQL 索引使用的注意事项</li>
+<li>说说反模式设计</li>
+<li>说说分库与分表设计</li>
+<li>分库与分表带来的分布式困境与应对之策</li>
+<li>说说 SQL 优化之道</li>
+<li>MySQL 遇到的死锁问题</li>
+<li>存储引擎的 InnoDB 与 MyISAM</li>
+<li>数据库索引的原理</li>
+<li>为什么要用 B-tree</li>
+<li>聚集索引与非聚集索引的区别</li>
+<li>limit 20000 加载很慢怎么解决</li>
+<li>选择合适的分布式主键方案</li>
+<li>选择合适的数据存储方案</li>
+<li>ObjectId 规则</li>
+<li>聊聊 MongoDB 使用场景</li>
+<li>倒排索引</li>
+<li>聊聊 ElasticSearch 使用场景</li>
+</ul>
+<h3 id="缓存使用"><a href="#缓存使用" class="headerlink" title="缓存使用"></a>缓存使用</h3><ul>
+<li>Redis 有哪些类型</li>
+<li>Redis 内部结构</li>
+<li>聊聊 Redis 使用场景</li>
+<li>Redis 持久化机制</li>
+<li>Redis 如何实现持久化</li>
+<li>Redis 集群方案与实现</li>
+<li>Redis 为什么是单线程的</li>
+<li>缓存奔溃</li>
+<li>缓存降级</li>
+<li>使用缓存的合理性问题</li>
+</ul>
+<h3 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h3><ul>
+<li>消息队列的使用场景</li>
+<li>消息的重发补偿解决思路</li>
+<li>消息的幂等性解决思路</li>
+<li>消息的堆积解决思路</li>
+<li>自己如何实现消息队列</li>
+<li>如何保证消息的有序性</li>
+</ul>
+<h2 id="框架篇"><a href="#框架篇" class="headerlink" title="框架篇"></a>框架篇</h2><h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h3><ul>
+<li>BeanFactory 和 ApplicationContext 有什么区别</li>
+<li>Spring Bean 的生命周期</li>
+<li>Spring IOC 如何实现</li>
+<li>说说 Spring AOP</li>
+<li>Spring AOP 实现原理</li>
+<li>动态代理（cglib 与 JDK）</li>
+<li>Spring 事务实现方式</li>
+<li>Spring 事务底层原理</li>
+<li>如何自定义注解实现功能</li>
+<li>Spring MVC 运行流程</li>
+<li>Spring MVC 启动流程</li>
+<li>Spring 的单例实现原理</li>
+<li>Spring 框架中用到了哪些设计模式</li>
+<li>Spring 其他产品（Srping Boot、Spring Cloud、Spring Secuirity、Spring Data、Spring AMQP 等）</li>
+</ul>
+<h3 id="Netty"><a href="#Netty" class="headerlink" title="Netty"></a>Netty</h3><ul>
+<li>为什么选择 Netty</li>
+<li>说说业务中，Netty 的使用场景</li>
+<li>原生的 NIO 在 JDK 1.7 版本存在 epoll bug</li>
+<li>什么是TCP 粘包/拆包</li>
+<li>TCP粘包/拆包的解决办法</li>
+<li>Netty 线程模型</li>
+<li>说说 Netty 的零拷贝</li>
+<li>Netty 内部执行流程</li>
+<li>Netty 重连实现</li>
+</ul>
+<h2 id="微服务篇"><a href="#微服务篇" class="headerlink" title="微服务篇"></a>微服务篇</h2><h3 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h3><ul>
+<li>前后端分离是如何做的</li>
+<li>微服务哪些框架</li>
+<li>你怎么理解 RPC 框架</li>
+<li>说说 RPC 的实现原理</li>
+<li>说说 Dubbo 的实现原理</li>
+<li>你怎么理解 RESTful</li>
+<li>说说如何设计一个良好的 API</li>
+<li>如何理解 RESTful API 的幂等性</li>
+<li>如何保证接口的幂等性</li>
+<li>说说 CAP 定理、 BASE 理论</li>
+<li>怎么考虑数据一致性问题</li>
+<li>说说最终一致性的实现方案</li>
+<li>你怎么看待微服务</li>
+<li>微服务与 SOA 的区别</li>
+<li>如何拆分服务</li>
+<li>微服务如何进行数据库管理</li>
+<li>如何应对微服务的链式调用异常</li>
+<li>对于快速追踪与定位问题</li>
+<li>微服务的安全</li>
+</ul>
+<h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><ul>
+<li>谈谈业务中使用分布式的场景</li>
+<li>Session 分布式方案</li>
+<li>分布式锁的场景</li>
+<li>分布是锁的实现方案</li>
+<li>分布式事务</li>
+<li>集群与负载均衡的算法与实现</li>
+<li>说说分库与分表设计</li>
+<li>分库与分表带来的分布式困境与应对之策</li>
+</ul>
+<h3 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h3><ul>
+<li>安全要素与 STRIDE 威胁</li>
+<li>防范常见的 Web 攻击</li>
+<li>服务端通信安全攻防</li>
+<li>HTTPS 原理剖析</li>
+<li>HTTPS 降级攻击</li>
+<li>授权与认证</li>
+<li>基于角色的访问控制</li>
+<li>基于数据的访问控制</li>
+</ul>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ul>
+<li>性能指标有哪些</li>
+<li>如何发现性能瓶颈</li>
+<li>性能调优的常见手段</li>
+<li>说说你在项目中如何进行性能调优</li>
+</ul>
+<h2 id="工程篇"><a href="#工程篇" class="headerlink" title="工程篇"></a>工程篇</h2><h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><ul>
+<li>你如何对需求原型进行理解和拆分</li>
+<li>说说你对功能性需求的理解</li>
+<li>说说你对非功能性需求的理解</li>
+<li>你针对产品提出哪些交互和改进意见</li>
+<li>你如何理解用户痛点</li>
+</ul>
+<h3 id="设计能力"><a href="#设计能力" class="headerlink" title="设计能力"></a>设计能力</h3><ul>
+<li>说说你在项目中使用过的 UML 图</li>
+<li>你如何考虑组件化</li>
+<li>你如何考虑服务化</li>
+<li>你如何进行领域建模</li>
+<li>你如何划分领域边界</li>
+<li>说说你项目中的领域建模</li>
+<li>说说概要设计</li>
+</ul>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ul>
+<li>你项目中有使用哪些设计模式</li>
+<li>说说常用开源框架中设计模式使用分析</li>
+<li>说说你对设计原则的理解</li>
+<li>23种设计模式的设计理念</li>
+<li>设计模式之间的异同，例如策略模式与状态模式的区别</li>
+<li>设计模式之间的结合，例如策略模式+简单工厂模式的实践</li>
+<li>设计模式的性能，例如单例模式哪种性能更好。</li>
+</ul>
+<h3 id="业务工程"><a href="#业务工程" class="headerlink" title="业务工程"></a>业务工程</h3><ul>
+<li>你系统中的前后端分离是如何做的</li>
+<li>说说你的开发流程</li>
+<li>你和团队是如何沟通的</li>
+<li>你如何进行代码评审</li>
+<li>说说你对技术与业务的理解</li>
+<li>说说你在项目中经常遇到的 Exception</li>
+<li>说说你在项目中遇到感觉最难Bug，怎么解决的</li>
+<li>说说你在项目中遇到印象最深困难，怎么解决的</li>
+<li>你觉得你们项目还有哪些不足的地方</li>
+<li>你是否遇到过 CPU 100% ，如何排查与解决</li>
+<li>你是否遇到过 内存 OOM ，如何排查与解决</li>
+<li>说说你对敏捷开发的实践</li>
+<li>说说你对开发运维的实践</li>
+<li>介绍下工作中的一个对自己最有价值的项目，以及在这个过程中的角色</li>
+</ul>
+<h3 id="软实力"><a href="#软实力" class="headerlink" title="软实力"></a>软实力</h3><ul>
+<li>说说你的亮点</li>
+<li>说说你最近在看什么书</li>
+<li>说说你觉得最有意义的技术书籍</li>
+<li>工作之余做什么事情</li>
+<li>说说个人发展方向方面的思考</li>
+<li>说说你认为的服务端开发工程师应该具备哪些能力</li>
+<li>说说你认为的架构师是什么样的，架构师主要做什么</li>
+<li>说说你所理解的技术专家</li>
+</ul>
 
     
 
@@ -461,21 +680,13 @@ IdentityFile    ~/.ssh/id_rsa #第一个步骤生成的公钥文件对应的私�
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/01/03/Spring注解/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/11/25/Java中9个处理Exception的最佳实践/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/03/Spring注解/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
